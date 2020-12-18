@@ -40,3 +40,4 @@ Thumbs.db
 # Node.js / Typescript
 node_modules
 dist
+.eslintcache
