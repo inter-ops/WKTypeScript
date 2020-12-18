@@ -22,8 +22,7 @@
     "rootDir": "src",
     "target": "es5",
     "esModuleInterop": true,
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "typeRoots": ["./src/types"],
+    "lib": ["dom", "dom.iterable", "esnext"]
   },
   "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.js", "src/**/*.jsx"],
   "exclude": ["./node_modules"]
