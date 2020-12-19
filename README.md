@@ -30,8 +30,10 @@ Add Xcode config overview:
 - [ ] Include transpiled JavaScript files
 
 ## Progress
+- [ ] JavaScript type-safe function reference generator for native Swift
 - [ ] Create example iOS project
 - [ ] Create example macOS project
+- [ ] Create cross-platform example project
 
 ## Requirements
 
