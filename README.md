@@ -3,14 +3,15 @@ A basic framework for evaluating TypeScript through WebKit
 
 ## Table of Contents
 1. **[Getting Started](#getting-started)**
-  1. [Setup](#setup)
-  2. [Building](#building)
+    1. [Setup](#setup)
+    2. [Building](#building)
 2. **[Configuration](#configuration)**
-  1. [Xcode](#xcode)
-3. **[Requirements](#requirements)**
-  1. [Swift](#swift)
-  2. [NPM](#npm)
-4. **[License](#mit-license)** 
+    1. [Xcode](#xcode)
+3. **[Progress](#progress)**
+4. **[Requirements](#requirements)**
+    1. [Swift](#swift)
+    2. [NPM](#npm)
+5. **[License](#mit-license)** 
 
 ## Getting Started
 
@@ -27,6 +28,10 @@ Add Xcode config overview:
 
 - [ ] Add Build Phases
 - [ ] Include transpiled JavaScript files
+
+## Progress
+- [ ] Create example iOS project
+- [ ] Create example macOS project
 
 ## Requirements
 
