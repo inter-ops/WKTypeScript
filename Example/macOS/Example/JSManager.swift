@@ -28,6 +28,14 @@ struct JS {
         get(file: file, path: path)
     }
     
+    /// Returns the generated JavaScript code for a specified JavaScript `file`.
+    /// - parameters:
+    ///     - file: The name of the JavaScript file you wish to retrieve (file extension is optional)
+    ///     - path: The path to the directory where the JavaScript file is located
+    /// - returns: The contents of the input JavaScript file as a String
+    /// # Usage
+    ///     let code = JS.get(file: "index")
+    ///     webView.evaluateJavaScript(code)
     static func get(file: String, path: String) -> String {
         if let filePath = Bundle.main.path(forResource: "\(path)\(file.removeExtension())", ofType: "js") {
             do {
