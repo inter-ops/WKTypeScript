@@ -18,6 +18,8 @@ class ViewController: NSViewController, WKUIDelegate, WKNavigationDelegate, WKSc
         clearCache()
         initWebView()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(self.didToggleMode(_:)), name: .didToggleMode, object: nil)
+        
     }
     
     // MARK: WebKit Config
@@ -36,10 +38,18 @@ class ViewController: NSViewController, WKUIDelegate, WKNavigationDelegate, WKSc
         WKWebsiteDataStore.default().removeData(ofTypes: websiteDataTypes as! Set<String>, modifiedSince: date, completionHandler:{ })
     }
     
+    func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
+        run(JS.get())
+    }
+    
     
     // MARK: JavaScript Handler
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         // JavaScript event listeners
+    }
+    
+    @objc func didToggleMode(_ notification: Notification) {
+        run("toggleMode();")
     }
     
 
@@ -50,5 +60,10 @@ class ViewController: NSViewController, WKUIDelegate, WKNavigationDelegate, WKSc
     }
 
 
+}
+
+// MARK: Notification Extensions
+extension Notification.Name {
+    static let didToggleMode = Notification.Name("didToggleMode")
 }
 
