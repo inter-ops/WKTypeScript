@@ -698,11 +698,19 @@
                                 <toolbarItem implicitItemIdentifier="NSToolbarPrintItem" id="Yb6-ab-aZR"/>
                                 <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="8pj-kc-IVL"/>
                                 <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="yyq-D8-NPg"/>
+                                <toolbarItem implicitItemIdentifier="78134E80-0980-413A-B2D9-B8F9BD35980D" label="Toggle Mode" paletteLabel="Toggle Mode" tag="-1" image="lightbulb" catalog="system" id="Go8-CJ-Rt9">
+                                    <size key="minSize" width="37" height="30"/>
+                                    <size key="maxSize" width="37" height="30"/>
+                                    <connections>
+                                        <action selector="toggleMode:" target="B8D-0N-5wS" id="fWb-2K-oGB"/>
+                                    </connections>
+                                </toolbarItem>
                             </allowedToolbarItems>
                             <defaultToolbarItems>
                                 <toolbarItem reference="TCR-4v-NcI"/>
                                 <toolbarItem reference="ImG-XZ-NA7"/>
                                 <toolbarItem reference="yyq-D8-NPg"/>
+                                <toolbarItem reference="Go8-CJ-Rt9"/>
                                 <toolbarItem reference="Yb6-ab-aZR"/>
                             </defaultToolbarItems>
                         </toolbar>
@@ -750,4 +758,7 @@
             <point key="canvasLocation" x="75" y="655"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="lightbulb" catalog="system" width="15" height="17"/>
+    </resources>
 </document>
