@@ -14,7 +14,7 @@ struct JS {
     
     /// Returns the generated JavaScript code for `index.js` as a String.
     static func get() -> String {
-        return get(file: index)
+        return get(file: index, path: path)
     }
     
     /// Returns the generated JavaScript code for a specified JavaScript `file`.
@@ -25,6 +25,10 @@ struct JS {
     ///     let code = JS.get(file: "index")
     ///     webView.evaluateJavaScript(code)
     static func get(file: String) -> String {
+        get(file: file, path: path)
+    }
+    
+    static func get(file: String, path: String) -> String {
         if let filePath = Bundle.main.path(forResource: "\(path)\(file.removeExtension())", ofType: "js") {
             do {
                 let contents = try String(contentsOfFile: filePath)
