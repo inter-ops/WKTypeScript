@@ -29,7 +29,7 @@
 			name = "NPM Run Build";
 			outputFiles = (
 			);
-			script = "# Type a script or drag a script file from your workspace to insert its path.\nnpm run builder\n";
+			script = "# Type a script or drag a script file from your workspace to insert its path.\nnpm run build\n";
 		};
 /* End PBXBuildRule section */
 
