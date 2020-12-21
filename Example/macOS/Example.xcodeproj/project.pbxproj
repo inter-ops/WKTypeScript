@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,22 +17,6 @@
 		C2C0A68E258E7A690038A67C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2C0A68D258E7A690038A67C /* Assets.xcassets */; };
 		C2C0A691258E7A690038A67C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2C0A68F258E7A690038A67C /* Main.storyboard */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXBuildRule section */
-		C286AC3525914CD800A16965 /* PBXBuildRule */ = {
-			isa = PBXBuildRule;
-			compilerSpec = com.apple.compilers.proxy.script;
-			fileType = pattern.proxy;
-			inputFiles = (
-			);
-			isEditable = 1;
-			name = "Build NPM";
-			outputFiles = (
-			);
-			runOncePerArchitecture = 0;
-			script = "# Type a script or drag a script file from your workspace to insert its path.\nnpm run build\n";
-		};
-/* End PBXBuildRule section */
 
 /* Begin PBXFileReference section */
 		C286AC222591291F00A16965 /* dist */ = {isa = PBXFileReference; lastKnownFileType = folder; name = dist; path = ../../../dist; sourceTree = "<group>"; };
@@ -106,7 +90,6 @@
 				C2C0A684258E7A680038A67C /* Resources */,
 			);
 			buildRules = (
-				C286AC3525914CD800A16965 /* PBXBuildRule */,
 			);
 			dependencies = (
 			);
