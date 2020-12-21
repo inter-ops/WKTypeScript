@@ -15,6 +15,7 @@ class ViewController: NSViewController, WKUIDelegate, WKNavigationDelegate, WKSc
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        clearCache()
         initWebView()
         
     }
@@ -26,8 +27,13 @@ class ViewController: NSViewController, WKUIDelegate, WKNavigationDelegate, WKSc
         webView.navigationDelegate = self                   // Set WebView Navigation Delegate
         // JavaScript Event Listeners
         webView.configuration.userContentController.add(self, name: "eventListeners")
-        // Load URL
-        webView.load("https://google.com")
+        webView.load(file: "index", path: "WebContent")
+    }
+    /// Clear WebKit WebView object cache.
+    func clearCache() {
+        let websiteDataTypes = NSSet(array: [WKWebsiteDataTypeDiskCache, WKWebsiteDataTypeMemoryCache])
+        let date = Date(timeIntervalSince1970: 0)
+        WKWebsiteDataStore.default().removeData(ofTypes: websiteDataTypes as! Set<String>, modifiedSince: date, completionHandler:{ })
     }
     
     
