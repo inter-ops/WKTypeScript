@@ -39,7 +39,7 @@
 		C286AC2525912BA400A16965 /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
 		C286AC2825912BAF00A16965 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		C286AC2B25912EB100A16965 /* JSManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSManager.swift; sourceTree = "<group>"; };
-		C286AC2F2591388500A16965 /* WebContent */ = {isa = PBXFileReference; lastKnownFileType = folder; path = WebContent; sourceTree = "<group>"; };
+		C286AC2F2591388500A16965 /* WebContent */ = {isa = PBXFileReference; lastKnownFileType = folder; name = WebContent; path = ../../WebContent; sourceTree = "<group>"; };
 		C2B89A00259151DA006B9DEE /* WKRunScript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKRunScript.swift; sourceTree = "<group>"; };
 		C2C0A686258E7A680038A67C /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2C0A689258E7A680038A67C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -322,7 +322,8 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				PRODUCT_BUNDLE_IDENTIFIER = ca.justinbush.Example;
+				MARKETING_VERSION = 0.0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.interops.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -344,7 +345,8 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				PRODUCT_BUNDLE_IDENTIFIER = ca.justinbush.Example;
+				MARKETING_VERSION = 0.0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.interops.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
