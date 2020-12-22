@@ -7,16 +7,17 @@
 
 import Foundation
 
+// MARK: JavaScript Manager
+/// Handles all of the reading and retrieval of JavaScript content from file.
 struct JS {
     
-    static let index = "index"
-    static let path = "dist/"
+    static let index = "index"      // index.js (default)
+    static let path = "dist/"       // path/to/js
     
     /// Returns the generated JavaScript code for `index.js` as a String.
     static func get() -> String {
         return get(file: index, path: path)
     }
-    
     /// Returns the generated JavaScript code for a specified JavaScript `file`.
     /// - parameters:
     ///     - file: The name of the JavaScript file you wish to retrieve (file extension is optional)
@@ -27,7 +28,6 @@ struct JS {
     static func get(file: String) -> String {
         get(file: file, path: path)
     }
-    
     /// Returns the generated JavaScript code for a specified JavaScript `file`.
     /// - parameters:
     ///     - file: The name of the JavaScript file you wish to retrieve (file extension is optional)
@@ -52,6 +52,7 @@ struct JS {
     
 }
 
+// MARK: String Extension
 extension String {
     /// Removes the `.js` extension from the file name (ie. `"index.js" -> "index"`).
     func removeExtension() -> String {

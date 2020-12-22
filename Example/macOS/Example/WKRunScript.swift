@@ -7,12 +7,11 @@
 
 import Foundation
 
-var jsReturn = ""                       // JS Console Response
+var jsReturn = ""       // JS Console Response
+let debug = true        // Set to false to disable JavaScript console logs
 
 // MARK: Run Script
 // Run JavaScript in WKWebView and handle return values
-let debug = true     // Set to false to disable JavaScript console logs
-
 extension ViewController {
     /// Run JavaScript code in WKWebView with completion handlers `result` and `error`
     /// - Parameters:
