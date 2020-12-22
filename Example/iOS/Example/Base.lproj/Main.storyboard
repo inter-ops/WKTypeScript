@@ -2,23 +2,45 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BiF-Dn-pgq">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--WKTypeScript-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Adr-ax-EBb">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Adr-ax-EBb" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="BJS-qv-QpG"/>
+                            <constraint firstAttribute="bottom" secondItem="Adr-ax-EBb" secondAttribute="bottom" id="RL4-iS-uyd"/>
+                            <constraint firstAttribute="trailing" secondItem="Adr-ax-EBb" secondAttribute="trailing" id="bZa-9Q-JSZ"/>
+                            <constraint firstItem="Adr-ax-EBb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="gOC-rY-mSK"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="zTb-HW-nl2"/>
+                    <navigationItem key="navigationItem" title="WKTypeScript" id="zTb-HW-nl2">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="lightbulb" catalog="system" id="afA-ef-mIO"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="webView" destination="Adr-ax-EBb" id="MSi-Ny-zGf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -44,6 +66,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="lightbulb" catalog="system" width="113" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

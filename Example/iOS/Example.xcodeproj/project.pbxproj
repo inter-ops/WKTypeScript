@@ -13,6 +13,12 @@
 		C207E77125924E5800A04149 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C207E76F25924E5800A04149 /* Main.storyboard */; };
 		C207E77325924E5A00A04149 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C207E77225924E5A00A04149 /* Assets.xcassets */; };
 		C207E77625924E5A00A04149 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C207E77425924E5A00A04149 /* LaunchScreen.storyboard */; };
+		C207E7842592546C00A04149 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C207E7832592546C00A04149 /* Extensions.swift */; };
+		C207E787259254A100A04149 /* JSManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C207E786259254A100A04149 /* JSManager.swift */; };
+		C207E78A259254AB00A04149 /* WKRunScript.swift in Sources */ = {isa = PBXBuildFile; fileRef = C207E789259254AB00A04149 /* WKRunScript.swift */; };
+		C207E78D2592555B00A04149 /* WebContent in Resources */ = {isa = PBXBuildFile; fileRef = C207E78C2592555B00A04149 /* WebContent */; };
+		C207E7902592557200A04149 /* dist in Resources */ = {isa = PBXBuildFile; fileRef = C207E78F2592557200A04149 /* dist */; };
+		C207E7942592563600A04149 /* Script.swift in Sources */ = {isa = PBXBuildFile; fileRef = C207E7932592563600A04149 /* Script.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +30,12 @@
 		C207E77225924E5A00A04149 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C207E77525924E5A00A04149 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C207E77725924E5A00A04149 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C207E7832592546C00A04149 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		C207E786259254A100A04149 /* JSManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSManager.swift; sourceTree = "<group>"; };
+		C207E789259254AB00A04149 /* WKRunScript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKRunScript.swift; sourceTree = "<group>"; };
+		C207E78C2592555B00A04149 /* WebContent */ = {isa = PBXFileReference; lastKnownFileType = folder; name = WebContent; path = ../../WebContent; sourceTree = "<group>"; };
+		C207E78F2592557200A04149 /* dist */ = {isa = PBXFileReference; lastKnownFileType = folder; name = dist; path = ../../../dist; sourceTree = "<group>"; };
+		C207E7932592563600A04149 /* Script.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Script.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,10 +71,16 @@
 				C207E76925924E5800A04149 /* AppDelegate.swift */,
 				C207E76B25924E5800A04149 /* SceneDelegate.swift */,
 				C207E76D25924E5800A04149 /* ViewController.swift */,
+				C207E7932592563600A04149 /* Script.swift */,
+				C207E786259254A100A04149 /* JSManager.swift */,
+				C207E789259254AB00A04149 /* WKRunScript.swift */,
+				C207E7832592546C00A04149 /* Extensions.swift */,
 				C207E76F25924E5800A04149 /* Main.storyboard */,
 				C207E77225924E5A00A04149 /* Assets.xcassets */,
 				C207E77425924E5A00A04149 /* LaunchScreen.storyboard */,
 				C207E77725924E5A00A04149 /* Info.plist */,
+				C207E78C2592555B00A04149 /* WebContent */,
+				C207E78F2592557200A04149 /* dist */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -126,7 +144,9 @@
 			files = (
 				C207E77625924E5A00A04149 /* LaunchScreen.storyboard in Resources */,
 				C207E77325924E5A00A04149 /* Assets.xcassets in Resources */,
+				C207E7902592557200A04149 /* dist in Resources */,
 				C207E77125924E5800A04149 /* Main.storyboard in Resources */,
+				C207E78D2592555B00A04149 /* WebContent in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,8 +158,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				C207E76E25924E5800A04149 /* ViewController.swift in Sources */,
+				C207E7942592563600A04149 /* Script.swift in Sources */,
 				C207E76A25924E5800A04149 /* AppDelegate.swift in Sources */,
 				C207E76C25924E5800A04149 /* SceneDelegate.swift in Sources */,
+				C207E7842592546C00A04149 /* Extensions.swift in Sources */,
+				C207E78A259254AB00A04149 /* WKRunScript.swift in Sources */,
+				C207E787259254A100A04149 /* JSManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,7 +240,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -271,7 +295,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
