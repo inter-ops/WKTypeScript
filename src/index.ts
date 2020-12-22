@@ -20,9 +20,8 @@ async function toggleMode() {
   await new Promise((r) => setTimeout(r, 1000));
 
   const result = "Mode: " + body?.getAttribute("mode")?.toString();
-  /*
-  // @ts--ignore
-  window.webkit.messageHandlers.eventListeners.postMessage(result);
-  */
   console.log(result);
+
+  // `wekbit` typing comes from `src/types/global.d.ts`
+  window.webkit.messageHandlers.eventListeners.postMessage(result);
 }
