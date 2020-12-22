@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Adr-ax-EBb">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -29,16 +29,21 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Adr-ax-EBb" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="BJS-qv-QpG"/>
+                            <constraint firstItem="Adr-ax-EBb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="BJS-qv-QpG"/>
                             <constraint firstAttribute="bottom" secondItem="Adr-ax-EBb" secondAttribute="bottom" id="RL4-iS-uyd"/>
                             <constraint firstAttribute="trailing" secondItem="Adr-ax-EBb" secondAttribute="trailing" id="bZa-9Q-JSZ"/>
                             <constraint firstItem="Adr-ax-EBb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="gOC-rY-mSK"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="WKTypeScript" id="zTb-HW-nl2">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="lightbulb" catalog="system" id="afA-ef-mIO"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="lightbulb" catalog="system" id="afA-ef-mIO">
+                            <connections>
+                                <action selector="toggleMode:" destination="BYZ-38-t0r" id="bAx-3f-M0r"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="toggleModeButton" destination="afA-ef-mIO" id="Xvz-pZ-GNU"/>
                         <outlet property="webView" destination="Adr-ax-EBb" id="MSi-Ny-zGf"/>
                     </connections>
                 </viewController>
