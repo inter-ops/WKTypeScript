@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C207E7A12592732700A04149 /* WKRunScript.swift in Sources */ = {isa = PBXBuildFile; fileRef = C207E79C2592732700A04149 /* WKRunScript.swift */; };
+		C207E7A22592732700A04149 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C207E79E2592732700A04149 /* Extensions.swift */; };
+		C207E7A32592732700A04149 /* JSManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C207E79F2592732700A04149 /* JSManager.swift */; };
+		C207E7A42592732700A04149 /* Script.swift in Sources */ = {isa = PBXBuildFile; fileRef = C207E7A02592732700A04149 /* Script.swift */; };
 		C286AC232591291F00A16965 /* dist in Resources */ = {isa = PBXBuildFile; fileRef = C286AC222591291F00A16965 /* dist */; };
 		C286AC2625912BA400A16965 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C286AC2525912BA400A16965 /* WindowController.swift */; };
-		C286AC2925912BAF00A16965 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C286AC2825912BAF00A16965 /* Extensions.swift */; };
-		C286AC2C25912EB100A16965 /* JSManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C286AC2B25912EB100A16965 /* JSManager.swift */; };
 		C286AC302591388500A16965 /* WebContent in Resources */ = {isa = PBXBuildFile; fileRef = C286AC2F2591388500A16965 /* WebContent */; };
-		C2B89A01259151DA006B9DEE /* WKRunScript.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B89A00259151DA006B9DEE /* WKRunScript.swift */; };
 		C2C0A68A258E7A680038A67C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C0A689258E7A680038A67C /* AppDelegate.swift */; };
 		C2C0A68C258E7A680038A67C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C0A68B258E7A680038A67C /* ViewController.swift */; };
 		C2C0A68E258E7A690038A67C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2C0A68D258E7A690038A67C /* Assets.xcassets */; };
@@ -35,12 +36,13 @@
 /* End PBXBuildRule section */
 
 /* Begin PBXFileReference section */
+		C207E79C2592732700A04149 /* WKRunScript.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKRunScript.swift; sourceTree = "<group>"; };
+		C207E79E2592732700A04149 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		C207E79F2592732700A04149 /* JSManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSManager.swift; sourceTree = "<group>"; };
+		C207E7A02592732700A04149 /* Script.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Script.swift; sourceTree = "<group>"; };
 		C286AC222591291F00A16965 /* dist */ = {isa = PBXFileReference; lastKnownFileType = folder; name = dist; path = ../../../dist; sourceTree = "<group>"; };
 		C286AC2525912BA400A16965 /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
-		C286AC2825912BAF00A16965 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		C286AC2B25912EB100A16965 /* JSManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSManager.swift; sourceTree = "<group>"; };
 		C286AC2F2591388500A16965 /* WebContent */ = {isa = PBXFileReference; lastKnownFileType = folder; name = WebContent; path = ../../WebContent; sourceTree = "<group>"; };
-		C2B89A00259151DA006B9DEE /* WKRunScript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKRunScript.swift; sourceTree = "<group>"; };
 		C2C0A686258E7A680038A67C /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2C0A689258E7A680038A67C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C2C0A68B258E7A680038A67C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +63,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C207E79B2592732700A04149 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				C207E7A02592732700A04149 /* Script.swift */,
+				C207E7A72592738700A04149 /* WebKit */,
+				C207E79D2592732700A04149 /* Includes */,
+			);
+			name = Shared;
+			path = ../../Shared;
+			sourceTree = "<group>";
+		};
+		C207E79D2592732700A04149 /* Includes */ = {
+			isa = PBXGroup;
+			children = (
+				C207E79E2592732700A04149 /* Extensions.swift */,
+			);
+			path = Includes;
+			sourceTree = "<group>";
+		};
+		C207E7A72592738700A04149 /* WebKit */ = {
+			isa = PBXGroup;
+			children = (
+				C207E79F2592732700A04149 /* JSManager.swift */,
+				C207E79C2592732700A04149 /* WKRunScript.swift */,
+			);
+			path = WebKit;
+			sourceTree = "<group>";
+		};
 		C2C0A67D258E7A680038A67C = {
 			isa = PBXGroup;
 			children = (
@@ -83,9 +113,7 @@
 				C2C0A689258E7A680038A67C /* AppDelegate.swift */,
 				C286AC2525912BA400A16965 /* WindowController.swift */,
 				C2C0A68B258E7A680038A67C /* ViewController.swift */,
-				C286AC2B25912EB100A16965 /* JSManager.swift */,
-				C2B89A00259151DA006B9DEE /* WKRunScript.swift */,
-				C286AC2825912BAF00A16965 /* Extensions.swift */,
+				C207E79B2592732700A04149 /* Shared */,
 				C2C0A68D258E7A690038A67C /* Assets.xcassets */,
 				C2C0A68F258E7A690038A67C /* Main.storyboard */,
 				C2C0A692258E7A690038A67C /* Info.plist */,
@@ -168,12 +196,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C207E7A32592732700A04149 /* JSManager.swift in Sources */,
+				C207E7A42592732700A04149 /* Script.swift in Sources */,
+				C207E7A22592732700A04149 /* Extensions.swift in Sources */,
+				C207E7A12592732700A04149 /* WKRunScript.swift in Sources */,
 				C2C0A68C258E7A680038A67C /* ViewController.swift in Sources */,
 				C286AC2625912BA400A16965 /* WindowController.swift in Sources */,
 				C2C0A68A258E7A680038A67C /* AppDelegate.swift in Sources */,
-				C286AC2925912BAF00A16965 /* Extensions.swift in Sources */,
-				C2B89A01259151DA006B9DEE /* WKRunScript.swift in Sources */,
-				C286AC2C25912EB100A16965 /* JSManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
