@@ -8,7 +8,6 @@
 import Foundation
 
 var jsReturn = ""       // JS Console Response
-let debug = true        // Set to false to disable JavaScript console logs
 
 // MARK: Run Script
 // Run JavaScript in WKWebView and handle return values

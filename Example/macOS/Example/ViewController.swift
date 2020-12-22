@@ -8,6 +8,9 @@
 import Cocoa
 import WebKit
 
+/// Enables debug functions and console logs when `true`
+let debug = true
+
 class ViewController: NSViewController, WKUIDelegate, WKNavigationDelegate, WKScriptMessageHandler {
     
     @IBOutlet var webView: WKWebView!
