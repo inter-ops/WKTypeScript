@@ -18,7 +18,7 @@ extension ViewController {
     ///
     /// **Enable Console Logs:** `debug = true`
     func run(_ script: Script) {
-        webView.evaluateJavaScript(script.function) { (result, error) in
+        webView.evaluateJavaScript(script.name) { (result, error) in
             if let result = result as? String {
                 if debug { print("Result: \(String(describing: result))") }
             }
@@ -34,7 +34,7 @@ extension ViewController {
     ///
     /// **Enable Console Logs:** `debug = true`
     func runWithResult(_ script: Script) -> String {
-        webView.evaluateJavaScript(script.function) { (result, error) in
+        webView.evaluateJavaScript(script.name) { (result, error) in
             if let result = result as? String {
                 if debug { print("Result: \(String(describing: result))") }
                 jsReturn = result

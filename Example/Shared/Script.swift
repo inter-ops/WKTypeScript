@@ -11,7 +11,7 @@ enum Script {
     
     case toggleMode
     
-    var function: String {
+    var name: String {
         switch self {
         case .toggleMode: return "toggleMode();"
         }
@@ -19,7 +19,8 @@ enum Script {
     
     var code: String {
         switch self {
-        case .toggleMode: return getJS(.toggleMode)
+        case .toggleMode: return JS.get()
+        //case .toggleMode: return getJS(.toggleMode)
         }
     }
     
