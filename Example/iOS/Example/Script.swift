@@ -7,8 +7,26 @@
 
 import Foundation
 
-struct Script {
+enum Script {
     
-    static let toggleMode = "toggleMode();"
+    case toggleMode
     
+    var function: String {
+        switch self {
+        case .toggleMode: return "toggleMode();"
+        }
+    }
+    
+    var code: String {
+        switch self {
+        case .toggleMode: return getJS(.toggleMode)
+        }
+    }
+    
+    func getJS(_ script: Script) -> String {
+        // return script function code
+        return ""
+    }
+
 }
+
