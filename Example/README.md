@@ -8,13 +8,13 @@ We have provided two example projects, each running a version of the app optimiz
 - `WebContent/`: A shared example web project presented in all example projects
 
 ## Shared
-The shared codebase allow for a number of possibilities, with the three most important being:
+The shared codebase allows for a number of possibilities, with the three most important being:
 
 - **[Script.swift](Shared/Script.swift):** A database of TypeScript functions that allow for us to make type-safe calls, to said functions, through native Swift
 - **[JSManager.swift](Shared/WebKit/JSManager.swift):** Handles all content retrieval of the compiled JavaScript (`dist/`)
 - **[WKRunScript.swift](Shared/WebKit/WKRunScript):** Handles the execution of the compiled JavaScript code through WebKit
 
-In a brief, the process for running a TypeScript function through a WebKit object:
+In a brief, the process for running a TypeScript function through some WebKit object:
 
 1. Call a TypeScript function from **Script** (type-safe)
 2. **Script** will retrieve the function code via **JSManager**
@@ -40,7 +40,7 @@ enum Script {
 
 Ah! This enum screams high-maintenance! Don't worry...
 
-Each case, as well as their corresponding values, are automatically generated from functions in the TypeScript file. If you plan on using WKTypeScript as intended, you shouldn't have to touch this file ever.
+Each case, as well as their corresponding values, are automatically generated from functions in the TypeScript file. If you plan on using WKTypeScript as intended, you shouldn't have to ever touch this file.
 
 The enumerated implementation, however, allows for us to make type-safe calls to raw TypeScript/JavaScript functions in native Swift.
 
@@ -59,7 +59,7 @@ run(script: .toggleMode)
 A full implementation of [Script.swift](Shared/Script.swift) can be found in the [Shared](Shared/) directory.
 
 ### [JSManager.swift](Shared/WebKit/JSManager.swift) <sup>struct</sup>
-**JSManager** – shorted to `JS` in code for quicker access – allows us to retrieve the contents of a compiled JavaScript file and ready it for use with **WKRunScript**.
+**JSManager** – shortened to `JS` for quicker access – allows us to retrieve the contents of a compiled JavaScript file and ready it for use with **WKRunScript**.
 
 Since we are using a TypeScript configuration, we have already set the default file and path:
 
@@ -70,11 +70,11 @@ struct JS {
   ...
 }
 ```
-Where `index.js` and `dist/` are both referenced to in the example projects, despite being at the root of this repository.
+Where `index.js` and `dist/` are both referenced-to in the example projects, despite being at the root of this repository.
 
 #### `JS.get()`
 
-Whether it be for generic use cases, or the requirement of all-encompassing functionality compressed into a single file, `JS.get()` is all you need. Once the TypeScript has been transpiled from `index.ts` to `index.js`, this function will return the contents of that compiled JavaScript file at `dist/index.js`.
+Whether it be for generic use cases, or the desire for all-encompassing functionality compressed into a single file, `JS.get()` is all you need. Once the TypeScript has been transpiled from `index.ts` to `index.js`, this function will return the contents of that compiled JavaScript file at `dist/index.js`.
 
 #### `JS.get(file: String)`
 If you are working with multiple TypeScript files for a more spread-out configuration of your project, this variation will return the contents of the input JavaScript file from within the `dist/` directory.
