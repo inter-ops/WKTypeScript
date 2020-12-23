@@ -31,9 +31,10 @@ Add Xcode config overview:
 
 ## Progress
 - [ ] JavaScript type-safe function reference generator for native Swift
-- [ ] Create example iOS project
+- [x] Create example iOS project
 - [x] Create example macOS project
 - [ ] Create cross-platform example project
+- [ ] Make a better README
 
 ## Requirements
 
