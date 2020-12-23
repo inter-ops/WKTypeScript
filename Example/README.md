@@ -82,19 +82,5 @@ If you are working with multiple TypeScript files for a more spread-out configur
 #### `JS.get(file: String, path: String)`
 Retrieve the contents of any compiled JavaScript file from the specified custom path.
 
-#### Extensions
-Due to the nature of Swift's file retrieval method, the extension of the filename is specifically specified: `Bundle.main.path(forResource: "dist/index", ofType: "js")`.
-
-Because of this, we use a custom extension to remove the `.js` filename extension from the argument:
-
-```
-extension String {
-  /// Removes the `.js` extension from the file name (ie. `"index.js" -> "index"`).
-  func removeExtension() -> String {
-    return self.replacingOccurrences(of: ".js", with: "")
-  }
-}
-```
-
 ### [WKRunScript.swift](Shared/WebKit/WKRunScript.swift) <sup>extension</sup>
 About WKRunScript...
