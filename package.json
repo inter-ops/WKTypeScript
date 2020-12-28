@@ -19,14 +19,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/revblaze/WKTypeScript.git"
+    "url": "git+https://github.com/inter-ops/WKTypeScript.git"
   },
   "author": "Francesco Virga @francescov1",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/revblaze/WKTypeScript/issues"
+    "url": "https://github.com/inter-ops/WKTypeScript/issues"
   },
-  "homepage": "https://github.com/revblaze/WKTypeScript#readme",
+  "homepage": "https://github.com/inter-ops/WKTypeScript#readme",
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.10.0",
     "@typescript-eslint/parser": "^4.10.0",
