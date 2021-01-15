@@ -1,7 +1,13 @@
 # WKTypeScript
-A basic framework for evaluating TypeScript through WebKit
+A lightweight framework for evaluating TypeScript through WebKit using native Swift.
 
-<img src="images/ScriptGen.png" />
+## Overview
+
+<img src="assets/ScriptGen.png" />
+
+### Type-Safe Calls to JavaScript with Native Swift
+
+<img src="assets/SwiftCode.png" />
 
 ## Table of Contents
 1. **[Getting Started](#getting-started)**
