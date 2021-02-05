@@ -9,6 +9,7 @@ import Foundation
 
 var jsReturn = ""       // JS Console Response
 
+/*
 // MARK: Run Script
 // Run JavaScript in WKWebView and handle return values
 extension ViewController {
@@ -83,3 +84,5 @@ extension ViewController {
     }
     
 }
+
+*/

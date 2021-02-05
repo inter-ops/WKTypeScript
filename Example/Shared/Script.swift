@@ -7,6 +7,8 @@
 
 import Foundation
 
+// run(_ ts: )
+/*
 enum Script {
     
     case toggleMode
@@ -28,6 +30,10 @@ enum Script {
         // return script function code
         return ""
     }
+    
+//    function postMessage(msg: WKScriptMessage) {
+//      window.webkit.messageHandlers.eventListeners.postMessage(msg)
+//    }
 
 }
-
+*/

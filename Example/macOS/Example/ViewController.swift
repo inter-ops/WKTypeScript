@@ -8,9 +8,6 @@
 import Cocoa
 import WebKit
 
-/// Enables debug functions and console logs when `true`
-let debug = true
-
 class ViewController: NSViewController, WKUIDelegate, WKNavigationDelegate, WKScriptMessageHandler {
     
     @IBOutlet var webView: WKWebView!
@@ -25,6 +22,13 @@ class ViewController: NSViewController, WKUIDelegate, WKNavigationDelegate, WKSc
         
     }
     
+    override func viewDidAppear() {
+        /*
+        let result = Function.builder("toggle", parameters: "a, b ,c ")
+        print(result)
+        */
+    }
+    
     // MARK: WebKit Config
     /// Initializes the main WKWebView object.
     func initWebView() {
@@ -33,6 +37,9 @@ class ViewController: NSViewController, WKUIDelegate, WKNavigationDelegate, WKSc
         // JavaScript Event Listeners
         webView.configuration.userContentController.add(self, name: "eventListeners")
         webView.load(file: "index", path: "WebContent")
+        
+        
+        //webView.ts(.toggle)
     }
     /// Clear WebKit WebView object cache.
     func clearCache() {
@@ -42,7 +49,7 @@ class ViewController: NSViewController, WKUIDelegate, WKNavigationDelegate, WKSc
     }
     
     func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
-        run(JS.get())
+        //run(JS.get())
     }
     
     
@@ -52,7 +59,7 @@ class ViewController: NSViewController, WKUIDelegate, WKNavigationDelegate, WKSc
     }
     
     @objc func didToggleMode(_ notification: Notification) {
-        run("toggleMode();")
+        //run("toggleMode();")
     }
     
 

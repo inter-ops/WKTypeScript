@@ -7,6 +7,9 @@
 
 import Cocoa
 
+/// Enables debug functions and console logs when `true`
+let debug = true
+
 @main
 class AppDelegate: NSObject, NSApplicationDelegate {
 
