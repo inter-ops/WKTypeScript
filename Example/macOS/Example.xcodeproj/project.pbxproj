@@ -17,6 +17,9 @@
 		C286AC232591291F00A16965 /* dist in Resources */ = {isa = PBXBuildFile; fileRef = C286AC222591291F00A16965 /* dist */; };
 		C286AC2625912BA400A16965 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C286AC2525912BA400A16965 /* WindowController.swift */; };
 		C286AC302591388500A16965 /* WebContent in Resources */ = {isa = PBXBuildFile; fileRef = C286AC2F2591388500A16965 /* WebContent */; };
+		C2889C0B25D074460053DF82 /* DemoElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2889C0825D074460053DF82 /* DemoElements.swift */; };
+		C2889C0C25D074460053DF82 /* ElementList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2889C0925D074460053DF82 /* ElementList.swift */; };
+		C2889C0D25D074460053DF82 /* ElementHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2889C0A25D074460053DF82 /* ElementHeader.swift */; };
 		C29118D525CD88BD0023D3D3 /* TypeScript.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29118D425CD88BD0023D3D3 /* TypeScript.swift */; };
 		C29118D925CD8EC70023D3D3 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29118D825CD8EC70023D3D3 /* String+Extension.swift */; };
 		C2A3F24F25CCDED800ADDE4C /* TS-rename.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A3F24E25CCDED800ADDE4C /* TS-rename.swift */; };
@@ -26,6 +29,7 @@
 		C2C0A68C258E7A680038A67C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C0A68B258E7A680038A67C /* ViewController.swift */; };
 		C2C0A68E258E7A690038A67C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2C0A68D258E7A690038A67C /* Assets.xcassets */; };
 		C2C0A691258E7A690038A67C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2C0A68F258E7A690038A67C /* Main.storyboard */; };
+		C2E6F92C25D07677005A4D25 /* ElementListHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E6F92B25D07677005A4D25 /* ElementListHostingController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -54,6 +58,9 @@
 		C286AC222591291F00A16965 /* dist */ = {isa = PBXFileReference; lastKnownFileType = folder; name = dist; path = ../../../dist; sourceTree = "<group>"; };
 		C286AC2525912BA400A16965 /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
 		C286AC2F2591388500A16965 /* WebContent */ = {isa = PBXFileReference; lastKnownFileType = folder; name = WebContent; path = ../../WebContent; sourceTree = "<group>"; };
+		C2889C0825D074460053DF82 /* DemoElements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoElements.swift; sourceTree = "<group>"; };
+		C2889C0925D074460053DF82 /* ElementList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElementList.swift; sourceTree = "<group>"; };
+		C2889C0A25D074460053DF82 /* ElementHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElementHeader.swift; sourceTree = "<group>"; };
 		C29118D425CD88BD0023D3D3 /* TypeScript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeScript.swift; sourceTree = "<group>"; };
 		C29118D825CD8EC70023D3D3 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		C2A3F24E25CCDED800ADDE4C /* TS-rename.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TS-rename.swift"; sourceTree = "<group>"; };
@@ -66,6 +73,7 @@
 		C2C0A690258E7A690038A67C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C2C0A692258E7A690038A67C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C2C0A693258E7A690038A67C /* Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Example.entitlements; sourceTree = "<group>"; };
+		C2E6F92B25D07677005A4D25 /* ElementListHostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementListHostingController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +90,7 @@
 		C207E79B2592732700A04149 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				C2889C0725D074460053DF82 /* Elements */,
 				C2A3F24E25CCDED800ADDE4C /* TS-rename.swift */,
 				C207E7A02592732700A04149 /* Script.swift */,
 				C2A3F25825CCEE3A00ADDE4C /* WKTSConfig.swift */,
@@ -99,6 +108,17 @@
 				C2A3F25325CCE84F00ADDE4C /* WKExtensions.swift */,
 			);
 			path = WebKit;
+			sourceTree = "<group>";
+		};
+		C2889C0725D074460053DF82 /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+				C2889C0825D074460053DF82 /* DemoElements.swift */,
+				C2889C0925D074460053DF82 /* ElementList.swift */,
+				C2889C0A25D074460053DF82 /* ElementHeader.swift */,
+				C2E6F92B25D07677005A4D25 /* ElementListHostingController.swift */,
+			);
+			path = Elements;
 			sourceTree = "<group>";
 		};
 		C29118D125CD887B0023D3D3 /* TypeScript */ = {
@@ -231,18 +251,22 @@
 				C207E7A32592732700A04149 /* JSManager.swift in Sources */,
 				C25FBE4325CDADB50002897E /* Constants.swift in Sources */,
 				C29118D925CD8EC70023D3D3 /* String+Extension.swift in Sources */,
+				C2889C0D25D074460053DF82 /* ElementHeader.swift in Sources */,
 				C2A3F25425CCE84F00ADDE4C /* WKExtensions.swift in Sources */,
 				C207E7A42592732700A04149 /* Script.swift in Sources */,
 				C2A3F25925CCEE3A00ADDE4C /* WKTSConfig.swift in Sources */,
 				C25FBE4025CDA4AA0002897E /* Functions.swift in Sources */,
 				C2A3F24F25CCDED800ADDE4C /* TS-rename.swift in Sources */,
 				C25FBE4725CDB6FE0002897E /* URL+Extension.swift in Sources */,
+				C2E6F92C25D07677005A4D25 /* ElementListHostingController.swift in Sources */,
 				C207E7A12592732700A04149 /* WKRunScript.swift in Sources */,
 				C25FBE3C25CDA2C10002897E /* WebKit+Extension.swift in Sources */,
+				C2889C0C25D074460053DF82 /* ElementList.swift in Sources */,
 				C29118D525CD88BD0023D3D3 /* TypeScript.swift in Sources */,
 				C2C0A68C258E7A680038A67C /* ViewController.swift in Sources */,
 				C286AC2625912BA400A16965 /* WindowController.swift in Sources */,
 				C2C0A68A258E7A680038A67C /* AppDelegate.swift in Sources */,
+				C2889C0B25D074460053DF82 /* DemoElements.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,7 +415,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = 0.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.interops.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -415,7 +439,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = 0.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.interops.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
