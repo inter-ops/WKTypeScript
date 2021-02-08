@@ -709,8 +709,9 @@
                     <window key="window" title="WKTypeScript" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="300" y="440" width="480" height="270"/>
+                        <rect key="contentRect" x="300" y="440" width="900" height="600"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <value key="minSize" type="size" width="750" height="600"/>
                         <toolbar key="toolbar" implicitIdentifier="3010F3C1-8E1F-4455-8859-3F53C4766723" autosavesConfiguration="NO" displayMode="iconOnly" sizeMode="regular" id="pDp-wO-QdX">
                             <allowedToolbarItems>
                                 <toolbarItem implicitItemIdentifier="NSToolbarShowColorsItem" id="TCR-4v-NcI"/>
@@ -744,29 +745,41 @@
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="250"/>
+            <point key="canvasLocation" x="-807" y="446"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="750" height="600"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <wkWebView wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ffY-GQ-mWP">
-                                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="600"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
+                            <containerView translatesAutoresizingMaskIntoConstraints="NO" id="Fkj-TZ-ONC">
+                                <rect key="frame" x="375" y="0.0" width="375" height="600"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="ZfN-Oh-iir"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="j3m-nR-flJ" kind="embed" id="nUZ-N9-Wxj"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="ffY-GQ-mWP" secondAttribute="trailing" id="4Wf-Gj-AXF"/>
-                            <constraint firstItem="ffY-GQ-mWP" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="axy-W4-9eE"/>
-                            <constraint firstItem="ffY-GQ-mWP" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="gtF-Hz-kVd"/>
-                            <constraint firstAttribute="bottom" secondItem="ffY-GQ-mWP" secondAttribute="bottom" id="vc7-Dy-dj5"/>
+                            <constraint firstItem="Fkj-TZ-ONC" firstAttribute="leading" secondItem="ffY-GQ-mWP" secondAttribute="trailing" id="3V5-Rg-ktC"/>
+                            <constraint firstAttribute="bottom" secondItem="Fkj-TZ-ONC" secondAttribute="bottom" id="ND2-k7-yd4"/>
+                            <constraint firstAttribute="trailing" secondItem="Fkj-TZ-ONC" secondAttribute="trailing" id="Oxq-TS-IGc"/>
+                            <constraint firstAttribute="bottom" secondItem="ffY-GQ-mWP" secondAttribute="bottom" id="Rdl-7M-OIQ"/>
+                            <constraint firstItem="Fkj-TZ-ONC" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="Y2T-Fp-0lm"/>
+                            <constraint firstItem="ffY-GQ-mWP" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="puB-DE-1tr"/>
+                            <constraint firstItem="ffY-GQ-mWP" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="vzE-iM-Eq0"/>
                         </constraints>
                     </view>
                     <connections>
@@ -775,7 +788,15 @@
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="74" y="415"/>
+        </scene>
+        <!--Element List Hosting Controller-->
+        <scene sceneID="h0j-gv-0q9">
+            <objects>
+                <hostingController id="j3m-nR-flJ" customClass="ElementListHostingController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController"/>
+                <customObject id="9T9-Q0-48W" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="796" y="415"/>
         </scene>
     </scenes>
     <resources>
