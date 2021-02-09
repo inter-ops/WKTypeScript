@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C28BC18725D2CD3400B6CCAA /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28BC18625D2CD3400B6CCAA /* WebView.swift */; };
+		C28BC1AC25D2DAFD00B6CCAA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28BC1A425D2DAFD00B6CCAA /* Constants.swift */; };
+		C28BC1AD25D2DAFD00B6CCAA /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28BC1A525D2DAFD00B6CCAA /* Functions.swift */; };
+		C28BC1AE25D2DAFD00B6CCAA /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28BC1A625D2DAFD00B6CCAA /* Builder.swift */; };
+		C28BC1AF25D2DAFD00B6CCAA /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28BC1A825D2DAFD00B6CCAA /* URL+Extension.swift */; };
+		C28BC1B025D2DAFD00B6CCAA /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28BC1A925D2DAFD00B6CCAA /* String+Extension.swift */; };
+		C28BC1B125D2DAFD00B6CCAA /* WebKit+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28BC1AA25D2DAFD00B6CCAA /* WebKit+Extension.swift */; };
+		C28BC1B225D2DAFD00B6CCAA /* TypeScript.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28BC1AB25D2DAFD00B6CCAA /* TypeScript.swift */; };
 		C2E6F93C25D0774C005A4D25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E6F93B25D0774C005A4D25 /* AppDelegate.swift */; };
 		C2E6F93E25D0774C005A4D25 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E6F93D25D0774C005A4D25 /* ContentView.swift */; };
 		C2E6F94025D0774E005A4D25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2E6F93F25D0774E005A4D25 /* Assets.xcassets */; };
@@ -18,6 +26,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C28BC18625D2CD3400B6CCAA /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		C28BC1A425D2DAFD00B6CCAA /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		C28BC1A525D2DAFD00B6CCAA /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
+		C28BC1A625D2DAFD00B6CCAA /* Builder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
+		C28BC1A825D2DAFD00B6CCAA /* URL+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+Extension.swift"; sourceTree = "<group>"; };
+		C28BC1A925D2DAFD00B6CCAA /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		C28BC1AA25D2DAFD00B6CCAA /* WebKit+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WebKit+Extension.swift"; sourceTree = "<group>"; };
+		C28BC1AB25D2DAFD00B6CCAA /* TypeScript.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeScript.swift; sourceTree = "<group>"; };
 		C2E6F93825D0774C005A4D25 /* WKTSwiftUI-macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WKTSwiftUI-macOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2E6F93B25D0774C005A4D25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C2E6F93D25D0774C005A4D25 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -42,6 +58,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C28BC1A325D2DAFD00B6CCAA /* TypeScript */ = {
+			isa = PBXGroup;
+			children = (
+				C28BC1AB25D2DAFD00B6CCAA /* TypeScript.swift */,
+				C28BC1A425D2DAFD00B6CCAA /* Constants.swift */,
+				C28BC1A525D2DAFD00B6CCAA /* Functions.swift */,
+				C28BC1A625D2DAFD00B6CCAA /* Builder.swift */,
+				C28BC1A725D2DAFD00B6CCAA /* Extensions */,
+			);
+			name = TypeScript;
+			path = ../../macOS/Example/TypeScript;
+			sourceTree = "<group>";
+		};
+		C28BC1A725D2DAFD00B6CCAA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C28BC1A825D2DAFD00B6CCAA /* URL+Extension.swift */,
+				C28BC1A925D2DAFD00B6CCAA /* String+Extension.swift */,
+				C28BC1AA25D2DAFD00B6CCAA /* WebKit+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		C2E6F92F25D0774C005A4D25 = {
 			isa = PBXGroup;
 			children = (
@@ -63,9 +102,11 @@
 			children = (
 				C2E6F93B25D0774C005A4D25 /* AppDelegate.swift */,
 				C2E6F93D25D0774C005A4D25 /* ContentView.swift */,
+				C28BC1A325D2DAFD00B6CCAA /* TypeScript */,
 				C2E6F94F25D0775F005A4D25 /* DemoElements.swift */,
 				C2E6F95225D07771005A4D25 /* ElementList.swift */,
 				C2E6F95925D0778A005A4D25 /* ElementHeader.swift */,
+				C28BC18625D2CD3400B6CCAA /* WebView.swift */,
 				C2E6F93F25D0774E005A4D25 /* Assets.xcassets */,
 				C2E6F94425D0774E005A4D25 /* Main.storyboard */,
 				C2E6F94725D0774E005A4D25 /* Info.plist */,
@@ -154,8 +195,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2E6F95025D0775F005A4D25 /* DemoElements.swift in Sources */,
+				C28BC1B025D2DAFD00B6CCAA /* String+Extension.swift in Sources */,
 				C2E6F93E25D0774C005A4D25 /* ContentView.swift in Sources */,
 				C2E6F95325D07771005A4D25 /* ElementList.swift in Sources */,
+				C28BC1AF25D2DAFD00B6CCAA /* URL+Extension.swift in Sources */,
+				C28BC1B225D2DAFD00B6CCAA /* TypeScript.swift in Sources */,
+				C28BC1AD25D2DAFD00B6CCAA /* Functions.swift in Sources */,
+				C28BC18725D2CD3400B6CCAA /* WebView.swift in Sources */,
+				C28BC1B125D2DAFD00B6CCAA /* WebKit+Extension.swift in Sources */,
+				C28BC1AE25D2DAFD00B6CCAA /* Builder.swift in Sources */,
+				C28BC1AC25D2DAFD00B6CCAA /* Constants.swift in Sources */,
 				C2E6F95A25D0778A005A4D25 /* ElementHeader.swift in Sources */,
 				C2E6F93C25D0774C005A4D25 /* AppDelegate.swift in Sources */,
 			);

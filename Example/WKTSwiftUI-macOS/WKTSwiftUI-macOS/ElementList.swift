@@ -32,14 +32,15 @@ struct ElementList: View {
                     
                     HStack {
                         Text("Toggle to see what happens:")
-                        
                         Toggle(isOn: $toggleState) {
                             Text("")
                         }
                         .padding()
+                        .onChange(of: toggleState) { value in
+                            Builder.set(.toggle)
+                        }
                     }
                 }
-                
                 Divider()
             }
             
@@ -55,9 +56,9 @@ struct ElementList: View {
                         TextField("Enter text...", text: $labelText)
                         Spacer()
                         Button(action: {
-                            print("Inject label text into TextField")
+                            Builder.set(.setLabel, value: labelText)
                         }) {
-                            Text("Submit")
+                            Text("Update Label")
                         }
                     }
                     .padding()
@@ -75,16 +76,13 @@ struct ElementList: View {
                     HStack {
                         HStack {
                             Toggle(isOn: $hideLabel) {
-                                Text(" display: none;")
-                                    .font(.system(.body, design: .monospaced))
-                                    .font(.system(size: 14))
-                                    .fontWeight(.regular)
+                                InlineCode(text: " display: none;")
                             }
                         }
                         Spacer()
                         HStack {
                             Button(action: {
-                                print("Hide object display from WebView")
+                                Builder.set(.hideLabel, value: hideLabel)
                             }) {
                                 Text("Set Display")
                             }
@@ -104,19 +102,15 @@ struct ElementList: View {
                 VStack {
                     ElementHeader(element: elements.addNumbers)
                     HStack {
-                        TextField("5", text: $firstNumber)
-                            .frame(width: 70)
-                            .multilineTextAlignment(.center)
+                        InlineTextField(digit: "5", number: $firstNumber)
                         Text("+")
                             .padding()
-                        TextField("10", text: $secondNumber)
-                            .frame(width: 70)
-                            .multilineTextAlignment(.center)
+                        InlineTextField(digit: "10", number: $secondNumber)
                         
                         Spacer()
                         
                         Button(action: {
-                            print("Add 2 numbers and inject into WebView.")
+                            Builder.set(.addNumbers, value: [firstNumber, secondNumber])
                         }) {
                             Text("Calculate")
                         }
@@ -143,16 +137,15 @@ struct ElementList: View {
                             }
                         }
                         .pickerStyle(SegmentedPickerStyle())
+                        .onChange(of: selectedDevice, perform: { _ in
+                            Builder.set(.selectDevice, value: selectedDevice)
+                        })
                     }
                     .padding()
                     
                     HStack {
-                        Text("Selected:")
-                        Text(selectedDevice)
-                            .font(.system(.body, design: .monospaced))
-                            .font(.system(size: 14))
-                            .fontWeight(.regular)
-                        //Text("Selected: \(selectedDevice)")
+                        Text("Device:")
+                        InlineCode(text: selectedDevice)
                     }
                     
                 }
@@ -176,16 +169,15 @@ struct ElementList: View {
                             }
                         }
                         .pickerStyle(SegmentedPickerStyle())
+                        .onChange(of: selectedMode, perform: { _ in
+                            Builder.set(.setMode, value: selectedMode)
+                        })
                     }
                     .padding()
                     
                     HStack {
                         Text("Current Mode:")
-                        Text(selectedMode)
-                            .font(.system(.body, design: .monospaced))
-                            .font(.system(size: 14))
-                            .fontWeight(.regular)
-                        //Text("Selected: \(selectedDevice)")
+                        InlineCode(text: selectedMode)
                     }
                     
                 }
@@ -207,8 +199,31 @@ struct ElementDescription: View {
             Spacer()
         }
         .multilineTextAlignment(.leading)
-        .padding(.vertical, 4)
+        .padding(.vertical, 8)
         .padding(.horizontal, 14)
+    }
+}
+
+struct InlineCode: View {
+    let text: String
+    
+    var body: some View {
+        Text(text)
+            .font(.system(.body, design: .monospaced))
+            .font(.system(size: 14))
+            .fontWeight(.regular)
+    }
+}
+
+struct InlineTextField: View {
+    let digit: String
+    //@State var number: String
+    @State var number: Binding<String>
+    
+    var body: some View {
+        TextField(digit, text: number)
+            .frame(width: 70)
+            .multilineTextAlignment(.center)
     }
 }
 
