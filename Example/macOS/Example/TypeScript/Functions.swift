@@ -11,6 +11,8 @@ import Foundation
 typealias TSF = Functions
 struct Functions {
     
+    static var code = ""
+    
     static func toggle() -> String { return "toggle();" }
     // IF function has one parameter, make first parameter call hidden with _: "(_ {param}: Type)"
     // ie. index.ts: setLabel(text: string) {...}
@@ -18,9 +20,9 @@ struct Functions {
     static func setLabel(_ text: String) -> String { return "setLabel(\(text));" }
     
     // IF function has default parameters, add to enum Void with default balue
-    // ie. index.ts: function hideLabel(hidden: boolean = false) {...}
-    //   -> *.swift: func hideLabel(_ hidden: Bool) -> String {...}
-    static func hideLabel(_ hidden: Bool = false) -> String { return "hideLabel(\(hidden));" }
+    // ie. index.ts: function hideObject(hidden: boolean = false) {...}
+    //   -> *.swift: func hideObject(_ hidden: Bool) -> String {...}
+    static func hideObject(_ hidden: Bool = false) -> String { return "hideObject(\(hidden));" }
     
     // IF function has more than one parameter, keep regular for easier identification
     // Note: Remember to convert ts.type(number) => swift.type(Double)
@@ -34,7 +36,6 @@ struct Functions {
     static func selectDevice(_ device: Constants.Device) -> String { return "selectDevice(\(device.value));" }
     
     // IF functions enum && has default propery, combine schemas (create enum and add to Void)
-    
     static func setMode(_ mode: Constants.Mode = .light) -> String { return "setMode(\(mode.value));" }
     
     // IF function has no parameters (void) -> reference static func for Swifty syntax
@@ -43,13 +44,13 @@ struct Functions {
         // Void function
         case toggle         // ts: function toggle() {...}
         // Function with default parameter(s)
-        case hideLabel      // ts: function hideLabel(hidden: boolean = false) {...}
+        case hideObject     // ts: function hideObject(hidden: boolean = false) {...}
         case setMode        // ts: function setMode(mode: Mode = Mode.light) {...}
         
         var ts: String {
             switch self {
             case .toggle:       return Functions.toggle()
-            case .hideLabel:    return Functions.hideLabel()
+            case .hideObject:   return Functions.hideObject()
             case .setMode:      return Functions.setMode()
             }
         }

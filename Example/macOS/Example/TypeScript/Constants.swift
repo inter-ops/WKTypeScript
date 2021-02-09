@@ -7,7 +7,6 @@
 
 import Foundation
 
-//struct Enums {
 struct Constants {
     
     enum Device {
