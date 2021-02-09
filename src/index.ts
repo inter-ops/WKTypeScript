@@ -36,7 +36,7 @@ enum Mode {
   Light = "light",
   Dark = "dark"
 }
-function setMode(mode: Mode = Mode.Light) {
+function setMode(mode = Mode.Light) {
   let modeCase = "";
   if (mode === Mode.Light) {
     modeCase = "Mode.Light";
