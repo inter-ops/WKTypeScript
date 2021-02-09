@@ -24,10 +24,17 @@ struct ElementHeader: View {
                 Text(element.title)
                     .font(.system(size: 20))
                     .fontWeight(.medium)
+                /*
                 Text(element.description)
                     .font(.system(size: 14))
                     .fontWeight(.regular)
-                    //.font(.system(.body, design: .monospaced))
+                    .foregroundColor(.secondary)
+                */
+                Text(element.code)
+                    .font(.system(.body, design: .monospaced))
+                    .font(.system(size: 14))
+                    .fontWeight(.regular)
+                    .foregroundColor(.secondary)
             }
             
             Spacer()

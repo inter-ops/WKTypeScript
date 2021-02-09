@@ -53,4 +53,21 @@ enum DemoElements {
             return "Set Mode description"
         }
     }
+    
+    var code: String {
+        switch self {
+        case .toggle:
+            return "toggle();"
+        case .setLabel:
+            return "setLabel(text: string);"
+        case .hideLabel:
+            return "hideLabel(hidden = false);"
+        case .addNumbers:
+            return "addNumbers(a: number, b: number);"
+        case .selectDevice:
+            return "selectDevice(device: Device);"
+        case .setMode:
+            return "setMode(mode = Mode.Light);"
+        }
+    }
 }
