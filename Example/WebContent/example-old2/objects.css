@@ -21,7 +21,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #39383D; /*#ccc;*/
+  background-color: #ccc;
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -62,51 +62,6 @@ input:checked + .slider:before {
 }
 
 
-/***************/
-/* HIDE OBJECT */
-/***************/
-div.hiddenObjectContainer {
-	width: 350px;
-	height: 80px;
-	border: 5px dashed #D0D0D0;
-	/*padding: 50px;*/
-	padding: 40px 0 40px 0;
-	/*margin: 20px;*/
-	position: relative;
-	align-content: center;
-	align-items: center;
-	justify-content: center;
-}
-
-div.objectToHide {
-	width: 100px;
-	heigh: 40px;
-	border: 2px solid #ccc;
-	/*padding: 10px;*/
-	padding: 10px 30px 10px 30px;
-	/*margin: 20px;*/
-	align-content: center;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	/*
-	margin-top: -50px;
-	margin-left: -25px;
-	*/
-	transform: translate(-50%, -50%);
-	background: rgba(0, 0, 0, 0.1);
-	align-items: center;
-	justify-content: center;
-	display: inherit;
-}
-
-div.objectToHide.p {
-	text-align: center;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-}
-
 
 /*************/
 /* SET LABEL */
@@ -136,9 +91,7 @@ input {
 	cursor: pointer;
 }
 .labelButton {
-	border-radius: 1em; /*12px;*/
-	padding-left: 25px !important;
-	padding-right: 25px !important;
+	border-radius: 12px;
 }
 
 

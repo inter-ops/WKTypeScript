@@ -8,45 +8,23 @@
 <body>
   <h1>WKTS Demo</h1>
 	
+    <!--
 	<div class="toc">
 	<button type="button" class="collapsible"><h2>Table of Contents &nbsp; &#43;</h2></button>
-	<div class="content toc">
+	<div class="content">
 		<table id="toc">
 			<tr>
 				<th id="number">1.</th>
-				<th id="title"><a href="#Toggle">Toggle</a></th>
-				<th id="code">toggle()</th>
-			</tr>
-			<tr>
-				<th id="number">2.</th>
-				<th id="title"><a href="#SetLabel">Set Label</a></th>
-				<th id="code">setLabel(text: string)</th>
-			</tr>
-			<tr>
-				<th id="number">3.</th>
-				<th id="title"><a href="#HideObject">Hide Label</a></th>
-				<th id="code">hideObject(hidden: boolean = false)</th>
-			</tr>
-			<tr>
-				<th id="number">4.</th>
-				<th id="title"><a href="#AddNumbers">Add Numbers</a></th>
-				<th id="code">addNumbers(a: number, b: number)</th>
-			</tr>
-			<tr>
-				<th id="number">5.</th>
-				<th id="title"><a href="#SelectDevice">Device <sup>enum</sup></a></th>
-				<th id="code">selectDevice(device: Device)</th>
-			</tr>
-			<tr>
-				<th id="number">6.</th>
-				<th id="title"><a href="#SetMode">Mode <sup>enum</sup></a></th>
-				<th id="code">setMode(mode: Mode = Mode.Light)</th>
+				<th id="title"><a href="#toggleToggle" >Toggle</a></th>
+				<th id="code">toggle();</th>
 			</tr>
 		</table>
 	</div>
 	</div>
+    -->
 	
-	<!--
+	<div class="symbol"><p></p></div>
+	
 	<h2>Table of Contents</h2>
 	
 	<div class="toc">
@@ -63,8 +41,8 @@
 		</tr>
 		<tr>
 			<th id="number">3.</th>
-			<th id="title"><a href="#HideObject">Hide Label</a></th>
-			<th id="code">hideObject(hidden: boolean = false)</th>
+			<th id="title"><a href="#HideLabel">Hide Label</a></th>
+			<th id="code">hideLabel(hidden: boolean = false)</th>
 		</tr>
 		<tr>
 			<th id="number">4.</th>
@@ -73,17 +51,16 @@
 		</tr>
 		<tr>
 			<th id="number">5.</th>
-			<th id="title"><a href="#SelectDevice">Device <sup>enum</sup></a></th>
+			<th id="title"><a href="#Device">Device <sup>enum</sup></a></th>
 			<th id="code">selectDevice(device: Device)</th>
 		</tr>
 		<tr>
 			<th id="number">6.</th>
-			<th id="title"><a href="#SetMode">Mode <sup>enum</sup></a></th>
+			<th id="title"><a href="#Mode">Mode <sup>enum</sup></a></th>
 			<th id="code">setMode(mode: Mode = Mode.Light)</th>
 		</tr>
 	</table>
 	</div>
--->
 	
 	
 	
@@ -135,8 +112,8 @@
 	<!-- SET LABEL: Object Preview -->
 	<div class="objectPreview">
 		<p align="center">
-			<input id="LabelTextField" type="text" value="" placeholder="TextField to inject..." />
-			<button class="inputButton labelButton" onclick="clearLabelText()">Clear</button>
+			<input type="text" value="" placeholder="Type something..." />
+			<button class="inputButton labelButton">Set Label Text</button>
 		</p>
 	</div>
 	<!-- SET LABEL: Code Implementation -->
@@ -165,23 +142,18 @@
 	
 	
 	
-	<!-- HIDE OBJECT -->
-	<hr id="HideObject" class="separator" />
-	<h2>Hide Object</h2>
+	<!-- HIDE LABEL -->
+	<hr id="HideLabel" class="separator" />
+	<h2>Hide Label</h2>
 	<p>Click the "Hide" button in the native Swift interface to interact with this object and toggle its hidden state.</p>
-	<!-- HIDE OBJECT: Object Preview -->
-	<div class="objectPreview" align="center">
+	<!-- HIDE LABEL: Object Preview -->
+	<div class="objectPreview">
 		<p align="center">
-			<div class="hiddenObjectContainer">
-				<div class="objectToHide">
-					<p><code>Hide Me</code></p>
-				</div>
-			</div>
 			<!--<input type="text" value="" placeholder="Type something..." />-->
-			<!--<button class="inputButton labelButton">Element to Hide</button>-->
+			<button class="inputButton labelButton">Hide Me</button>
 		</p>
 	</div>
-	<!-- HIDE OBJECT: Code Implementation -->
+	<!-- HIDE LABEL: Code Implementation -->
 	<button type="button" class="collapsible">Code Implementation</button>
 	<div class="content">
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
@@ -214,15 +186,10 @@
 	<!-- ADD NUMBERS: Object Preview -->
 	<div class="objectPreview">
 		<p align="center">
-			<input id="NumberA" class="numbers" type="text" value="" placeholder="5" />
-			<input id="NumberB" class="numbers" type="text" value="" placeholder="10" />
-			<button id="CalculateButton" class="inputButton labelButton" onclick="getSum()">Calculate</button>
-		</p>
-		
-		<p align="center">
-			<input id="ResultField" type="text" value="" placeholder="5 + 10 = 15" />
-		</p>
-		
+			<input class="numbers" type="text" value="" placeholder="5" />
+			<input class="numbers" type="text" value="" placeholder="10" />
+			<button class="inputButton labelButton">Calculate Sum</button>
+			</p>
 	</div>
 	<!-- ADD NUMBERS: Code Implementation -->
 	<button type="button" class="collapsible">Code Implementation</button>
@@ -250,15 +217,15 @@
 	
 	
 	
-	<!-- SELECT DEVICE -->
-	<hr id="SelectDevice" class="separator" />
+	<!-- DEVICE -->
+	<hr id="Device" class="separator" />
 	<h2>Device <sup>enum</sup></h2>
 	<p>WKTypeScript will automatically generate a file, Constants.swift, to place your declared variables, as well as their corresponding types.</p>
-	<!-- SELECT DEVICE: Object Preview -->
+	<!-- DEVICE: Object Preview -->
 	<div class="objectPreview">
 		<p align="center">
 			<span class="custom-dropdown big">
-				<select id="DeviceSelect">    
+				<select>    
 						<option>iPhone</option>
 						<option>iPad</option>  
 						<option>macOS</option>
@@ -266,7 +233,7 @@
 			</span>
 		</p>
 	</div>
-	<!-- SELECT DEVICE: Code Implementation -->
+	<!-- DEVICE: Code Implementation -->
 	<button type="button" class="collapsible">Code Implementation</button>
 	<div class="content">
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
@@ -292,18 +259,18 @@
 	
 	
 	
-	<!-- SET MODE -->
-	<hr id="SetMode" class="separator" />
+	<!-- MODE -->
+	<hr id="Mode" class="separator" />
 	<h2>Mode <sup>enum</sup></h2>
 	<p>Use TypeScript functions to manipulate just about anything within a WebKit object. In this example, we will use our <code>setMode()</code> function - found in <code>index.ts</code> - to toggle this page between light and dark modes.</p>
 	<p>To toggle between modes, either click the native "Toggle Mode" button in the Swift interface, or do it manually with the button below.</p>
-	<!-- SET MODE: Object Preview -->
+	<!-- DEVICE: Object Preview -->
 	<div class="objectPreview">
 		<p align="center">
 			<button class="inputButton labelButton">Manually Toggle Mode</button>
 		</p>
 	</div>
-	<!-- SET MODE: Code Implementation -->
+	<!-- DEVICE: Code Implementation -->
 	<button type="button" class="collapsible">Code Implementation</button>
 	<div class="content">
 		<p>Use TypeScript functions to manipulate just about anything within a WebKit object. <code>SetMode()</code> specifically </p>
@@ -333,9 +300,8 @@
 
 
 
-<script src="custom.js"></script>
+<script src="index.js"></script>
 
-<!--
 <script>
 var coll = document.getElementsByClassName("collapsible");
 var i;
@@ -356,18 +322,4 @@ for (i = 0; i < coll.length; i++) {
 	});
 }
 
-function clearLabelText() {
-	document.getElementById("LabelTextField").value = "";
-}
-
-function getSum() {
-	var a = document.getElementById("NumberA").value;
-	var b = document.getElementById("NumberB").value;
-	var sum = Number(a) + Number(b);
-	
-	var resultField = document.getElementById("ResultField");
-	resultField.value = String(a) + " + " + String(b) + " = " + String(sum);
-}
-
 </script>
--->

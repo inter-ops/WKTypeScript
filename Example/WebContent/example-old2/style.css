@@ -4,7 +4,7 @@ html {
 
 body {
 	color: #000;
-	background: #FFF;
+	background: #fff;
 	font-family: -apple-system, BlinkMacSystemFont;
 	padding: 5px 20px 20px 20px;
 }
@@ -15,33 +15,18 @@ p > code {
 }
 
 hr.separator {
-	border: 0;
-	border-bottom: 1.5px dashed #D0D0D0;
-	background: transparent;
+	border-top: 1px dashed #D0D0D0;
 	margin-top: 30px;
 	margin-bottom: 10px;
 }
 
-/* Gradient transparent - color - transparent */
-/*
-hr.separator {
-		border: 0;
-		height: 1px;
-		background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0));
-		margin-top: 30px;
-		margin-bottom: 10px;
-}
-*/
-
-a, a:link, a:visited, a:active {
-	color: #007AFF;
+a:link, a:visited {
+	text-color: #007AFF;
 	text-decoration: none;
 }
 
-
 div.objectPreview {
 	padding: 5px 0 15px 0;
-	align-content: center;
 }
 
 .toc {
@@ -56,14 +41,12 @@ div.objectPreview {
 }
 #toc #number {
 	font-weight: 400;
-	/*width: 5%;*/
-	width: 20px;
+	width: 5%;
 }
 #toc #title {
 	font-weight: 600;
 	padding-right: 10px;
-	/*width: 25%;*/
-	width: 120px;
+	width: 25%;
 }
 #toc #code {
 	font-weight: normal;
@@ -91,13 +74,7 @@ th, td {
 	text-align: left;
 }
 #codeTable #language {
-	width: 100px; /* 15%; */
-}
-
-#codeTable tr:first-child > #function {
-	width: 15%;
-	font-weight: bold;
-	font-family: -apple-system, BlinkMacSystemFont;
+	width: 10%;
 }
 
 #codeTable #function {
