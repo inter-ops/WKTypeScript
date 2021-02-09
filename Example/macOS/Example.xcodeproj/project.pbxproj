@@ -20,9 +20,10 @@
 		C2889C0B25D074460053DF82 /* DemoElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2889C0825D074460053DF82 /* DemoElements.swift */; };
 		C2889C0C25D074460053DF82 /* ElementList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2889C0925D074460053DF82 /* ElementList.swift */; };
 		C2889C0D25D074460053DF82 /* ElementHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2889C0A25D074460053DF82 /* ElementHeader.swift */; };
+		C28BC19225D2CFA900B6CCAA /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28BC19125D2CFA900B6CCAA /* Notifications.swift */; };
+		C28BC19625D2D2A400B6CCAA /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28BC19525D2D2A400B6CCAA /* Builder.swift */; };
 		C29118D525CD88BD0023D3D3 /* TypeScript.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29118D425CD88BD0023D3D3 /* TypeScript.swift */; };
 		C29118D925CD8EC70023D3D3 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29118D825CD8EC70023D3D3 /* String+Extension.swift */; };
-		C2A3F24F25CCDED800ADDE4C /* TS-rename.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A3F24E25CCDED800ADDE4C /* TS-rename.swift */; };
 		C2A3F25425CCE84F00ADDE4C /* WKExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A3F25325CCE84F00ADDE4C /* WKExtensions.swift */; };
 		C2A3F25925CCEE3A00ADDE4C /* WKTSConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A3F25825CCEE3A00ADDE4C /* WKTSConfig.swift */; };
 		C2C0A68A258E7A680038A67C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C0A689258E7A680038A67C /* AppDelegate.swift */; };
@@ -61,9 +62,10 @@
 		C2889C0825D074460053DF82 /* DemoElements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoElements.swift; sourceTree = "<group>"; };
 		C2889C0925D074460053DF82 /* ElementList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElementList.swift; sourceTree = "<group>"; };
 		C2889C0A25D074460053DF82 /* ElementHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElementHeader.swift; sourceTree = "<group>"; };
+		C28BC19125D2CFA900B6CCAA /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		C28BC19525D2D2A400B6CCAA /* Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
 		C29118D425CD88BD0023D3D3 /* TypeScript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeScript.swift; sourceTree = "<group>"; };
 		C29118D825CD8EC70023D3D3 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
-		C2A3F24E25CCDED800ADDE4C /* TS-rename.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TS-rename.swift"; sourceTree = "<group>"; };
 		C2A3F25325CCE84F00ADDE4C /* WKExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKExtensions.swift; sourceTree = "<group>"; };
 		C2A3F25825CCEE3A00ADDE4C /* WKTSConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKTSConfig.swift; sourceTree = "<group>"; };
 		C2C0A686258E7A680038A67C /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,7 +93,6 @@
 			isa = PBXGroup;
 			children = (
 				C2889C0725D074460053DF82 /* Elements */,
-				C2A3F24E25CCDED800ADDE4C /* TS-rename.swift */,
 				C207E7A02592732700A04149 /* Script.swift */,
 				C2A3F25825CCEE3A00ADDE4C /* WKTSConfig.swift */,
 				C207E7A72592738700A04149 /* WebKit */,
@@ -127,6 +128,7 @@
 				C29118D425CD88BD0023D3D3 /* TypeScript.swift */,
 				C25FBE3F25CDA4AA0002897E /* Functions.swift */,
 				C25FBE4225CDADB50002897E /* Constants.swift */,
+				C28BC19525D2D2A400B6CCAA /* Builder.swift */,
 				C29118D725CD8EA90023D3D3 /* Extensions */,
 			);
 			path = TypeScript;
@@ -164,6 +166,7 @@
 				C2C0A689258E7A680038A67C /* AppDelegate.swift */,
 				C286AC2525912BA400A16965 /* WindowController.swift */,
 				C2C0A68B258E7A680038A67C /* ViewController.swift */,
+				C28BC19125D2CFA900B6CCAA /* Notifications.swift */,
 				C29118D125CD887B0023D3D3 /* TypeScript */,
 				C207E79B2592732700A04149 /* Shared */,
 				C2C0A68D258E7A690038A67C /* Assets.xcassets */,
@@ -248,6 +251,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C28BC19225D2CFA900B6CCAA /* Notifications.swift in Sources */,
 				C207E7A32592732700A04149 /* JSManager.swift in Sources */,
 				C25FBE4325CDADB50002897E /* Constants.swift in Sources */,
 				C29118D925CD8EC70023D3D3 /* String+Extension.swift in Sources */,
@@ -256,7 +260,6 @@
 				C207E7A42592732700A04149 /* Script.swift in Sources */,
 				C2A3F25925CCEE3A00ADDE4C /* WKTSConfig.swift in Sources */,
 				C25FBE4025CDA4AA0002897E /* Functions.swift in Sources */,
-				C2A3F24F25CCDED800ADDE4C /* TS-rename.swift in Sources */,
 				C25FBE4725CDB6FE0002897E /* URL+Extension.swift in Sources */,
 				C2E6F92C25D07677005A4D25 /* ElementListHostingController.swift in Sources */,
 				C207E7A12592732700A04149 /* WKRunScript.swift in Sources */,
@@ -267,6 +270,7 @@
 				C286AC2625912BA400A16965 /* WindowController.swift in Sources */,
 				C2C0A68A258E7A680038A67C /* AppDelegate.swift in Sources */,
 				C2889C0B25D074460053DF82 /* DemoElements.swift in Sources */,
+				C28BC19625D2D2A400B6CCAA /* Builder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

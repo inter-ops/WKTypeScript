@@ -15,19 +15,18 @@ class ViewController: NSViewController, WKUIDelegate, WKNavigationDelegate, WKSc
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        clearCache()
-        initWebView()
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(self.didToggleMode(_:)), name: .didToggleMode, object: nil)
+        clearCache()        // Clear WebKit Cache
+        initWebView()       // Initialize WebView
+        addObservers()      // Add Observers
+    }
+    
+    
+    @objc func runJS(_ notification: Notification) {
+        if debug { print("Running JS: \(Functions.code)") }
+        webView.ts(Functions.code)
         
     }
     
-    override func viewDidAppear() {
-        /*
-        let result = Function.builder("toggle", parameters: "a, b ,c ")
-        print(result)
-        */
-    }
     
     // MARK: WebKit Config
     /// Initializes the main WKWebView object.
@@ -37,9 +36,6 @@ class ViewController: NSViewController, WKUIDelegate, WKNavigationDelegate, WKSc
         // JavaScript Event Listeners
         webView.configuration.userContentController.add(self, name: "eventListeners")
         webView.load(file: "index", path: "WebContent")
-        
-        
-        //webView.ts(.toggle)
     }
     /// Clear WebKit WebView object cache.
     func clearCache() {
@@ -48,18 +44,19 @@ class ViewController: NSViewController, WKUIDelegate, WKNavigationDelegate, WKSc
         WKWebsiteDataStore.default().removeData(ofTypes: websiteDataTypes as! Set<String>, modifiedSince: date, completionHandler:{ })
     }
     
-    func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
-        //run(JS.get())
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        webView.ts(JS.get())
     }
     
     
     // MARK: JavaScript Handler
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         // JavaScript event listeners
-    }
-    
-    @objc func didToggleMode(_ notification: Notification) {
-        //run("toggleMode();")
+        if message.name == "eventListeners" {
+            if let message = message.body as? String {
+                if debug { print("> \(message)") }
+            }
+        }
     }
     
 
@@ -72,8 +69,4 @@ class ViewController: NSViewController, WKUIDelegate, WKNavigationDelegate, WKSc
 
 }
 
-// MARK: Notification Extensions
-extension Notification.Name {
-    static let didToggleMode = Notification.Name("didToggleMode")
-}
 

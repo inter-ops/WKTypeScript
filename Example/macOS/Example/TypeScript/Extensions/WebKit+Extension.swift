@@ -32,7 +32,8 @@ extension WKWebView {
     func ts(_ function: String) {
         evaluateJavaScript(function) { (result, error) in
             if error != nil {
-                if WKTSConfig.debug { print("[WKTS] Error: \(String(describing: error))") }
+                // if debug { }
+                print("[WKTS] Error: \(String(describing: error))")
             }
         }
     }
