@@ -11,122 +11,192 @@ let elements = DemoElements.self
 struct ElementList: View {
     @State private var toggleState = false
     @State private var labelText: String = ""
-    @State private var hideLabel = true
-    
+    @State private var hideObject = false
     @State private var firstNumber: String = ""
     @State private var secondNumber: String = ""
     
-    @State private var darkMode = false
+    @State private var selectedDevice = "iPhone"
+    var devices = ["iPhone", "iPad", "macOS"]
+    
+    @State private var selectedMode = "Light"
+    var modes = ["Light", "Dark"]
     
     var body: some View {
         List {
-            //MARK: Toggle
-            Group {
-                VStack {
-                    ElementHeader(element: elements.toggle)
-                    HStack {
-                        Toggle(isOn: $toggleState) {
-                            Text("Toggle the switch to see what happens in the WebView")
-                        }
-                        .padding()
-                    }
-                }
-            }
             
-            //MARK: Set Label
             Group {
                 VStack {
-                    ElementHeader(element: elements.setLabel)
+                    ElementHeader(element: elements.toggleMode)
+                    ElementDescription(element: elements.toggleMode)
+                    
                     HStack {
-                        TextField("Enter text...", text: $labelText)
-                        Spacer()
-                        Button(action: {
-                            print("Inject label text into TextField")
-                        }) {
-                            ButtonContent(text: "Submit")
+                        Picker(selection: $selectedMode, label: Text("")) {
+                            Text("Light").tag("Light")
+                            Text("Dark").tag("Dark")
+                        }
+                        .pickerStyle(SegmentedPickerStyle())
+                        .onChange(of: selectedMode) { _ in
+                            Builder.set(.setMode, value: selectedMode)
                         }
                     }
                     .padding()
                 }
+                Divider()
             }
+            
+            // MARK: Toggle
+            Group {
+                VStack {
+                    ElementHeader(element: elements.toggle)
+                    ElementDescription(element: elements.toggle)
+                    
+                    HStack {
+                        Text("Toggle to see what happens:")
+                        Toggle(isOn: $toggleState) {
+                            Text("")
+                        }
+                        .padding()
+                        .onChange(of: toggleState) { value in
+                            Builder.set(.toggle)
+                        }
+                    }
+                }
+                Divider()
+            }
+            
+            
+            
+            // MARK: Set Label
+            Group {
+                VStack {
+                    ElementHeader(element: elements.setLabel)
+                    ElementDescription(element: elements.setLabel)
+                    
+                    HStack {
+                        TextField("Enter text...", text: $labelText)
+                        Spacer()
+                        Button(action: {
+                            Builder.set(.setLabel, value: labelText)
+                        }) {
+                            Text("Update Label")
+                        }
+                    }
+                    .padding()
+                }
+                
+                Divider()
+            }
+            
+            
             
             // MARK: Hide Object/Label
             Group {
                 VStack {
-                    ElementHeader(element: elements.hideLabel)
+                    ElementHeader(element: elements.hideObject)
                     HStack {
                         HStack {
-                            Toggle(isOn: $hideLabel) {
-                                Text("Display:")
+                            Toggle(isOn: $hideObject) {
+                                InlineCode(text: " display: none;")
                             }
                         }
                         Spacer()
                         HStack {
                             Button(action: {
-                                print("Hide object display from WebView")
+                                Builder.set(.hideObject, value: hideObject)
                             }) {
-                                ButtonContent(text: "Submit")
+                                Text("Set Display")
                             }
                         }
                         .padding(.leading, 60)
                     }
                     .padding()
                 }
+                
+                Divider()
             }
+            
+            
             
             // MARK: Add Numbers
             Group {
                 VStack {
                     ElementHeader(element: elements.addNumbers)
                     HStack {
-                        TextField("5", text: $firstNumber)
-                            .frame(width: 70)
-                            .multilineTextAlignment(.center)
+                        InlineTextField(digit: "5", number: $firstNumber)
                         Text("+")
                             .padding()
-                        TextField("10", text: $secondNumber)
-                            .frame(width: 70)
-                            .multilineTextAlignment(.center)
+                        InlineTextField(digit: "10", number: $secondNumber)
                         
                         Spacer()
                         
                         Button(action: {
-                            print("Add 2 numbers")
+                            Builder.set(.addNumbers, value: [firstNumber, secondNumber])
                         }) {
-                            ButtonContent(text: "Calculate")
+                            Text("Calculate")
                         }
                     }
                     .padding()
                 }
+                
+                Divider()
             }
+            
+            
             
             // MARK: Select Device
             Group {
                 VStack {
                     ElementHeader(element: elements.selectDevice)
+                    ElementDescription(element: elements.selectDevice)
+                    
                     HStack {
-                        GroupBox {
-                            DisclosureGroup("Select Device") {
-                                Text("iPhone")
-                                Text("iPad")
-                                Text("macOS")
-                            }
+                        Picker(selection: $selectedDevice, label: Text("")) {
+                            Text("iPhone").tag("iPhone")
+                            Text("iPad").tag("iPad")
+                            Text("macOS").tag("macOS")
+                        }
+                        .pickerStyle(SegmentedPickerStyle())
+                        .onChange(of: selectedDevice) { _ in
+                            Builder.set(.selectDevice, value: selectedDevice)
                         }
                     }
                     .padding()
+                    
+                    HStack {
+                        Text("Device:")
+                        InlineCode(text: selectedDevice)
+                    }
+                    
                 }
+                
+                Divider()
             }
+            
+            
             
             // MARK: Set Mode
             Group {
                 VStack {
                     ElementHeader(element: elements.setMode)
+                    ElementDescription(element: elements.setMode)
+                    
                     HStack {
-                        Toggle(isOn: $darkMode) {
-                            Text("Dark Mode")
+                        Picker(selection: $selectedMode, label: Text("")) {
+                            Text("Light").tag("Light")
+                            Text("Dark").tag("Dark")
+                        }
+                        .pickerStyle(SegmentedPickerStyle())
+                        .onChange(of: selectedMode) { _ in
+                            Builder.set(.setMode, value: selectedMode)
                         }
                     }
                     .padding()
+                    
+                    HStack {
+                        Text("Current Mode:")
+                        InlineCode(text: selectedMode)
+                    }
+                    
                 }
             }
             
@@ -135,21 +205,49 @@ struct ElementList: View {
     }
 }
 
-struct ButtonContent: View {
-    let text: String
+
+struct ElementDescription: View {
+    let element: DemoElements
+    
     var body: some View {
-        Text(text)
-            .fontWeight(.medium)
-            .padding(10)
-            .background(Color.blue)
-            .cornerRadius(9)
-            .foregroundColor(.white)
+        HStack {
+            Text(element.description)
+                
+            Spacer()
+        }
+        .multilineTextAlignment(.leading)
+        .padding(.vertical, 8)
+        .padding(.horizontal, 14)
     }
 }
+
+struct InlineCode: View {
+    let text: String
+    
+    var body: some View {
+        Text(text)
+            .font(.system(.body, design: .monospaced))
+            .font(.system(size: 14))
+            .fontWeight(.regular)
+    }
+}
+
+struct InlineTextField: View {
+    let digit: String
+    //@State var number: String
+    @State var number: Binding<String>
+    
+    var body: some View {
+        TextField(digit, text: number)
+            .frame(width: 70)
+            .multilineTextAlignment(.center)
+    }
+}
+
 
 struct ElementList_Previews: PreviewProvider {
     static var previews: some View {
         ElementList()
-            .previewLayout(.fixed(width: 375, height: 1000))
+            .previewLayout(.fixed(width: 375, height: 1100))
     }
 }
