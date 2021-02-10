@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17701"/>
         <plugIn identifier="com.apple.WebKit2IBPlugin" version="17701"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -712,27 +711,65 @@
                         <rect key="contentRect" x="300" y="440" width="900" height="600"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                         <value key="minSize" type="size" width="750" height="600"/>
-                        <toolbar key="toolbar" implicitIdentifier="3010F3C1-8E1F-4455-8859-3F53C4766723" autosavesConfiguration="NO" displayMode="iconOnly" sizeMode="regular" id="pDp-wO-QdX">
+                        <toolbar key="toolbar" implicitIdentifier="3010F3C1-8E1F-4455-8859-3F53C4766723" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="pDp-wO-QdX">
                             <allowedToolbarItems>
+                                <toolbarItem implicitItemIdentifier="AD88B0D1-8485-49BF-B3F1-EB354977594F" label="Toggle" paletteLabel="Toggle" tag="-1" image="switch.2" catalog="system" id="t9B-aQ-uWz">
+                                    <size key="minSize" width="32" height="32"/>
+                                    <size key="maxSize" width="32" height="32"/>
+                                    <connections>
+                                        <action selector="toggle:" target="B8D-0N-5wS" id="gjQ-IG-asu"/>
+                                    </connections>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="917F005E-EAEC-49EB-B0B6-55C8E559F49E" label="Set Label" paletteLabel="Set Label" tag="-1" image="text.cursor" catalog="system" id="xr7-Je-o90">
+                                    <size key="minSize" width="32" height="32"/>
+                                    <size key="maxSize" width="32" height="32"/>
+                                    <connections>
+                                        <action selector="setLabel:" target="B8D-0N-5wS" id="WIB-gP-loi"/>
+                                    </connections>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="511ADA5D-6BFD-480A-9BB4-2ED515EB152D" label="Hide Object" paletteLabel="Hide Object" tag="-1" image="eye.slash" catalog="system" id="Yb3-Sb-ZeA">
+                                    <size key="minSize" width="32" height="32"/>
+                                    <size key="maxSize" width="32" height="32"/>
+                                    <connections>
+                                        <action selector="hideObject:" target="B8D-0N-5wS" id="aBr-Sh-i1k"/>
+                                    </connections>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="E0AA475C-16F8-4C8D-B37A-F858F42E7799" label="Calculate" paletteLabel="Add Numbers" tag="-1" image="plus.slash.minus" catalog="system" id="OXr-DL-Unh">
+                                    <size key="minSize" width="32" height="32"/>
+                                    <size key="maxSize" width="32" height="32"/>
+                                    <connections>
+                                        <action selector="addNumbers:" target="B8D-0N-5wS" id="ekC-Ao-ujb"/>
+                                    </connections>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="550FAF53-F966-475F-8E15-9B88C49296DD" label="Select" paletteLabel="Select Device" tag="-1" image="laptopcomputer.and.iphone" catalog="system" id="dio-lA-icH">
+                                    <size key="minSize" width="32" height="32"/>
+                                    <size key="maxSize" width="32" height="32"/>
+                                    <connections>
+                                        <action selector="selectDevice:" target="B8D-0N-5wS" id="eP4-cE-o0F"/>
+                                    </connections>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="887C6254-0B93-4B54-A9F4-7F317FA82358" label="Mode" paletteLabel="Switch Mode" tag="-1" image="lightbulb" catalog="system" id="ggt-vi-cuH">
+                                    <size key="minSize" width="32" height="32"/>
+                                    <size key="maxSize" width="32" height="32"/>
+                                    <connections>
+                                        <action selector="setMode:" target="B8D-0N-5wS" id="dks-2G-4td"/>
+                                    </connections>
+                                </toolbarItem>
                                 <toolbarItem implicitItemIdentifier="NSToolbarShowColorsItem" id="TCR-4v-NcI"/>
                                 <toolbarItem implicitItemIdentifier="NSToolbarShowFontsItem" id="ImG-XZ-NA7"/>
                                 <toolbarItem implicitItemIdentifier="NSToolbarPrintItem" id="Yb6-ab-aZR"/>
                                 <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="8pj-kc-IVL"/>
                                 <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="yyq-D8-NPg"/>
-                                <toolbarItem implicitItemIdentifier="78134E80-0980-413A-B2D9-B8F9BD35980D" label="Toggle Mode" paletteLabel="Toggle Mode" tag="-1" image="lightbulb" catalog="system" id="Go8-CJ-Rt9">
-                                    <size key="minSize" width="37" height="30"/>
-                                    <size key="maxSize" width="37" height="30"/>
-                                    <connections>
-                                        <action selector="toggleMode:" target="B8D-0N-5wS" id="fWb-2K-oGB"/>
-                                    </connections>
-                                </toolbarItem>
                             </allowedToolbarItems>
                             <defaultToolbarItems>
-                                <toolbarItem reference="TCR-4v-NcI"/>
-                                <toolbarItem reference="ImG-XZ-NA7"/>
+                                <toolbarItem reference="t9B-aQ-uWz"/>
+                                <toolbarItem reference="xr7-Je-o90"/>
+                                <toolbarItem reference="Yb3-Sb-ZeA"/>
+                                <toolbarItem reference="OXr-DL-Unh"/>
+                                <toolbarItem reference="dio-lA-icH"/>
                                 <toolbarItem reference="yyq-D8-NPg"/>
-                                <toolbarItem reference="Go8-CJ-Rt9"/>
-                                <toolbarItem reference="Yb6-ab-aZR"/>
+                                <toolbarItem reference="8pj-kc-IVL"/>
+                                <toolbarItem reference="ggt-vi-cuH"/>
                             </defaultToolbarItems>
                         </toolbar>
                         <connections>
@@ -745,7 +782,7 @@
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-807" y="446"/>
+            <point key="canvasLocation" x="-865" y="415"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
@@ -800,6 +837,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="eye.slash" catalog="system" width="21" height="14"/>
+        <image name="laptopcomputer.and.iphone" catalog="system" width="21" height="13"/>
         <image name="lightbulb" catalog="system" width="15" height="17"/>
+        <image name="plus.slash.minus" catalog="system" width="16" height="14"/>
+        <image name="switch.2" catalog="system" width="16" height="14"/>
+        <image name="text.cursor" catalog="system" width="16" height="16"/>
     </resources>
 </document>
