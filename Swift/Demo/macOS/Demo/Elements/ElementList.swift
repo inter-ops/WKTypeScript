@@ -58,7 +58,8 @@ struct ElementList: View {
                     ElementDescription(element: elements.toggle)
                     
                     HStack {
-                        Text("Toggle to see what happens:")
+                        //Text("Toggle to see what happens:")
+                        InlineCode(text: "toggle.click():")
                         Toggle(isOn: $toggleState) {
                             Text("")
                         }
@@ -100,6 +101,7 @@ struct ElementList: View {
             Group {
                 VStack {
                     ElementHeader(element: elements.hideObject)
+                    ElementDescription(element: elements.hideObject)
                     HStack {
                         HStack {
                             Toggle(isOn: $hideObject) {
@@ -128,6 +130,7 @@ struct ElementList: View {
             Group {
                 VStack {
                     ElementHeader(element: elements.addNumbers)
+                    ElementDescription(element: elements.addNumbers)
                     HStack {
                         InlineTextField(digit: "5", number: $firstNumber)
                         Text("+")

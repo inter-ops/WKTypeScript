@@ -44,17 +44,17 @@ enum DemoElements {
     var description: String {
         switch self {
         case .toggle:
-            return "Make simple calls to "
+            return "Make simple calls to your TypeScript functions."
         case .setLabel:
-            return "Set Label description"
+            return "Call functions through native Swift with arguments and proper types."
         case .hideObject:
-            return "Hide Label description"
+            return "Manipulate web content within the WebView using TypeScript."
         case .addNumbers:
-            return "Add Numbers description"
+            return "Interact with a web interface to provide it with input data and listen for a result."
         case .selectDevice:
-            return "Select Device description"
+            return "Control (pretty much) any web content with JavaScript evaluation."
         case .setMode:
-            return "Set Mode description"
+            return "Modify entire pages with your custom styling code."
         case .toggleMode:
             return "Preview the demo in light or dark mode. The full implementation can be found below."
         }
@@ -64,19 +64,38 @@ enum DemoElements {
     var code: String {
         switch self {
         case .toggle:
-            return "toggle();"
+            return "toggle()"
         case .setLabel:
-            return "setLabel(text: string);"
+            return "setLabel(text: string)"
         case .hideObject:
-            return "hideObject(hidden = false);"
+            return "hideObject(hidden = false)"
         case .addNumbers:
-            return "addNumbers(a: number, b: number);"
+            return "addNumbers(a: number, b: number)"
         case .selectDevice:
-            return "selectDevice(device: Device);"
+            return "selectDevice(device: Device)"
         case .setMode:
-            return "setMode(mode = Mode.Light);"
+            return "setMode(mode = Mode.Light)"
         case .toggleMode:
-            return "setMode(Mode.light);"
+            return "setMode(.Light | .Dark)"
+        }
+    }
+    
+    var codeSwift: String {
+        switch self {
+        case .toggle:
+            return "webView.ts(.toggle)"
+        case .setLabel:
+            return "setLabel(_ text: String)"
+        case .hideObject:
+            return "hideObject(_ hidden: Bool = false)"
+        case .addNumbers:
+            return "addNumbers(a: Double, b: Double)"
+        case .selectDevice:
+            return "selectDevice(_ device: Device)"
+        case .setMode:
+            return "setMode(_ mode: Mode = .light)"
+        case .toggleMode:
+            return "setMode(Mode.light)"
         }
     }
     
