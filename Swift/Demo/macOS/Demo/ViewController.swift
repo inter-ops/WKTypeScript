@@ -9,22 +9,31 @@
 import Cocoa
 import WebKit
 
-class ViewController: NSViewController, WKUIDelegate, WKNavigationDelegate, WKScriptMessageHandler {
+class ViewController: NSViewController, NSWindowDelegate, WKUIDelegate, WKNavigationDelegate, WKScriptMessageHandler {
     
     @IBOutlet var webView: WKWebView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        clearCache()        // Clear WebKit Cache
+        clearCache()        // Clear WKCache
         initWebView()       // Initialize WebView
         addObservers()      // Add Observers
+        
+        //initWindowSize(width: 1045, height: 780)
+        
+        //WindowHelper.positionWindowAtCenter(sender: self.view.window)
     }
     
+    override func viewWillAppear() {
+        
+    }
     
-    @objc func runJS(_ notification: Notification) {
-        if debug { print("Running JS: \(Functions.code)") }
-        webView.ts(Functions.code)
+    override func viewDidAppear() {
+        if let screenSize = view.window?.screen?.frame {
+            //view.window!.setFrame(screenSize, display: true)
+            print(screenSize)
+        }
     }
     
     
@@ -33,19 +42,18 @@ class ViewController: NSViewController, WKUIDelegate, WKNavigationDelegate, WKSc
     func initWebView() {
         webView.uiDelegate = self                           // Set WebView UI Delegate
         webView.navigationDelegate = self                   // Set WebView Navigation Delegate
-        // JavaScript Event Listeners
         webView.configuration.userContentController.add(self, name: "eventListeners")
-        webView.load(file: "index", path: "WebContent")
-    }
-    /// Clear WebKit WebView object cache.
-    func clearCache() {
-        let websiteDataTypes = NSSet(array: [WKWebsiteDataTypeDiskCache, WKWebsiteDataTypeMemoryCache])
-        let date = Date(timeIntervalSince1970: 0)
-        WKWebsiteDataStore.default().removeData(ofTypes: websiteDataTypes as! Set<String>, modifiedSince: date, completionHandler:{ })
+        webView.load(file: "index", path: "Shared/WebContent")
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         webView.load(.index)
+    }
+    
+    
+    @objc func runJS(_ notification: Notification) {
+        if debug { print("Running JS: \(Functions.code)") }
+        webView.ts(Functions.code)
     }
     
     

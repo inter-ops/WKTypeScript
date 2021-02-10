@@ -8,6 +8,10 @@
 
 import SwiftUI
 
+//class ToggleCode: ObservableObject {
+//    @Published var mode: String = "setMode(.light)"
+//}
+
 let elements = DemoElements.self
 struct ElementList: View {
     @State private var toggleState = false
@@ -21,6 +25,8 @@ struct ElementList: View {
     
     @State private var selectedMode = "Light"
     var modes = ["Light", "Dark"]
+    
+    @State var modeCode = "setMode(.light)"
     
     var body: some View {
         List {
@@ -203,6 +209,7 @@ struct ElementList: View {
             
             
         }
+        .listStyle(SidebarListStyle())
     }
 }
 
@@ -219,6 +226,7 @@ struct ElementDescription: View {
         .multilineTextAlignment(.leading)
         .padding(.vertical, 8)
         .padding(.horizontal, 14)
+        .lineLimit(nil)
     }
 }
 

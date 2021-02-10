@@ -76,7 +76,8 @@ enum DemoElements {
         case .setMode:
             return "setMode(mode = Mode.Light);"
         case .toggleMode:
-            return "setMode(.Light ?? .Dark);"
+            return "setMode(Mode.light);"
         }
     }
+    
 }

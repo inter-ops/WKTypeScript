@@ -9,6 +9,15 @@
 import Foundation
 import WebKit
 
+extension ViewController {
+    /// Clear WebKit WebView object cache.
+    func clearCache() {
+        let websiteDataTypes = NSSet(array: [WKWebsiteDataTypeDiskCache, WKWebsiteDataTypeMemoryCache])
+        let date = Date(timeIntervalSince1970: 0)
+        WKWebsiteDataStore.default().removeData(ofTypes: websiteDataTypes as! Set<String>, modifiedSince: date, completionHandler:{ })
+    }
+}
+
 // MARK: WebKit Extensions
 extension WKWebView {
     /// Quick and short load URL String in a WKWebView

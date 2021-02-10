@@ -27,6 +27,9 @@
 		C2A7C99725D383210044A552 /* WKExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A7C99625D383210044A552 /* WKExtensions.swift */; };
 		C2A7C99B25D3860B0044A552 /* WKTSConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A7C99A25D3860B0044A552 /* WKTSConfig.swift */; };
 		C2A7C99E25D386360044A552 /* dist in Resources */ = {isa = PBXBuildFile; fileRef = C2A7C99D25D386360044A552 /* dist */; };
+		C2A7C9A125D38B0A0044A552 /* Shared in Resources */ = {isa = PBXBuildFile; fileRef = C2A7C9A025D38B0A0044A552 /* Shared */; };
+		C2A7C9D725D428D70044A552 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A7C9D625D428D70044A552 /* Settings.swift */; };
+		C2A7C9DB25D4454B0044A552 /* ElementTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A7C9DA25D4454B0044A552 /* ElementTitle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +56,9 @@
 		C2A7C99625D383210044A552 /* WKExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKExtensions.swift; sourceTree = "<group>"; };
 		C2A7C99A25D3860B0044A552 /* WKTSConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKTSConfig.swift; sourceTree = "<group>"; };
 		C2A7C99D25D386360044A552 /* dist */ = {isa = PBXFileReference; lastKnownFileType = folder; name = dist; path = ../../../../dist; sourceTree = "<group>"; };
+		C2A7C9A025D38B0A0044A552 /* Shared */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Shared; path = ../../Shared; sourceTree = "<group>"; };
+		C2A7C9D625D428D70044A552 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		C2A7C9DA25D4454B0044A552 /* ElementTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementTitle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +103,7 @@
 				C25A155325D366EE00AADF9B /* Info.plist */,
 				C25A155425D366EE00AADF9B /* Demo.entitlements */,
 				C2A7C99D25D386360044A552 /* dist */,
+				C2A7C9A025D38B0A0044A552 /* Shared */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
@@ -106,6 +113,7 @@
 			children = (
 				C25A158625D378FE00AADF9B /* DemoElements.swift */,
 				C25A158525D378FE00AADF9B /* ElementHeader.swift */,
+				C2A7C9DA25D4454B0044A552 /* ElementTitle.swift */,
 				C25A158325D378FE00AADF9B /* ElementList.swift */,
 				C25A158425D378FE00AADF9B /* ElementListHostingController.swift */,
 			);
@@ -140,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				C2A7C99625D383210044A552 /* WKExtensions.swift */,
+				C2A7C9D625D428D70044A552 /* Settings.swift */,
 			);
 			path = Includes;
 			sourceTree = "<group>";
@@ -202,6 +211,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2A7C99E25D386360044A552 /* dist in Resources */,
+				C2A7C9A125D38B0A0044A552 /* Shared in Resources */,
 				C25A154F25D366EE00AADF9B /* Assets.xcassets in Resources */,
 				C25A155225D366EE00AADF9B /* Main.storyboard in Resources */,
 			);
@@ -219,7 +229,9 @@
 				C25A158925D378FE00AADF9B /* ElementHeader.swift in Sources */,
 				C25A155F25D3693A00AADF9B /* Notifications.swift in Sources */,
 				C2A7C98D25D381100044A552 /* Builder.swift in Sources */,
+				C2A7C9DB25D4454B0044A552 /* ElementTitle.swift in Sources */,
 				C2A7C98C25D381100044A552 /* Functions.swift in Sources */,
+				C2A7C9D725D428D70044A552 /* Settings.swift in Sources */,
 				C2A7C98E25D381100044A552 /* URL+Extension.swift in Sources */,
 				C2A7C98F25D381100044A552 /* String+Extension.swift in Sources */,
 				C2A7C99025D381100044A552 /* WebKit+Extension.swift in Sources */,
