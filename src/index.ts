@@ -8,9 +8,6 @@ function postMessage(msg: string) {
   window.webkit.messageHandlers.eventListeners.postMessage(`[WKTS] ${msg}`);
 }
 
-const anchorDelay = 500;
-const actionDelay = 400;
-
 /****************/
 /* DEMO HELPERS */
 /****************/
@@ -24,10 +21,14 @@ enum Anchor {
   SelectDevice = "#SelectDevice",
   SetMode = "#SetMode"
 }
-
+/* @ignore */
 function goTo(anchor: Anchor) {
   location.hash = anchor.toString();
 }
+/* @ignore start */
+const anchorDelay = 500;
+const actionDelay = 400;
+/* @ignore end */
 
 /*
  * FUNCTIONS
@@ -50,7 +51,6 @@ async function setLabel(text: string) {
   labelTextField.value = text;
 
   postMessage(`setLabel.text: ${text}`);
-  return ""; //text
 }
 
 async function hideObject(hidden = false) {
@@ -138,6 +138,7 @@ async function setMode(mode = Mode.Light) {
  * TODO: Some flag that specifies that this function is NOT to be generated for Functions.swift, nor Constants.swift.
  * This function manipulates the CSS of the page to reflect a light or dark mode.
  */
+/* @ignore */
 async function toggleTo(mode = Mode.Light) {
   currentMode = mode;
 
@@ -162,12 +163,18 @@ async function toggleTo(mode = Mode.Light) {
 
   /* Separator (hr) */
   const separator = document.querySelectorAll<HTMLElement>(".separator");
-  let separatorStyle = "1px dashed #D0D0D0;";
+  let separatorStyle = "1px dashed #D0D0D0";
 
   /* Input Fields */
   const inputFields = document.querySelectorAll<HTMLElement>("input[type='text']");
   let inputColor = "#000";
   let inputBG = "#E7E7E7";
+
+  const hideMeText = <HTMLElement>document.querySelector(".objectToHide > p > code");
+  let hideMeTextColor = "#000";
+
+  const codeBlocks = document.querySelectorAll<HTMLElement>("code");
+  let codeBlockColor = "#000";
 
   if (mode === Mode.Dark) {
     textColor = "#FFF";
@@ -180,14 +187,20 @@ async function toggleTo(mode = Mode.Light) {
     contentBG = "#111";
     tocBG = "#111";
 
-    separatorStyle = "1px dashed #343434;";
+    separatorStyle = "1px dashed #343434";
 
     inputColor = "#FFF";
     inputBG = "#39383D";
+
+    hideMeTextColor = "#FFF";
+
+    codeBlockColor = "#FFF";
   }
 
   body?.style.setProperty("color", textColor);
   body?.style.setProperty("background", bgColor);
+
+  hideMeText.style.setProperty("color", hideMeTextColor);
 
   menuDropdown.forEach(function (elem) {
     elem.style.setProperty("color", menuHeader);
@@ -209,8 +222,13 @@ async function toggleTo(mode = Mode.Light) {
     elem.style.setProperty("color", inputColor);
     elem.style.setProperty("background-color", inputBG);
   });
+
+  codeBlocks.forEach(function (elem) {
+    elem.style.setProperty("color", codeBlockColor);
+  });
 }
 
+/* @ignore */
 function toggleMode() {
   const printMode = currentMode;
   let mode = Mode.Light;
@@ -222,74 +240,3 @@ function toggleMode() {
 
   postMessage(`toggleMode from: .${printMode.toString()}, to: .${mode.toString()}`);
 }
-
-/*
-function postMessage(msg: string) {
-  window.webkit.messageHandlers.eventListeners.postMessage(`${msg}`);
-}
-
-function toggle() {
-  postMessage(`Toggle`);
-}
-
-function setLabel(text: string) {
-  postMessage(`[setLabel] ${text}`);
-  return text;
-}
-
-function hideObject(hidden = false) {
-  postMessage(`[hideObject] ${hidden}`);
-  return hidden;
-}
-
-function addNumbers(a: number, b: number) {
-  const sum = a + b;
-  postMessage(`[addNumbers] ${sum}`);
-}
-
-enum Device {
-  Phone = "iPhone",
-  Pad = "iPad",
-  Mac = "macOS"
-}
-function selectDevice(device: Device) {
-  const deviceString = device.toString();
-  postMessage(`[selectDevice] ${deviceString}`);
-  return deviceString;
-}
-
-enum Mode {
-  Light = "light",
-  Dark = "dark"
-}
-function setMode(mode = Mode.Light) {
-  let modeCase = "";
-  if (mode === Mode.Light) {
-    modeCase = "Mode.Light";
-  } else {
-    modeCase = `Mode.Dark`;
-  }
-  postMessage(`[setMode] mode: ${modeCase}, setting to ${mode.toString()} mode.`);
-  return mode;
-}
-
-async function toggleMode() {
-  const body = document.querySelector("body");
-  if (!body?.hasAttribute("mode")) {
-    body?.setAttribute("mode", "light");
-  }
-  const mode = body?.getAttribute("mode");
-  if (mode == "light") {
-    body?.style.setProperty("color", "#fff");
-    body?.style.setProperty("background", "#000");
-    body?.setAttribute("mode", "dark");
-  } else {
-    body?.style.setProperty("color", "#000");
-    body?.style.setProperty("background", "#fff");
-    body?.setAttribute("mode", "light");
-  }
-  await new Promise((r) => setTimeout(r, 1000));
-  const result = "Mode: " + body?.getAttribute("mode")?.toString();
-  window.webkit.messageHandlers.eventListeners.postMessage(result);
-}
-*/
