@@ -36,3 +36,10 @@ struct Constants {
     }
     
 }
+
+struct Variables {
+    
+    // MARK: Default Variables
+    static var device = Constants.Device.phone
+    static var mode = Constants.Mode.light
+}

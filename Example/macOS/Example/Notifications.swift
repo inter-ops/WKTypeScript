@@ -16,8 +16,16 @@ extension Notification.Name {
 extension ViewController {
     
     func addObservers() {
+        // MARK: SwiftUI Notifications
         NotificationCenter.default.addObserver(self, selector: #selector(self.runJS(_:)), name: .willRunJS, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.didToggleMode(_:)), name: .didToggleMode, object: nil)
+        
+        // MARK: NSWindow Notifications
+        //NotificationCenter.default.addObserver(self, selector: #selector(self.didToggleMode(_:)), name: .didToggleMode, object: nil)
     }
-    
+}
+
+struct Notifications {
+    static func post(_ name: Notification.Name) {
+        NotificationCenter.default.post(Notification(name: name))
+    }
 }

@@ -24,7 +24,6 @@ class ViewController: NSViewController, WKUIDelegate, WKNavigationDelegate, WKSc
     @objc func runJS(_ notification: Notification) {
         if debug { print("Running JS: \(Functions.code)") }
         webView.ts(Functions.code)
-        
     }
     
     

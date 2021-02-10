@@ -68,7 +68,7 @@ struct Builder {
         
         Functions.code = code
         
-        print("Functions.code: \(Functions.code)")
+        //print("Functions.code: \(Functions.code)")
         
         // post notification
         NotificationCenter.default.post(Notification(name: .willRunJS))

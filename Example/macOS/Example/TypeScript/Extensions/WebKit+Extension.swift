@@ -15,14 +15,7 @@ extension WKWebView {
     /// # Usage
     ///     webView.ts(.toggle)  // toggle();
     ///     webView.ts(.setTrue) // setTrue();
-    func ts(_ function: Functions.Void) {
-        ts(function.ts)
-//        evaluateJavaScript(function.ts) { (result, error) in
-//            if error != nil {
-//                if WKTSConfig.debug { print("[WKTS] Error: \(String(describing: error))") }
-//            }
-//        }
-    }
+    func ts(_ function: Functions.Void) { ts(function.ts) }
     /// Executes some TypeScript function with parameters to be executed in a WebKit object.
     /// # Usage
     ///     let myFunction = Functions.addNumbers(a: 5, b: 10)
@@ -30,11 +23,20 @@ extension WKWebView {
     ///     // TS: addNumbers(5, 10);
     ///
     func ts(_ function: String) {
-        evaluateJavaScript(function) { (result, error) in
-            if error != nil {
-                // if debug { }
-                print("[WKTS] Error: \(String(describing: error))")
+        evaluateJavaScript(function)
+    }
+    
+    func ts(_ function: Functions.Void, console: Bool) { ts(function.ts, console: console) }
+    
+    func ts(_ function: String, console: Bool) {
+        if console {
+            evaluateJavaScript(function) { (result, error) in
+                if error != nil {
+                    if debug { print("[WKTS] Error: \(String(describing: error))") }
+                }
             }
+        } else {
+            ts(function)
         }
     }
     
