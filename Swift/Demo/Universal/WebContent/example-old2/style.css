@@ -1,0 +1,146 @@
+html {
+	scroll-behavior: smooth !important;
+}
+
+body {
+	color: #000;
+	background: #fff;
+	font-family: -apple-system, BlinkMacSystemFont;
+	padding: 5px 20px 20px 20px;
+}
+
+p > code {
+	color: #000;
+	font-family: 'SF Mono', SFMono-Regular, ui-monospace, 'DejaVu Sans Mono', Menlo, Consolas, monospace;
+}
+
+hr.separator {
+	border-top: 1px dashed #D0D0D0;
+	margin-top: 30px;
+	margin-bottom: 10px;
+}
+
+a:link, a:visited {
+	text-color: #007AFF;
+	text-decoration: none;
+}
+
+div.objectPreview {
+	padding: 5px 0 15px 0;
+}
+
+.toc {
+	
+}
+
+#toc {
+	text-align: left;
+	margin-top: 18px;
+	width: 100%;
+	padding: 10px;
+}
+#toc #number {
+	font-weight: 400;
+	width: 5%;
+}
+#toc #title {
+	font-weight: 600;
+	padding-right: 10px;
+	width: 25%;
+}
+#toc #code {
+	font-weight: normal;
+	font-family: 'SF Mono', SFMono-Regular, ui-monospace, 'DejaVu Sans Mono', Menlo, Consolas, monospace;
+	font-size: 14px;
+}
+
+ol.toc {
+	/*list-style-type: lower-alpha;*/
+	line-height: 1.5;
+	font-size: 1.1rem;
+}
+
+table, th, td {
+	border: 1px solid #D0D0D0;
+	border-collapse: collapse;
+}
+
+th, td {
+	padding: 5px;
+	padding-left: 10px;
+}
+#codeTable {
+	width: 100%;
+	text-align: left;
+}
+#codeTable #language {
+	width: 10%;
+}
+
+#codeTable #function {
+	width: 15%;
+	font-weight: normal;
+	font-family: 'SF Mono', SFMono-Regular, ui-monospace, 'DejaVu Sans Mono', Menlo, Consolas, monospace;
+}
+
+#codeTable > #example {
+	width: 75%;
+	font-weight: normal;
+	font-family: 'SF Mono', SFMono-Regular, ui-monospace, 'DejaVu Sans Mono', Menlo, Consolas, monospace;
+}
+
+
+.collapsible {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .collapsible:hover {
+  background-color: #ccc;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+  padding-bottom: 20px;
+}
+
+
+
+div.toc > .collapsible {
+	background-color: #eee;
+	color: #444;
+	cursor: pointer;
+	padding: 10px 0 10px 20px;
+	width: 100%;
+	border: none;
+	text-align: left;
+	outline: none;
+	font-size: 15px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, div.toc >.collapsible:hover {
+	background-color: #ccc;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+div.toc > .content {
+	padding: 0 18px;
+	display: none;
+	overflow: hidden;
+	background-color: #fff; /*#f1f1f1*/
+	padding-bottom: 20px;
+}
+

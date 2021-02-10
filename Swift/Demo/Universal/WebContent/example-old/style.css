@@ -1,0 +1,21 @@
+body {
+  color: #000;
+  background: #fff;
+  font-family: -apple-system, BlinkMacSystemFont;
+  padding: 5px 20px 20px 20px;
+}
+
+/* Apple System Fonts (Deprecated?)
+ font-family: -apple-system-body
+ font-family: -apple-system-headline
+ font-family: -apple-system-subheadline
+ font-family: -apple-system-caption1
+ font-family: -apple-system-caption2
+ font-family: -apple-system-footnote
+ font-family: -apple-system-short-body
+ font-family: -apple-system-short-headline
+ font-family: -apple-system-short-subheadline
+ font-family: -apple-system-short-caption1
+ font-family: -apple-system-short-footnote
+ font-family: -apple-system-tall-body
+ */
