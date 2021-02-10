@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="objects.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <h1>WKTS Demo</h1>
+	
+	<div class="toc">
+	<button type="button" class="collapsible"><h2>Table of Contents &nbsp; &#43;</h2></button>
+	<div class="content toc">
+		<table id="toc">
+			<tr>
+				<th id="number">1.</th>
+				<th id="title"><a href="#Toggle">Toggle</a></th>
+				<th id="code">toggle()</th>
+			</tr>
+			<tr>
+				<th id="number">2.</th>
+				<th id="title"><a href="#SetLabel">Set Label</a></th>
+				<th id="code">setLabel(text: string)</th>
+			</tr>
+			<tr>
+				<th id="number">3.</th>
+				<th id="title"><a href="#HideObject">Hide Label</a></th>
+				<th id="code">hideObject(hidden: boolean = false)</th>
+			</tr>
+			<tr>
+				<th id="number">4.</th>
+				<th id="title"><a href="#AddNumbers">Add Numbers</a></th>
+				<th id="code">addNumbers(a: number, b: number)</th>
+			</tr>
+			<tr>
+				<th id="number">5.</th>
+				<th id="title"><a href="#SelectDevice">Device <sup>enum</sup></a></th>
+				<th id="code">selectDevice(device: Device)</th>
+			</tr>
+			<tr>
+				<th id="number">6.</th>
+				<th id="title"><a href="#SetMode">Mode <sup>enum</sup></a></th>
+				<th id="code">setMode(mode: Mode = Mode.Light)</th>
+			</tr>
+		</table>
+	</div>
+	</div>
+	
+	<!--
+	<h2>Table of Contents</h2>
+	
+	<div class="toc">
+	<table id="toc">
+		<tr>
+			<th id="number">1.</th>
+			<th id="title"><a href="#Toggle">Toggle</a></th>
+			<th id="code">toggle()</th>
+		</tr>
+		<tr>
+			<th id="number">2.</th>
+			<th id="title"><a href="#SetLabel">Set Label</a></th>
+			<th id="code">setLabel(text: string)</th>
+		</tr>
+		<tr>
+			<th id="number">3.</th>
+			<th id="title"><a href="#HideObject">Hide Label</a></th>
+			<th id="code">hideObject(hidden: boolean = false)</th>
+		</tr>
+		<tr>
+			<th id="number">4.</th>
+			<th id="title"><a href="#AddNumbers">Add Numbers</a></th>
+			<th id="code">addNumbers(a: number, b: number)</th>
+		</tr>
+		<tr>
+			<th id="number">5.</th>
+			<th id="title"><a href="#SelectDevice">Device <sup>enum</sup></a></th>
+			<th id="code">selectDevice(device: Device)</th>
+		</tr>
+		<tr>
+			<th id="number">6.</th>
+			<th id="title"><a href="#SetMode">Mode <sup>enum</sup></a></th>
+			<th id="code">setMode(mode: Mode = Mode.Light)</th>
+		</tr>
+	</table>
+	</div>
+-->
+	
+	
+	
+  <!-- TOGGLE -->
+	<hr id="Toggle" class="separator" />
+  <h2 >Toggle</h2>
+  <p>Make calls to your TypeScript functions with ease: &nbsp;<code>webView.ts(.toggle)</code></p>
+
+	<!-- TOGGLE: Object Preview -->
+	<div class="objectPreview">
+  <p align="center">
+		<label class="switch">
+			<input type="checkbox">
+			<span class="slider round"></span>
+		</label>
+	</p>
+	</div>
+	
+	<!-- TOGGLE: Code Implementation -->
+	<button type="button" class="collapsible">Code Implementation</button>
+	<div class="content">
+		<p>WKTypeScript will search through your working <code>dist</code> directory for TypeScript files and generate corresponding Swift files with type-safe references. From here, you can make calls to your TypeScript code through native Swift.</p>
+		<table id="codeTable">
+			<tr>
+				<th id="language"></th>
+				<th id="function">Function</th>
+				<th id="example">Example</th>
+			</tr>
+			<tr>
+				<th id="language">TypeScript</th>
+				<td id="function"><code>toggle();</code></td>
+				<td id="example"><code>function toggle() {...}</code></td>
+			</tr>
+			<tr>
+				<th id="language">Swift</th>
+				<td id="function"><code>toggle()</code></td>
+				<td id="example"><code>webView.ts(.toggle)</code></td>
+			</tr>
+		</table>
+	</div>
+	<!-- SET LABEL -->
+	<hr id="SetLabel" class="separator" />
+	<h2>Set Label</h2>
+	<p>Enter a text value in the native Swift TextField. Upon setting a new label, the app uses WKTS to call upon the TypeScript function.</p>
+	<!-- SET LABEL: Object Preview -->
+	<div class="objectPreview">
+		<p align="center">
+			<input id="LabelTextField" type="text" value="" placeholder="TextField to inject..." />
+			<button class="inputButton labelButton" onclick="clearLabelText()">Clear</button>
+		</p>
+	</div>
+	<!-- SET LABEL: Code Implementation -->
+	<button type="button" class="collapsible">Code Implementation</button>
+	<div class="content">
+		<p>Let's say you have some TypeScript function - <code>setLabel(text: string)</code> - that will set take some <code>String</code> as a parameter. The parameter will set or change the value of some object embedded in the WebView. In our case, we will be setting the InputField's value.</p>
+		<table id="codeTable">
+			<tr>
+				<th id="language"></th>
+				<th id="function">Function</th>
+				<th id="example">Example</th>
+			</tr>
+			<tr>
+				<th id="language">TypeScript</th>
+				<th id="function"><code>setLabel("String")</code></th>
+				<th id="example"><code>function setLabel(text: string) {...}</code></th>
+			</tr>
+			<tr>
+				<th id="language">Swift</th>
+				<th id="function"><code>setLabel(text: String)</code></th>
+				<th id="example"><code>webView.ts(.setLabel, value: "text")</code></th>
+			</tr>
+		</table>
+	</div>
+	
+	
+	
+	<!-- HIDE OBJECT -->
+	<hr id="HideObject" class="separator" />
+	<h2>Hide Object</h2>
+	<p>Manipulate web content in real-time with TypeScript property setters. Enable the line of custom CSS code, in the sidebar to the right, to manipulate the object below.</p>
+	<!-- HIDE OBJECT: Object Preview -->
+	<div class="objectPreview" align="center">
+		<p align="center">
+			<div class="hiddenObjectContainer">
+				<div class="objectToHide">
+					<p><code>Hide Me</code></p>
+				</div>
+			</div>
+			<!--<input type="text" value="" placeholder="Type something..." />-->
+			<!--<button class="inputButton labelButton">Element to Hide</button>-->
+		</p>
+	</div>
+	<!-- HIDE OBJECT: Code Implementation -->
+	<button type="button" class="collapsible">Code Implementation</button>
+	<div class="content">
+		<p>Having the ability .</p>
+		
+		<table id="codeTable">
+			<tr>
+				<th id="language"></th>
+				<th id="function">Function</th>
+				<th id="example">Example</th>
+			</tr>
+			<tr>
+				<th id="language">TypeScript</th>
+				<th id="function"><code>toggle();</code></th>
+				<th id="example"><code>function toggle() {...}</code></th>
+			</tr>
+			<tr>
+				<th id="language">Swift</th>
+				<th id="function"><code>toggle();</code></th>
+				<th id="example"><code>func toggle() { return "toggle();" }</code></th>
+			</tr>
+		</table>
+	</div>
+	
+	
+	
+	<!-- ADD NUMBERS -->
+	<hr id="AddNumbers" class="separator" />
+	<h2>Add Numbers</h2>
+	<p>Send TypeScript some operation and watch as it handles it.</p>
+	<!-- ADD NUMBERS: Object Preview -->
+	<div class="objectPreview">
+		<p align="center">
+			<input id="NumberA" class="numbers" type="text" value="" placeholder="5" />
+			<input id="NumberB" class="numbers" type="text" value="" placeholder="10" />
+			<button id="CalculateButton" class="inputButton labelButton" onclick="getSum()">Calculate</button>
+		</p>
+		
+		<p align="center">
+			<input id="ResultField" type="text" value="" placeholder="5 + 10 = 15" />
+		</p>
+		
+	</div>
+	<!-- ADD NUMBERS: Code Implementation -->
+	<button type="button" class="collapsible">Code Implementation</button>
+	<div class="content">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+		
+		<table id="codeTable">
+			<tr>
+				<th id="language"></th>
+				<th id="function">Function</th>
+				<th id="example">Example</th>
+			</tr>
+			<tr>
+				<th id="language">TypeScript</th>
+				<th id="function"><code>toggle();</code></th>
+				<th id="example"><code>function toggle() {...}</code></th>
+			</tr>
+			<tr>
+				<th id="language">Swift</th>
+				<th id="function"><code>toggle();</code></th>
+				<th id="example"><code>func toggle() { return "toggle();" }</code></th>
+			</tr>
+		</table>
+	</div>
+	
+	
+	
+	<!-- SELECT DEVICE -->
+	<hr id="SelectDevice" class="separator" />
+	<h2>Device <sup>enum</sup></h2>
+	<p>WKTypeScript will automatically generate a file, Constants.swift, to place your declared variables, as well as their corresponding types.</p>
+	<!-- SELECT DEVICE: Object Preview -->
+	<div class="objectPreview">
+		<p align="center">
+			<span class="custom-dropdown big">
+				<select id="DeviceSelect">    
+						<option>iPhone</option>
+						<option>iPad</option>  
+						<option>macOS</option>
+				</select>
+			</span>
+		</p>
+	</div>
+	<!-- SELECT DEVICE: Code Implementation -->
+	<button type="button" class="collapsible">Code Implementation</button>
+	<div class="content">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+		
+		<table id="codeTable">
+			<tr>
+				<th id="language"></th>
+				<th id="function">Function</th>
+				<th id="example">Example</th>
+			</tr>
+			<tr>
+				<th id="language">TypeScript</th>
+				<th id="function"><code>toggle();</code></th>
+				<th id="example"><code>function toggle() {...}</code></th>
+			</tr>
+			<tr>
+				<th id="language">Swift</th>
+				<th id="function"><code>toggle();</code></th>
+				<th id="example"><code>func toggle() { return "toggle();" }</code></th>
+			</tr>
+		</table>
+	</div>
+	
+	
+	
+	<!-- SET MODE -->
+	<hr id="SetMode" class="separator" />
+	<h2>Mode <sup>enum</sup></h2>
+	<p>Use TypeScript functions to manipulate just about anything within a WebKit object. In this example, we will use our <code>setMode()</code> function - found in <code>index.ts</code> - to toggle this page between light and dark modes.</p>
+	<p>To toggle between modes, either click the native "Toggle Mode" button in the Swift interface, or do it manually with the button below.</p>
+	<!-- SET MODE: Object Preview -->
+	<div class="objectPreview">
+		<p align="center">
+			<button class="inputButton labelButton">Manually Toggle Mode</button>
+		</p>
+	</div>
+	<!-- SET MODE: Code Implementation -->
+	<button type="button" class="collapsible">Code Implementation</button>
+	<div class="content">
+		<p>Use TypeScript functions to manipulate just about anything within a WebKit object. <code>SetMode()</code> specifically </p>
+		
+		<table id="codeTable">
+			<tr>
+				<th id="language"></th>
+				<th id="function">Function</th>
+				<th id="example">Example</th>
+			</tr>
+			<tr>
+				<th id="language">TypeScript</th>
+				<th id="function"><code>toggle();</code></th>
+				<th id="example"><code>function toggle() {...}</code></th>
+			</tr>
+			<tr>
+				<th id="language">Swift</th>
+				<th id="function"><code>toggle();</code></th>
+				<th id="example"><code>func toggle() { return "toggle();" }</code></th>
+			</tr>
+		</table>
+	</div>
+	
+	
+</body>
+</html>
+
+
+
+<script src="custom.js"></script>
+
+<!--
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+	coll[i].addEventListener("click", function() {
+		this.classList.toggle("active");
+		var content = this.nextElementSibling;
+		var tocHeader = document.querySelector("body > div.toc > button > h2");
+		if (content.style.display === "block") {
+			content.style.display = "none";
+			tocHeader.innerHTML = "Table of Contents &nbsp; &#43;";
+		} else {
+			content.style.display = "block";
+			tocHeader.innerHTML = "Table of Contents &nbsp; &#8722;";
+			
+		}
+	});
+}
+
+function clearLabelText() {
+	document.getElementById("LabelTextField").value = "";
+}
+
+function getSum() {
+	var a = document.getElementById("NumberA").value;
+	var b = document.getElementById("NumberB").value;
+	var sum = Number(a) + Number(b);
+	
+	var resultField = document.getElementById("ResultField");
+	resultField.value = String(a) + " + " + String(b) + " = " + String(sum);
+}
+
+</script>
+-->
