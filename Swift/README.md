@@ -2,9 +2,9 @@
 
 The purpose of these demo projects are to showcase the utilization of WKTypeScript to bridge the gap between WebKit, TypeScript and native Swift.
 
-<!--![Light Demo Preview](../assets/swift/WKTSDemo-Light.jpg)
+![Light Demo Preview](../assets/swift/WKTSDemo-Light.jpg)
 
-![Dark Demo Preview](../assets/swift/WKTSDemo-Dark.jpg)-->
+![Dark Demo Preview](../assets/swift/WKTSDemo-Dark.jpg)
 
 Imagine being able to have an Xcode project in which both TypeScript and native Swift work hand-in-hand; all whilst maintaining their own type-safe nature. It goes a little something like this:
 
