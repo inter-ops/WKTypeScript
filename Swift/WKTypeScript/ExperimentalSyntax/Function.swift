@@ -9,7 +9,7 @@ import Foundation
 
 // Swift enums with associated default values
 // https://ilya.puchka.me/swift-enums-with-associated-values-defaults/
-typealias Func = Function
+//typealias Func = Function
 public enum Function {
     
     case toggle

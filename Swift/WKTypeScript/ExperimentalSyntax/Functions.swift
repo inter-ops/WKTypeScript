@@ -9,7 +9,7 @@
 
 import Foundation
 
-typealias TSF = Functions
+//typealias TSF = Functions
 struct Functions {
     
     static var code = ""
