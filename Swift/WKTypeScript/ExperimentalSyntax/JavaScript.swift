@@ -68,6 +68,7 @@ public enum JavaScript {
     */
 }
 
+/*
 extension ViewController {
     func runJSTests() {
         
@@ -85,6 +86,7 @@ extension ViewController {
     }
     
 }
+ */
 
 // webView.index.js(.myFunction)
 // JS.index.myFunction
@@ -124,7 +126,7 @@ struct JSTester {
     
     public enum Builder {
         //public static func setLabel(_ text: String) -> Function { return Function.setLabel(text) }
-        public static func index() -> JSTester { return JSTester.index }
+        //public static func index() -> JSTester { return JSTester.index }
     }
     
     public static var make: JSTester.index.Builder.Type {
@@ -132,6 +134,7 @@ struct JSTester {
     }
 }
 
+/*
 extension WKWebView {
     
     func evaluate(_ js: String) {
@@ -190,3 +193,4 @@ extension WKWebView {
     
     
 }
+ */

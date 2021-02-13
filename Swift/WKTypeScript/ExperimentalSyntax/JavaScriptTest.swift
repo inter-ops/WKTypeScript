@@ -33,7 +33,7 @@ struct IndexTS {
 }
 
 
-
+/*
 extension ViewController {
     func runJS() {
         // MARK: Load JavaScript file
@@ -62,3 +62,4 @@ extension WKWebView {
         evaluate(code)
     }
 }
+*/

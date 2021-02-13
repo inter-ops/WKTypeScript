@@ -46,6 +46,7 @@ public enum Function {
     public static let ts = "index.ts"
 }
 
+/*
 extension ViewController {
     func runTS() {
         webView.ts(.toggle)
@@ -60,7 +61,7 @@ extension ViewController {
         //webView.index.ts(.toggle)
     }
 }
-
+*/
 
 
 

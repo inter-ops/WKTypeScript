@@ -25,18 +25,6 @@ public enum Constants {
         }
     }
     
-    /*
-    enum Vars {
-        case setLabel(_ text: String)
-        
-        var js: String {
-            switch self {
-            case .setLabel(self)
-            }
-        }
-    }
-    */
-    
     public enum Mode {
         case light
         case dark
