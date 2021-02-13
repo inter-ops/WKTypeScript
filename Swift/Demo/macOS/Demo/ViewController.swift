@@ -36,19 +36,16 @@ class ViewController: NSViewController, NSWindowDelegate, WKUIDelegate, WKNaviga
     // MARK: WebKit Config
     /// Initializes the main WKWebView object.
     func initWebView() {
-        webView.uiDelegate = self                           // Set WebView UI Delegate
-        webView.navigationDelegate = self                   // Set WebView Navigation Delegate
+        webView.uiDelegate = self
+        webView.navigationDelegate = self
         webView.configuration.userContentController.add(self, name: "eventListeners")
         webView.load(file: "index", path: "Shared/WebContent")
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        // MARK: TODO Load ts in webView Syntax
-        //webView.ts(load: .index.ts)
-        //webView.load.ts(.index)
-        //webView.load(.index.ts)
-        webView.load(.index)
-        //webView.load()
+        webView.load(.global)       // webView.ts(load: .global)
+        webView.load(.index)        // webView.ts(load: .index)
+        webView.load(.mode)         // webView.ts(load: .mode)
     }
     
     

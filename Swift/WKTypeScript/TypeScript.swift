@@ -31,7 +31,7 @@ extension TypeScript {
         case index          // index.ts
         case mode           // mode.ts
         
-        var rawValue: String {
+        var rawString: String {
             switch self {
             case .global:   return "global"
             case .index:    return "index"

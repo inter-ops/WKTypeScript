@@ -11,11 +11,20 @@ import WebKit
 
 extension WKWebView {
     
+    // UNDER CONSTRUCTION
+    func ts(load: TypeScript.Files) -> String {
+        return WKWebView.get(file: load.rawString, path: WKTSConfig.distDir)// load.rawValue
+    }
+    func load(_ file: TypeScript.Files) {
+        let js = WKWebView.get(file: file.rawString, path: WKTSConfig.distDir)
+        evaluateJavaScript(js)
+    }
+    
+    
     func ts(_ function: Function) {
         evaluateJavaScript(function.js)
         //evaluateJavaScript(function)
     }
-
     /// Executes some void TypeScript function to be executed in a WebKit object.
     /// - Parameters:
     ///     - function: TypeScript function of type `void`
@@ -57,14 +66,8 @@ extension WKWebView {
             ts(function)
         }
     }
-    // UNDER CONSTRUCTION
-    func ts(load: TypeScript.Files) -> String {
-        return WKWebView.get(file: load.rawValue, path: WKTSConfig.distDir)// load.rawValue
-    }
-    func load(_ file: TypeScript.Files) {
-        let js = WKWebView.get(file: file.rawValue, path: WKTSConfig.distDir)
-        evaluateJavaScript(js)
-    }
+    
+    
     /// Returns the generated JavaScript code for a specified JavaScript `file`.
     /// - parameters:
     ///     - file: The name of the JavaScript file you wish to retrieve (file extension is optional)
