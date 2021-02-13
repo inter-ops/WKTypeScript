@@ -3,26 +3,39 @@
 //  Shared
 //  Inter-Ops/WKTypeScript
 //
-//  THIS FILE HAS GENERATED WITH WKTYPESCRIPT.
+//  THIS FILE WAS GENERATED WITH WKTYPESCRIPT.
 //  DO NOT TOUCH THIS FILE.
 //
 
 import Foundation
 
 typealias TS = TypeScript
-
+/// The core controller for everything TypeScript. Load files, call functions and handle function callbacks.
 struct TypeScript {
     
-    let functions = Functions.self
-    let constants = Constants.self
+    static let global = TSGlobal.self       // global.ts
+    static let index = TSIndex.self         // index.ts
+    static let mode = TSMode.self           // mode.ts
+    
+}
+
+
+
+// MARK:- TypeScript References
+// DO NOT GENERATE: UNDER DEVELOPMENT
+extension TypeScript {
     
     // Files in src/ (index.ts = index) camelCase
     enum Files {
-        case index
+        case global         // global.ts
+        case index          // index.ts
+        case mode           // mode.ts
         
         var rawValue: String {
             switch self {
-            case .index: return "index"
+            case .global:   return "global"
+            case .index:    return "index"
+            case .mode:     return "mode"
             }
         }
     }
@@ -44,4 +57,5 @@ struct TypeScript {
             }
         }
     }
+    
 }
