@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C2034B2A25D573FF0092B650 /* JavaScript.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2034B2925D573FF0092B650 /* JavaScript.swift */; };
+		C2034B2D25D59A030092B650 /* JavaScriptTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2034B2C25D59A030092B650 /* JavaScriptTest.swift */; };
 		C25A154B25D366ED00AADF9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25A154A25D366ED00AADF9B /* AppDelegate.swift */; };
 		C25A154D25D366ED00AADF9B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25A154C25D366ED00AADF9B /* ViewController.swift */; };
 		C25A154F25D366EE00AADF9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C25A154E25D366EE00AADF9B /* Assets.xcassets */; };
@@ -30,9 +32,12 @@
 		C2A7C9A125D38B0A0044A552 /* Shared in Resources */ = {isa = PBXBuildFile; fileRef = C2A7C9A025D38B0A0044A552 /* Shared */; };
 		C2A7C9D725D428D70044A552 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A7C9D625D428D70044A552 /* Settings.swift */; };
 		C2A7C9DB25D4454B0044A552 /* ElementTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A7C9DA25D4454B0044A552 /* ElementTitle.swift */; };
+		C2BF4C9225D4AE9F0043753F /* Function.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BF4C9125D4AE9F0043753F /* Function.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C2034B2925D573FF0092B650 /* JavaScript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JavaScript.swift; sourceTree = "<group>"; };
+		C2034B2C25D59A030092B650 /* JavaScriptTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JavaScriptTest.swift; sourceTree = "<group>"; };
 		C25A154725D366ED00AADF9B /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C25A154A25D366ED00AADF9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C25A154C25D366ED00AADF9B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +64,7 @@
 		C2A7C9A025D38B0A0044A552 /* Shared */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Shared; path = ../../Shared; sourceTree = "<group>"; };
 		C2A7C9D625D428D70044A552 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		C2A7C9DA25D4454B0044A552 /* ElementTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementTitle.swift; sourceTree = "<group>"; };
+		C2BF4C9125D4AE9F0043753F /* Function.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Function.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,7 +129,10 @@
 		C2A7C98225D381100044A552 /* WKTypeScript */ = {
 			isa = PBXGroup;
 			children = (
+				C2034B2925D573FF0092B650 /* JavaScript.swift */,
+				C2034B2C25D59A030092B650 /* JavaScriptTest.swift */,
 				C2A7C98A25D381100044A552 /* TypeScript.swift */,
+				C2BF4C9125D4AE9F0043753F /* Function.swift */,
 				C2A7C98425D381100044A552 /* Functions.swift */,
 				C2A7C98325D381100044A552 /* Constants.swift */,
 				C2A7C98525D381100044A552 /* Builder.swift */,
@@ -226,9 +235,12 @@
 			files = (
 				C25A158725D378FE00AADF9B /* ElementList.swift in Sources */,
 				C2A7C99125D381100044A552 /* TypeScript.swift in Sources */,
+				C2034B2D25D59A030092B650 /* JavaScriptTest.swift in Sources */,
 				C25A158925D378FE00AADF9B /* ElementHeader.swift in Sources */,
 				C25A155F25D3693A00AADF9B /* Notifications.swift in Sources */,
 				C2A7C98D25D381100044A552 /* Builder.swift in Sources */,
+				C2BF4C9225D4AE9F0043753F /* Function.swift in Sources */,
+				C2034B2A25D573FF0092B650 /* JavaScript.swift in Sources */,
 				C2A7C9DB25D4454B0044A552 /* ElementTitle.swift in Sources */,
 				C2A7C98C25D381100044A552 /* Functions.swift in Sources */,
 				C2A7C9D725D428D70044A552 /* Settings.swift in Sources */,

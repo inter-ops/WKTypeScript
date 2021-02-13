@@ -9,9 +9,9 @@
 
 import Foundation
 
-struct Constants {
+public enum Constants {
     
-    enum Device {
+    public enum Device {
         case phone
         case pad
         case mac
@@ -25,7 +25,19 @@ struct Constants {
         }
     }
     
-    enum Mode {
+    /*
+    enum Vars {
+        case setLabel(_ text: String)
+        
+        var js: String {
+            switch self {
+            case .setLabel(self)
+            }
+        }
+    }
+    */
+    
+    public enum Mode {
         case light
         case dark
         

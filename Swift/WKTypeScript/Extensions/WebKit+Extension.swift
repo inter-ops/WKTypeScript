@@ -10,6 +10,12 @@ import Foundation
 import WebKit
 
 extension WKWebView {
+    
+    func ts(_ function: Function) {
+        evaluateJavaScript(function.js)
+        //evaluateJavaScript(function)
+    }
+
     /// Executes some void TypeScript function to be executed in a WebKit object.
     /// - Parameters:
     ///     - function: TypeScript function of type `void`
@@ -33,6 +39,7 @@ extension WKWebView {
     ///     webView.ts(.toggle)  // toggle();
     ///     webView.ts(.setTrue) // setTrue();
     func ts(_ function: Functions.Void, console: Bool) { ts(function.ts, console: console) }
+    
     /// Executes some void TypeScript function to be executed in a WebKit object.
     /// - Parameters:
     ///     - function: TypeScript function of type `void`

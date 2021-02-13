@@ -19,10 +19,6 @@ class ViewController: NSViewController, NSWindowDelegate, WKUIDelegate, WKNaviga
         clearCache()        // Clear WKCache
         initWebView()       // Initialize WebView
         addObservers()      // Add Observers
-        
-        //initWindowSize(width: 1045, height: 780)
-        
-        //WindowHelper.positionWindowAtCenter(sender: self.view.window)
     }
     
     override func viewWillAppear() {
@@ -47,7 +43,12 @@ class ViewController: NSViewController, NSWindowDelegate, WKUIDelegate, WKNaviga
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        // MARK: TODO Load ts in webView Syntax
+        //webView.ts(load: .index.ts)
+        //webView.load.ts(.index)
+        //webView.load(.index.ts)
         webView.load(.index)
+        //webView.load()
     }
     
     

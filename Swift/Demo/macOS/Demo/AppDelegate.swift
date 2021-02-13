@@ -35,14 +35,5 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if !flag { for window in sender.windows { window.makeKeyAndOrderFront(self) }}
         return true
     }
-    
-    /*
-    #warning("Temporarily disable noisy layout constraint warnings; these should still be fixed though!")
-    private func silenceLayoutConstraintWarnings() {
-        // Disable NSLayoutConstraints warnings to clean up debug console.
-        // TODO: We need to fix these, but right now these are cluttering up the debug console.
-        UserDefaults.standard.setValue(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
-    }
-    */
 
 }
