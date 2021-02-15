@@ -16,9 +16,9 @@ class ViewController: NSViewController, NSWindowDelegate, WKUIDelegate, WKNaviga
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        clearCache()        // Clear WKCache
-        initWebView()       // Initialize WebView
-        addObservers()      // Add Observers
+        clearCache()            // Clear WKCache
+        initWebView()           // Initialize WebView
+        addObservers()          // Add Observers
     }
     
     override func viewWillAppear() {
