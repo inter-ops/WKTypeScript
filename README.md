@@ -50,8 +50,8 @@ function new(
 </td></tr></table>
 
 <table><tr>
-  <th>User.ts</th>
-  <th>User.swift</th>
+  <th>Call in TypeScript</th>
+  <th>Call in Swift</th>
 </tr>
 <tr><td>
             
@@ -62,7 +62,7 @@ function new(
 toggle()
 setLabel("Hello, world!")
 addNumbers(5, 10)
-get("John")
+get("John", true)
 ```
         
 </td><td>
@@ -95,7 +95,7 @@ npm install
 `npm run build` will parse the TypeScript files in `src/` and generate `Swift/WKTypeScript`. This directory contains a native Swift implementation of all your delcared TypeScript functions, constants and variables. 
 
 ```
-npm run build`
+npm run build
 ```
 
 It was also transpile the TypeScript files into JavaScript files, with default output directory: `dist/`. If you decide to change this, make sure to also change `WKTSConfig.swift`:
