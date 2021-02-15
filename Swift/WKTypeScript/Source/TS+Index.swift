@@ -22,6 +22,24 @@ struct TSIndex {
         static func addNumbers(_ a: Double, _ b: Double) -> String { return "addNumbers(\(a), \(b));" }
         static func selectDevice(_ device: Constants.Device) -> String { return "selectDevice(\(device.rawString));" }
         
+        enum Name {
+            case toggle
+            case setLabel(_ text: String)
+            case hideObjects(_ hidden: Bool = false)
+            case addNumbers(_ a: Double, _ b: Double)
+            case selectDevice(_ device: Constants.Device)
+            
+            var js: String {
+                switch self {
+                case .toggle: return Functions.toggle()
+                case .setLabel(let text): return Functions.setLabel(text)
+                case .hideObjects(let hidden): return Functions.hideObject(hidden)
+                case .addNumbers(let a, let b): return Functions.addNumbers(a, b)
+                case .selectDevice(let device): return Functions.selectDevice(device)
+                }
+            }
+        }
+        
     }
     
     // MARK: Constants: index.ts

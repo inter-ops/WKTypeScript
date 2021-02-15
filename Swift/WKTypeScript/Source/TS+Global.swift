@@ -22,5 +22,15 @@ struct TSGlobal {
         /// - returns: A message, of type `String`, to be printed in the Xcode console, ie. "[WKTS] toggle() success"
         static func postMessage(_ msg: String) -> String { return "postMessage(\(msg));" }
         
+        enum Name {
+            case postMessage(_ msg: String)
+            
+            var js: String {
+                switch self {
+                case .postMessage(let msg): return Functions.postMessage(msg)
+                }
+            }
+        }
+        
     }
 }

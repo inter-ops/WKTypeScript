@@ -13,11 +13,20 @@ import Foundation
 
 struct TSMode {
     
-    
     // MARK: Functions: mode.ts
     struct Functions {
         
         static func setMode(_ mode: Constants.Mode) -> String { return "setMode(\(mode.rawString));" }
+        
+        enum Name {
+            case setMode(_ mode: Constants.Mode)
+            
+            var js: String {
+                switch self {
+                case .setMode(let mode): return Functions.setMode(mode)
+                }
+            }
+        }
         
     }
     
