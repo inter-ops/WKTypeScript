@@ -36,6 +36,7 @@
 		C2A7C9D725D428D70044A552 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A7C9D625D428D70044A552 /* Settings.swift */; };
 		C2A7C9DB25D4454B0044A552 /* ElementTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A7C9DA25D4454B0044A552 /* ElementTitle.swift */; };
 		C2BF4C9225D4AE9F0043753F /* Function.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BF4C9125D4AE9F0043753F /* Function.swift */; };
+		C2F187E525DB14AC00876BE2 /* WKTSExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F187E425DB14AC00876BE2 /* WKTSExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +72,7 @@
 		C2A7C9D625D428D70044A552 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		C2A7C9DA25D4454B0044A552 /* ElementTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementTitle.swift; sourceTree = "<group>"; };
 		C2BF4C9125D4AE9F0043753F /* Function.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Function.swift; sourceTree = "<group>"; };
+		C2F187E425DB14AC00876BE2 /* WKTSExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKTSExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 				C2034B3B25D826C50092B650 /* TS+Global.swift */,
 				C2034B3725D826AD0092B650 /* TS+Index.swift */,
 				C2034B3E25D826CD0092B650 /* TS+Mode.swift */,
+				C2F187E425DB14AC00876BE2 /* WKTSExtensions.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 				C2BF4C9225D4AE9F0043753F /* Function.swift in Sources */,
 				C2034B2A25D573FF0092B650 /* JavaScript.swift in Sources */,
 				C2A7C9DB25D4454B0044A552 /* ElementTitle.swift in Sources */,
+				C2F187E525DB14AC00876BE2 /* WKTSExtensions.swift in Sources */,
 				C2A7C98C25D381100044A552 /* Functions.swift in Sources */,
 				C2A7C9D725D428D70044A552 /* Settings.swift in Sources */,
 				C2A7C98E25D381100044A552 /* URL+Extension.swift in Sources */,
