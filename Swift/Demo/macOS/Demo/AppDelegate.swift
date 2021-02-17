@@ -8,22 +8,14 @@
 
 import Cocoa
 
-/// Enables debug functions and console logs when `true`
-let debug = true
-
 @main
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     var mainWindow: NSWindow!
-    @IBOutlet var debugMenu: NSMenuItem!
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         mainWindow = NSApplication.shared.windows[0]
         NSApp.activate(ignoringOtherApps: true)
-        debugMenu.isHidden = !debug
-        
-        //silenceLayoutConstraintWarnings()
-        //print(UserDefaults.standard.dictionaryRepresentation())
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
@@ -36,4 +28,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         return true
     }
 
+
 }
+
