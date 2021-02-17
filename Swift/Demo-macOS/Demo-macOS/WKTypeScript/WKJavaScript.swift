@@ -7,33 +7,14 @@
 
 import Foundation
 
-//typealias JS = WKJavaScript
-//struct WKJavaScript
-
 extension WKTypeScript {
     
+    /// **JavaScript Utility Functions:** Helper functions to format the JavScript code before execution.
     struct JS {
-        // "anchorDelay"
         static func toString(_ variable: String) -> String {
+            // TODO: add postMessage callback
             return "\(variable).toString();"
         }
-    }
-    
-    struct Utility {
-        
-        // index.anchorDelay.js = "anchorDelay.toString();"
-        // anchorDelay
-        static func toString(_ code: String) -> String {
-            return ""
-        }
-        
-        // Utility.builder(.
-        /*
-        static func builder(_ function: String, args: String) -> String {
-            
-        }
-        */
-        
     }
     
 }

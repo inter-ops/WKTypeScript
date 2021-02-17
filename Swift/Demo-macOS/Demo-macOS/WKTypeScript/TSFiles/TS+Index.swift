@@ -29,25 +29,16 @@ extension WKTypeScript {
             case .setLabel(let text): return "setLabel(\"\(text)\");"
             case .hideObjects(let hidden): return "hideObject(\(hidden));"
             case .addNumbers(let a, let b): return "addNumbers(\(a), \(b));"
-            case .selectDevice(let device): return "selectDevice(\(device.rawString));"
+            case .selectDevice(let device): return "selectDevice(\(device.rawValue));"
             }
         }
         
         
         // MARK:- enums
-        
-        enum Device {
-            case phone
-            case pad
-            case mac
-            
-            var rawString: String {
-                switch self {
-                case .phone:    return "Device.Phone"
-                case .pad:      return "Device.Pad"
-                case .mac:      return "Device.Mac"
-                }
-            }
+        enum Device: String {
+            case phone = "iOS"
+            case pad = "iPadOS"
+            case mac = "macOS"
         }
         
     }

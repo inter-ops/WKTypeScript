@@ -20,18 +20,18 @@ class ViewController: NSViewController {
     func runTests() {
         //Autocomplete Appears: TypeScript.index(TSIndex)
         //print(TypeScript.index(.myFunc(true)))
-        TypeScript.index.staticFunc()
+        //TypeScript.index.staticFunc()
         
         // Load file
         webView.load(.index)
         webView.ts(load: .index)
         
         // Call function
-        webView.ts(.index(.anotherFunc(true)))
-        webView.index(.anotherFunc(true))
+        //webView.ts(.index(.anotherFunc(true)))
+        //webView.index(.anotherFunc(true))
         
         // Get variable
-        webView.index(.variable)
+        //webView.index(.variable)
         
         webView.async {
             print("Hello, world!")
