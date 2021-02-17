@@ -2,6 +2,9 @@
  * FUNCTIONS
  * WKTS extracts the functions and parameters from these and generates the Functions.swift file.
  */
+const anchorDelay = 500;
+const actionDelay = 400;
+
 async function toggle() {
   goTo(Anchor.Toggle);
   await new Promise((r) => setTimeout(r, anchorDelay));
@@ -99,7 +102,3 @@ enum Anchor {
 function goTo(anchor: Anchor) {
   location.hash = anchor.toString();
 }
-/* @ignore start */
-const anchorDelay = 500;
-const actionDelay = 400;
-/* @ignore end */

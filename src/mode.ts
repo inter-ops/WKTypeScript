@@ -7,7 +7,7 @@ enum Mode {
 /* @ignore this variable */
 let currentMode = Mode.Light;
 
-/* DONT @ignore this function */
+/* DONT @i_gnore this function */
 async function setMode(mode = Mode.Light) {
   const printMode = currentMode;
   if (mode !== currentMode) {
