@@ -10,23 +10,20 @@
 
 import Foundation
 
-extension WKTypeScript {
-    typealias mode = TSMode
+extension TypeScript {
     /// `mode.ts:` functions and variables
-    enum TSMode {
+    enum mode {
         // MARK: Variables
         case currentMode
         // MARK: Functions
         case setMode(_ mode: Mode)
-        
         /// Raw JavaScript-generated code to `evaluate` in some WKWebView.
         var js: String {
             switch self {
-            case .currentMode: return JS.toString("currentMode")        //"currentMode.toString();"
+            case .currentMode: return TSUtility.toString("currentMode")        //"currentMode.toString();"
             case .setMode(let io): return "setMode(\(io.rawValue));"    //"setMode(\(io));"
             }
         }
-        
         // MARK: enums and related types
         /// `enum Mode` declared in `mode.ts`
         enum Mode: String {

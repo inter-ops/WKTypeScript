@@ -10,19 +10,16 @@
 
 import Foundation
 
-extension WKTypeScript {
-    typealias global = TSGlobal
+extension TypeScript {
     /// `global.ts:` functions and variables
-    enum TSGlobal {
+    enum global {
         // MARK: Functions
         case postMessage(_ msg: String)
-        
         /// Raw JavaScript-generated code to `evaluate` in some WKWebView.
         var js: String {
             switch self {
             case .postMessage(let io): return "postMessage(\"\(io)\");"
             }
         }
-        
     }
 }

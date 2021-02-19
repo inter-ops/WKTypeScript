@@ -11,6 +11,11 @@ import Foundation
 
 /// **Core WKTypeScript Controller:** All things TypeScript go thorugh this structure.
 struct WKTypeScript {
+    
+    typealias file = WKTypeScript.File
+    typealias body = WKTypeScript.Body // Body // Function
+    typealias function = WKTypeScript.Function
+    
     /// The type-safe Swift code equivalent of the parsed and generated TypeScript files. ie. `index.ts` → `index`
     enum File: String {
         /// `global.ts`
@@ -19,6 +24,24 @@ struct WKTypeScript {
         case index = "index"
         /// `mode.ts`
         case mode = "mode"
+    }
+    
+    enum Body {
+        /// `global.ts`
+        case global(global)
+        /// `index.ts`
+        case index(index)
+        /// `mode.ts`
+        case mode(mode)
+        
+        /// The executable JavaScript code, transpiled from TypeScript, to be evaluated in some WKWebView object.
+        var js: String {
+            switch self {
+            case .global(let io): return io.js
+            case .index(let io): return io.js
+            case .mode(let io): return io.js
+            }
+        }
     }
     
     enum Function {

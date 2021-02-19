@@ -9,10 +9,10 @@
 //
 
 import Foundation
-extension WKTypeScript {
-    typealias index = TSIndex
+
+extension TypeScript {
     /// `index.ts:` functions and variables
-    enum TSIndex {
+    enum index {
         // MARK: Variables
         case anchorDelay
         case actionDelay
@@ -22,12 +22,11 @@ extension WKTypeScript {
         case hideObjects(_ hidden: Bool = false)
         case addNumbers(_ a: Double, _ b: Double)
         case selectDevice(_ device: Device)
-        
         /// Raw JavaScript-generated code to `evaluate` in some WKWebView.
         var js: String {
             switch self {
-            case .anchorDelay: return JS.toString("anchorDelay") //"anchorDelay.toString();"
-            case .actionDelay: return JS.toString("actionDelay") //"actionDelay.toString();"
+            case .anchorDelay: return TSUtility.toString("anchorDelay")
+            case .actionDelay: return TSUtility.toString("actionDelay")
             case .toggle: return "toggle();"
             case .setLabel(let text): return "setLabel(\"\(text)\");"
             case .hideObjects(let hidden): return "hideObject(\(hidden));"
@@ -36,13 +35,11 @@ extension WKTypeScript {
             }
         }
         
-        
         // MARK:- enums
         enum Device: String {
             case phone = "iOS"
             case pad = "iPadOS"
             case mac = "macOS"
         }
-        
     }
 }

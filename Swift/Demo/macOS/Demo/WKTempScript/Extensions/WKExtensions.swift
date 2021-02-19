@@ -1,33 +1,28 @@
 //
 //  WKExtensions.swift
-//  Shared
-//  Inter-Ops/WKTypeScript
+//  Demo
 //
-//  Created by Justin Bush on 2021-02-05.
+//  Created by Justin Bush on 2021-02-19.
 //
 
 import Foundation
 import WebKit
 
-// MARK: WKTypeScript Functions
 
 extension WKWebView {
-    
     // MARK:- Load File
-    
     /// Load the generated JavaScript code, of the input TypeScript file, to be evaluated in some WKWebView object.
     /// - parameters:
     ///     - load: The Swift-generated name of the specified TypeScript file
     /// # Usage
     ///     webView.ts(load: .index)
-    func ts(load: WKTypeScript.File) { evaluateTypeScript(file: load) }
+    func ts(load: TypeScript.File) { evaluateTypeScript(file: load) }
     /// Load the generated JavaScript code, of the input TypeScript file, to be evaluated in some WKWebView object.
     /// - parameters:
     ///     - file: The Swift-generated name of the specified TypeScript file
     /// # Usage
     ///     webView.load(.index)
-    func load(_ file: WKTypeScript.File) { evaluateTypeScript(file: file) }
-    
+    func load(_ file: TypeScript.File) { evaluateTypeScript(file: file) }
     // MARK:- TypeScript Calls
     
     /// Make calls to your TypeScript functions and variables to be evaluated in some WKWebView object.
@@ -36,14 +31,14 @@ extension WKWebView {
     /// # Usage
     ///     webView.ts(.index(.variable))
     ///     webView.ts(.index(.function())
-    func ts(_ function: WKTypeScript.Function) { js(function.js) }
+    //func ts(_ script: TypeScript.Body) { js(script.js) }
     /// Make calls to your TypeScript functions (or variables) to be evaluated in some WKWebView object.
     /// - parameters:
     ///     - function: The Swift-generated function or variable
     /// # Usage
     ///     webView.function(.index(.variable))
     ///     webView.function(.index(.function())
-    func function(_ function: WKTypeScript.Function) { js(function.js) }
+    func function(_ script: TypeScript.Body) { js(script.js) }
     
     // MARK:- Controller Functions
     /// Evalutes raw JavaScript code in a `WKWebView` object
@@ -55,7 +50,9 @@ extension WKWebView {
     func js(_ script: String) {
         evaluateJavaScript(script)
     }
-    func evaluateTypeScript(file: WKTypeScript.File) {
+
+    
+    func evaluateTypeScript(file: TypeScript.File) {
         evaluateJavaScript(getScriptString(file: file))
     }
     /// Returns the raw JavaScript generated-code, as a `String`, from the TypeScript `file`.
@@ -66,8 +63,8 @@ extension WKWebView {
     ///     let code = getScriptString(file: .index)
     ///     webView.js(code) // or
     ///     webView.evaluateTypeScript(code)
-    func getScriptString(file: WKTypeScript.File) -> String {
-        return getScriptString(file: file.rawValue, path: WKTypeScript.Config.dir)
+    func getScriptString(file: TypeScript.File) -> String {
+        return getScriptString(file: file.rawValue, path: TSConfig.dir)
     }
     /// Returns the raw JavaScript generated-code, as a `String`, from the specified JavaScript `file`.
     /// - parameters:
@@ -79,7 +76,7 @@ extension WKWebView {
     ///     webView.js(code) // or
     ///     webView.evaluateJavaScript(code)
     func getScriptString(file: String, path: String) -> String {
-        let fileName = WKTypeScript.JS.removeExtension(file)
+        let fileName = TSUtility.removeExtension(file)
         if let filePath = Bundle.main.path(forResource: "\(path)\(fileName)", ofType: "js") {
             do {
                 let contents = try String(contentsOfFile: filePath)
@@ -92,6 +89,7 @@ extension WKWebView {
         }
         return "Error"
     }
+
 }
 
 
@@ -115,3 +113,68 @@ func ts(_ function script: String, completion: (result: AnyObject?, error: NSErr
     }
 }
 */
+
+
+// https://gist.github.com/ahmedk92/f279a49fa2a8d7b3b887f433e42cb612
+extension WKWebView {
+    enum EvaluateJavaScriptError: String, Error {
+        case typeMismatchError
+    }
+    
+    func evaluateCallback(_ javaScriptString: String, completionHandler: ((Result<String, Error>) -> Void)? = nil) {
+        evaluateJavaScript(javaScriptString) { (result, error) in
+            guard let result = result else {
+                completionHandler?(.failure(error!))
+                return
+            }
+            
+            completionHandler?(.success(String(format: "%@", result as! NSObject)))
+        }
+    }
+    
+    func evaluateCallback<T>(_ javaScriptString: String, completionHandler: ((Result<T, Error>) -> Void)? = nil) {
+        evaluateJavaScript(javaScriptString) { (result, error) in
+            guard let result = result else {
+                completionHandler?(.failure(error!))
+                return
+            }
+            
+            if let result = result as? T {
+                completionHandler?(.success(result))
+            } else {
+                completionHandler?(.failure(EvaluateJavaScriptError.typeMismatchError))
+            }
+        }
+    }
+    
+    func ts(index: TypeScript.index, completionHandler: ((Result<String, Error>) -> Void)? = nil) {
+        evaluateCallback(index.js, completionHandler: completionHandler)
+    }
+    
+    /*
+    func ts(_ script: TypeScript.Body, completionHandler: ((Result<String, Error>) -> Void)? = nil) {
+        evaluateJavaScript(script.js) { (result, error) in
+            guard let result = result else {
+                completionHandler?(.failure(error!))
+                return
+            }
+            
+            completionHandler?(.success(String(format: "%@", result as! NSObject)))
+        }
+    }
+    func ts<T>(_ script: TypeScript.Body, completionHandler: ((Result<T, Error>) -> Void)? = nil) {
+        evaluateJavaScript(script.js) { (result, error) in
+            guard let result = result else {
+                completionHandler?(.failure(error!))
+                return
+            }
+            
+            if let result = result as? T {
+                completionHandler?(.success(result))
+            } else {
+                completionHandler?(.failure(EvaluateJavaScriptError.typeMismatchError))
+            }
+        }
+    }
+    */
+}
