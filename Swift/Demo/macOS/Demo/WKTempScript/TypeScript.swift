@@ -42,5 +42,15 @@ struct TypeScript {
         }
     }
     
-    
 }
+
+// TODO: All functions pass through here before being output as a String
+struct TSFunction {
+    static func builder(_ script: String) -> String {
+        return script
+    }
+}
+
+//struct TSManager {
+//    static func call
+//}
