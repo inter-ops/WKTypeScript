@@ -20,8 +20,8 @@ extension TypeScript {
         /// Raw JavaScript-generated code to `evaluate` in some WKWebView.
         var js: String {
             switch self {
-            case .currentMode: return TSUtility.toString("currentMode")
-            case .setMode(let io): return TSFunction.builder("setMode(\(io.js))")
+            case .currentMode: return JS.variable("currentMode")
+            case .setMode(let io): return JS.function("setMode(\(io.js))")
             }
         }
         // MARK: enums and related types

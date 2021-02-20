@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C25310FC25E178B000D1CFDB /* JavaScript.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25310FB25E178B000D1CFDB /* JavaScript.swift */; };
 		C282EB3925DD9A2A00FF8407 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C282EB3825DD9A2A00FF8407 /* WindowController.swift */; };
 		C282EB3C25DD9A3D00FF8407 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = C282EB3B25DD9A3D00FF8407 /* Notifications.swift */; };
 		C2914E5B25DD7F2500999D5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2914E5A25DD7F2500999D5B /* AppDelegate.swift */; };
@@ -34,6 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C25310FB25E178B000D1CFDB /* JavaScript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JavaScript.swift; sourceTree = "<group>"; };
 		C282EB3825DD9A2A00FF8407 /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
 		C282EB3B25DD9A3D00FF8407 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		C2914E5725DD7F2500999D5B /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -163,6 +165,7 @@
 			children = (
 				C2B7AA5425E15B1A006258ED /* TSFunction.swift */,
 				C2B7AA5325E15B1A006258ED /* TSUtility.swift */,
+				C25310FB25E178B000D1CFDB /* JavaScript.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 				C2B7AA8125E167E4006258ED /* ElementListHostingController.swift in Sources */,
 				C2B7AA5825E15B1A006258ED /* TypeScript.swift in Sources */,
 				C2B7AA8425E167E4006258ED /* ElementList.swift in Sources */,
+				C25310FC25E178B000D1CFDB /* JavaScript.swift in Sources */,
 				C2914E5D25DD7F2500999D5B /* ViewController.swift in Sources */,
 				C282EB3C25DD9A3D00FF8407 /* Notifications.swift in Sources */,
 				C282EB3925DD9A2A00FF8407 /* WindowController.swift in Sources */,

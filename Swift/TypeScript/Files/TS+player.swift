@@ -23,12 +23,12 @@ extension TypeScript {
         /// Raw JavaScript-generated code to `evaluate` in some WKWebView.
         var js: String {
             switch self {
-            case .title: return TSUtility.toString("title")
-            case .pause: return TSFunction.builder("pause()")
-            case .isPlaying: return TSFunction.builder("isPlaying()")
-            case .getTitle: return TSFunction.builder("getTitle()")
-            case .getDuration: return TSFunction.builder("getDuration()")
-            case .addAlbums(let io): return TSFunction.builder("addAlbums(\(io))")
+            case .title: return JS.variable("title")
+            case .pause: return JS.function("pause()")
+            case .isPlaying: return JS.function("isPlaying()")
+            case .getTitle: return JS.function("getTitle()")
+            case .getDuration: return JS.function("getDuration()")
+            case .addAlbums(let io): return JS.function("addAlbums(\(io))")
             }
         }
     }

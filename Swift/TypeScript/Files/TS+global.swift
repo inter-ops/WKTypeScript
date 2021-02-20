@@ -18,7 +18,7 @@ extension TypeScript {
         /// Raw JavaScript-generated code to `evaluate` in some WKWebView.
         var js: String {
             switch self {
-            case .postMessage(let io): return TSFunction.builder("postMessage(\"\(io)\")")
+            case .postMessage(let io): return JS.function("postMessage(\"\(io)\")")
             }
         }
     }

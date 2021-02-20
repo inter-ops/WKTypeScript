@@ -25,13 +25,13 @@ extension TypeScript {
         /// Raw JavaScript-generated code to `evaluate` in some WKWebView.
         var js: String {
             switch self {
-            case .anchorDelay: return TSUtility.toString("anchorDelay")
-            case .actionDelay: return TSUtility.toString("actionDelay")
-            case .toggle: return TSFunction.builder("toggle()")
-            case .setLabel(let text): return TSFunction.builder("setLabel(\"\(text)\")")
-            case .hideObject(let hidden): return TSFunction.builder("hideObject(\(hidden))")
-            case .addNumbers(let a, let b): return TSFunction.builder("addNumbers(\(a), \(b))")
-            case .selectDevice(let device): return TSFunction.builder("selectDevice(\(device.js))")
+            case .anchorDelay: return JS.variable("anchorDelay")
+            case .actionDelay: return JS.variable("actionDelay")
+            case .toggle: return JS.function("toggle()")
+            case .setLabel(let text): return JS.function("setLabel(\"\(text)\")")
+            case .hideObject(let hidden): return JS.function("hideObject(\(hidden))")
+            case .addNumbers(let a, let b): return JS.function("addNumbers(\(a), \(b))")
+            case .selectDevice(let device): return JS.function("selectDevice(\(device.js))")
             }
         }
         

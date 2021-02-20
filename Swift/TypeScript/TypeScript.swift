@@ -44,8 +44,4 @@ struct TypeScript {
         }
     }
     
-    static func builder(_ script: String) -> String {
-        return script
-    }
-    
 }
