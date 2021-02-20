@@ -23,10 +23,10 @@ extension TypeScript {
         var js: String {
             switch self {
             case .title: return TSUtility.toString("title")
-            case .pause: return "pause();"
-            case .isPlaying: return "isPlaying();"
-            case .getTitle: return "getTitle();"
-            case .getDuration: return "getDuration();"
+            case .pause: return TSFunction.builder("pause();")
+            case .isPlaying: return TSFunction.builder("isPlaying();")
+            case .getTitle: return TSFunction.builder("getTitle();")
+            case .getDuration: return TSFunction.builder("getDuration();")
             }
         }
     }

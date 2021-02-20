@@ -10,9 +10,6 @@ import Foundation
 // typealias TS = TypeScript
 /// **Core WKTypeScript Controller:** All things TypeScript go thorugh this structure.
 struct TypeScript {
-
-    //typealias file = File
-    //typealias body = Body
     
     /// The type-safe Swift code equivalent of the parsed and generated TypeScript files. ie. `index.ts` → `index`
     enum File: String {
@@ -42,15 +39,8 @@ struct TypeScript {
         }
     }
     
-}
-
-// TODO: All functions pass through here before being output as a String
-struct TSFunction {
     static func builder(_ script: String) -> String {
         return script
     }
+    
 }
-
-//struct TSManager {
-//    static func call
-//}

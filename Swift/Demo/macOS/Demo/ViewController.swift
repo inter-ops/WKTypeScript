@@ -23,34 +23,33 @@ class ViewController: NSViewController, NSWindowDelegate, WKUIDelegate, WKNaviga
         
         webView.ts(index: .toggle())
         
+        
+        /*
         webView.ts(index: .addNumbers(1, 2), completionHandler: { (result) in
             switch result {
                     case .failure(let error): print(error)
                     case .success(let value): print(value, type(of: value)) // 3 String
                 }
         })
+        */
         
-        webView.ts(index: ., completionHandler: <#T##((Result<String, Error>) -> Void)?##((Result<String, Error>) -> Void)?##(Result<String, Error>) -> Void#>)
+        
+        
+        //webView.ts(index: ., completionHandler: <#T##((Result<String, Error>) -> Void)?##((Result<String, Error>) -> Void)?##(Result<String, Error>) -> Void#>)
         
         // Completion Handlers
-        webView.ts(.index(.toggle())) { (result) in
-            switch result {
-                case .failure(let error): print(error)
-                case .success(let value): print(value, type(of: value)) // 3 String
-            }
-        }
+//        webView.ts(.index(.toggle())) { (result) in
+//            switch result {
+//                case .failure(let error): print(error)
+//                case .success(let value): print(value, type(of: value)) // 3 String
+//            }
+//        }
         
         //webView.ts(index: .addNumbers(1, 2))
         
         //webView.ts(.index(.toggle()))
 
-        
-        //WKTS.index.hideObjects(true)
-        //webView.ts(index: .toggle())
-        
-        // webview.ts(index: .toggle()) { (object) in
-        //     
-        // }
+        //webView.ts
 
     }
     

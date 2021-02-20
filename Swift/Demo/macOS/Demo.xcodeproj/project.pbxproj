@@ -21,6 +21,7 @@
 		C282EB3125DD8FB700FF8407 /* WK+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = C282EB3025DD8FB700FF8407 /* WK+Generated.swift */; };
 		C282EB3925DD9A2A00FF8407 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C282EB3825DD9A2A00FF8407 /* WindowController.swift */; };
 		C282EB3C25DD9A3D00FF8407 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = C282EB3B25DD9A3D00FF8407 /* Notifications.swift */; };
+		C284BFB725E14BB700998FA9 /* TSFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = C284BFB625E14BB700998FA9 /* TSFunction.swift */; };
 		C28878A725E072470092369C /* WKGenerated.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28878A625E072470092369C /* WKGenerated.swift */; };
 		C2914E5B25DD7F2500999D5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2914E5A25DD7F2500999D5B /* AppDelegate.swift */; };
 		C2914E5D25DD7F2500999D5B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2914E5C25DD7F2500999D5B /* ViewController.swift */; };
@@ -51,6 +52,7 @@
 		C282EB3025DD8FB700FF8407 /* WK+Generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WK+Generated.swift"; sourceTree = "<group>"; };
 		C282EB3825DD9A2A00FF8407 /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
 		C282EB3B25DD9A3D00FF8407 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		C284BFB625E14BB700998FA9 /* TSFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSFunction.swift; sourceTree = "<group>"; };
 		C28878A625E072470092369C /* WKGenerated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKGenerated.swift; sourceTree = "<group>"; };
 		C2914E5725DD7F2500999D5B /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2914E5A25DD7F2500999D5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -80,16 +82,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C25A5F8B25E0545000F239B6 /* WKTempScript */ = {
+		C25A5F8B25E0545000F239B6 /* TypeScript */ = {
 			isa = PBXGroup;
 			children = (
-				C25A5F9E25E0576C00F239B6 /* TypeScript.swift */,
 				C2A733F425E064C9003579F8 /* Configuration */,
 				C25A5FBB25E061B000F239B6 /* Extensions */,
-				C25A5FA725E0590F00F239B6 /* Helpers */,
 				C25A5F8C25E0545F00F239B6 /* Files */,
+				C25A5FA725E0590F00F239B6 /* Helpers */,
+				C25A5F9E25E0576C00F239B6 /* TypeScript.swift */,
 			);
-			path = WKTempScript;
+			path = TypeScript;
 			sourceTree = "<group>";
 		};
 		C25A5F8C25E0545F00F239B6 /* Files */ = {
@@ -132,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				C25A5FA825E0599800F239B6 /* TSUtility.swift */,
+				C284BFB625E14BB700998FA9 /* TSFunction.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -193,7 +196,7 @@
 				C25A5F8825E00B2F00F239B6 /* JSConsoleTests.swift */,
 				C282EB3825DD9A2A00FF8407 /* WindowController.swift */,
 				C282EB3B25DD9A3D00FF8407 /* Notifications.swift */,
-				C25A5F8B25E0545000F239B6 /* WKTempScript */,
+				C25A5F8B25E0545000F239B6 /* TypeScript */,
 				C2914E6C25DD800300999D5B /* WKTypeScript */,
 				C2914E5E25DD7F2500999D5B /* Assets.xcassets */,
 				C2914E6025DD7F2500999D5B /* Main.storyboard */,
@@ -338,6 +341,7 @@
 				C25A5F9625E054DD00F239B6 /* TS+mode.swift in Sources */,
 				C282EB3C25DD9A3D00FF8407 /* Notifications.swift in Sources */,
 				C282EB3925DD9A2A00FF8407 /* WindowController.swift in Sources */,
+				C284BFB725E14BB700998FA9 /* TSFunction.swift in Sources */,
 				C2914E7425DD800300999D5B /* WKTypeScript.swift in Sources */,
 				C282EB2625DD82BB00FF8407 /* WKExtensions_backup.swift in Sources */,
 				C2914E5B25DD7F2500999D5B /* AppDelegate.swift in Sources */,

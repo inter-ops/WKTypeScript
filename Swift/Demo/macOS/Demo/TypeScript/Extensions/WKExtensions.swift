@@ -10,7 +10,9 @@ import WebKit
 
 
 extension WKWebView {
+    
     // MARK:- Load File
+    
     /// Load the generated JavaScript code, of the input TypeScript file, to be evaluated in some WKWebView object.
     /// - parameters:
     ///     - load: The Swift-generated name of the specified TypeScript file
@@ -23,24 +25,52 @@ extension WKWebView {
     /// # Usage
     ///     webView.load(.index)
     func load(_ file: TypeScript.File) { evaluateTypeScript(file: file) }
+    
     // MARK:- TypeScript Calls
     
-    /// Make calls to your TypeScript functions and variables to be evaluated in some WKWebView object.
+    /// (**DEFAULT**) `String` : Call any function or variable, using the `TypeScript` controller format, to be evaluated in some WKWebView object.
     /// - parameters:
-    ///     - function: The Swift-generated function or variable
+    ///     - script: The TypeScript code to run
+    ///     - completionHandler: Awaits a return value `String` from the function call
     /// # Usage
     ///     webView.ts(.index(.variable))
-    ///     webView.ts(.index(.function())
-    //func ts(_ script: TypeScript.Body) { js(script.js) }
-    /// Make calls to your TypeScript functions (or variables) to be evaluated in some WKWebView object.
+    ///     webView.ts(.index(.function()))
+    ///     // Callbacks (String)
+    ///     webView.ts(.index(.function())) { (result) in
+    ///         switch result {
+    ///         case .failure(let error): print(error)
+    ///         case .success(let value): print(value)
+    ///         }
+    ///     }
+    /// # Callbacks (default)
+    /// The default implementation, with an optional completion parameter (as seen in the Usage example above), will return the JavaScript `String` literal
+    /// of the callback value.
+    ///
+    /// **Note:** Some functions, like those with a declared return value of a non-`String` type, may not return to the console.
+    /// Consider declaring a return type instead: `(result: Result<Type, Error>) in`
+    func ts(_ script: TypeScript.Body, completionHandler: ((Result<String, Error>) -> Void)? = nil) {
+        evaluateCallback(script.js, completionHandler: completionHandler)
+    }
+    /// Call any function or variable, using the `TypeScript` controller format, to be evaluated in some WKWebView object.
     /// - parameters:
-    ///     - function: The Swift-generated function or variable
+    ///     - script: The TypeScript code to run
+    ///     - completionHandler: Awaits a return value from the function call
     /// # Usage
-    ///     webView.function(.index(.variable))
-    ///     webView.function(.index(.function())
-    func function(_ script: TypeScript.Body) { js(script.js) }
+    ///     webView.ts(.index(.variable))
+    ///     webView.ts(.index(.function()))
+    ///     // Callbacks
+    ///     webView.ts(.index(.function())) { (result: Result<Bool, Error>) in
+    ///         switch result {
+    ///         case .failure(let error): print(error)
+    ///         case .success(let value): print(value)
+    ///         }
+    ///     }
+    func ts<T>(_ script: TypeScript.Body, completionHandler: ((Result<T, Error>) -> Void)? = nil) {
+        evaluateCallback(script.js, completionHandler: completionHandler)
+    }
     
     // MARK:- Controller Functions
+    
     /// Evalutes raw JavaScript code in a `WKWebView` object
     /// - parameters:
     ///     - script: The JavaScript code that you wish to execute
@@ -50,8 +80,7 @@ extension WKWebView {
     func js(_ script: String) {
         evaluateJavaScript(script)
     }
-
-    
+    /// Evaluates the input TypeScript file as JavaScript code in some WKWebView object.
     func evaluateTypeScript(file: TypeScript.File) {
         evaluateJavaScript(getScriptString(file: file))
     }
@@ -89,33 +118,26 @@ extension WKWebView {
         }
         return "Error"
     }
-
+    
+    // MARK:- Deprecated Functions
+    /// Make calls to your TypeScript functions and variables to be evaluated in some WKWebView object.
+    /// - parameters:
+    ///     - function: The Swift-generated function or variable
+    /// # Usage
+    ///     webView.ts(.index(.variable))
+    ///     webView.ts(.index(.function())
+    //func ts(_ script: TypeScript.Body) { js(script.js) }
+    /// Make calls to your TypeScript functions (or variables) to be evaluated in some WKWebView object.
+    /// - parameters:
+    ///     - function: The Swift-generated function or variable
+    /// # Usage
+    ///     webView.function(.index(.variable))
+    ///     webView.function(.index(.function())
+    //func function(_ script: TypeScript.Body) { js(script.js) }
 }
 
-
-/* HACKY: async await
-func ts(_ function script: String, completion: (result: AnyObject?, error: NSError?) -> Void) {
-    var finished = false
-    
-    evaluateJavaScript(script) { (result, error) in
-        if error == nil {
-            if result != nil {
-                completion(result: result, error: nil)
-            }
-        } else {
-            completion(result: nil, error: error)
-        }
-        finished = true
-    }
-    
-    while !finished {
-        RunLoop.current().run(mode: .defaultRunLoopMode, before: Date.distantFuture)
-    }
-}
-*/
-
-
-// https://gist.github.com/ahmedk92/f279a49fa2a8d7b3b887f433e42cb612
+// MARK:- TypeScript Callbacks
+// Reference: https://gist.github.com/ahmedk92/f279a49fa2a8d7b3b887f433e42cb612
 extension WKWebView {
     enum EvaluateJavaScriptError: String, Error {
         case typeMismatchError
@@ -146,35 +168,25 @@ extension WKWebView {
             }
         }
     }
-    
-    func ts(index: TypeScript.index, completionHandler: ((Result<String, Error>) -> Void)? = nil) {
-        evaluateCallback(index.js, completionHandler: completionHandler)
-    }
-    
-    /*
-    func ts(_ script: TypeScript.Body, completionHandler: ((Result<String, Error>) -> Void)? = nil) {
-        evaluateJavaScript(script.js) { (result, error) in
-            guard let result = result else {
-                completionHandler?(.failure(error!))
-                return
-            }
-            
-            completionHandler?(.success(String(format: "%@", result as! NSObject)))
-        }
-    }
-    func ts<T>(_ script: TypeScript.Body, completionHandler: ((Result<T, Error>) -> Void)? = nil) {
-        evaluateJavaScript(script.js) { (result, error) in
-            guard let result = result else {
-                completionHandler?(.failure(error!))
-                return
-            }
-            
-            if let result = result as? T {
-                completionHandler?(.success(result))
-            } else {
-                completionHandler?(.failure(EvaluateJavaScriptError.typeMismatchError))
-            }
-        }
-    }
-    */
 }
+
+/* HACKY: async await
+func ts(_ function script: String, completion: (result: AnyObject?, error: NSError?) -> Void) {
+    var finished = false
+    
+    evaluateJavaScript(script) { (result, error) in
+        if error == nil {
+            if result != nil {
+                completion(result: result, error: nil)
+            }
+        } else {
+            completion(result: nil, error: error)
+        }
+        finished = true
+    }
+    
+    while !finished {
+        RunLoop.current().run(mode: .defaultRunLoopMode, before: Date.distantFuture)
+    }
+}
+*/
