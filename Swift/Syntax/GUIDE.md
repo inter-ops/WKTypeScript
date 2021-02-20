@@ -32,6 +32,9 @@ $PROJECT_ROOT/
         Extensions/
             Generated/
                 WK+Generated.swift      // Generated WebKit extensions
+        Helpers/
+            JavaScript.swift
+            TSUtility.swift
                 
 ```
 
