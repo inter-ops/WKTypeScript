@@ -21,14 +21,21 @@ extension TypeScript {
         var js: String {
             switch self {
             case .currentMode: return TSUtility.toString("currentMode")
-            case .setMode(let io): return TSFunction.builder("setMode(\(io.rawValue))")
+            case .setMode(let io): return TSFunction.builder("setMode(\(io.js))")
             }
         }
         // MARK: enums and related types
         /// `enum Mode` declared in `mode.ts`
         enum Mode: String {
-            case light = "Mode.Light"
-            case dark = "Mode.Dark"
+            case light = "light"
+            case dark = "dark"
+            
+            var js: String {
+                switch self {
+                case .light: return "Mode.Light"
+                case .dark: return "Mode.Dark"
+                }
+            }
         }
     }
 }

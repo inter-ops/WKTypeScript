@@ -17,6 +17,7 @@ class ViewController: NSViewController, NSWindowDelegate, WKUIDelegate, WKNaviga
         super.viewDidLoad()
 
         initWebView()
+        addObservers()
     }
     
     // MARK: WebKit Config
@@ -33,6 +34,12 @@ class ViewController: NSViewController, NSWindowDelegate, WKUIDelegate, WKNaviga
         webView.load(.index)        // webView.ts(load: .index)
         webView.load(.mode)         // webView.ts(load: .mode)
         webView.load(.player)       // webView.ts(load: .player)
+    }
+    
+    
+    @objc func runScript(_ notification: Notification) {
+        webView.js(Notifications.javaScript)
+        print("Running: \(Notifications.javaScript)")
     }
     
     // MARK: JavaScript Handler

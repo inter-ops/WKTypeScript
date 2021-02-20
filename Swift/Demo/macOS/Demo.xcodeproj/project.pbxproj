@@ -25,6 +25,12 @@
 		C2B7AA5E25E15B1A006258ED /* TSFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B7AA5425E15B1A006258ED /* TSFunction.swift */; };
 		C2B7AA6F25E15F62006258ED /* Shared in Resources */ = {isa = PBXBuildFile; fileRef = C2B7AA6E25E15F62006258ED /* Shared */; };
 		C2B7AA7225E15F78006258ED /* dist in Resources */ = {isa = PBXBuildFile; fileRef = C2B7AA7125E15F78006258ED /* dist */; };
+		C2B7AA7925E16618006258ED /* SwiftUIBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B7AA7825E16618006258ED /* SwiftUIBuilder.swift */; };
+		C2B7AA8025E167E4006258ED /* ElementTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B7AA7B25E167E3006258ED /* ElementTitle.swift */; };
+		C2B7AA8125E167E4006258ED /* ElementListHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B7AA7C25E167E3006258ED /* ElementListHostingController.swift */; };
+		C2B7AA8225E167E4006258ED /* DemoElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B7AA7D25E167E4006258ED /* DemoElements.swift */; };
+		C2B7AA8325E167E4006258ED /* ElementHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B7AA7E25E167E4006258ED /* ElementHeader.swift */; };
+		C2B7AA8425E167E4006258ED /* ElementList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B7AA7F25E167E4006258ED /* ElementList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +55,12 @@
 		C2B7AA5425E15B1A006258ED /* TSFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSFunction.swift; sourceTree = "<group>"; };
 		C2B7AA6E25E15F62006258ED /* Shared */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Shared; path = ../../Shared; sourceTree = "<group>"; };
 		C2B7AA7125E15F78006258ED /* dist */ = {isa = PBXFileReference; lastKnownFileType = folder; name = dist; path = ../../../../dist; sourceTree = "<group>"; };
+		C2B7AA7825E16618006258ED /* SwiftUIBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIBuilder.swift; sourceTree = "<group>"; };
+		C2B7AA7B25E167E3006258ED /* ElementTitle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElementTitle.swift; sourceTree = "<group>"; };
+		C2B7AA7C25E167E3006258ED /* ElementListHostingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElementListHostingController.swift; sourceTree = "<group>"; };
+		C2B7AA7D25E167E4006258ED /* DemoElements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoElements.swift; sourceTree = "<group>"; };
+		C2B7AA7E25E167E4006258ED /* ElementHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElementHeader.swift; sourceTree = "<group>"; };
+		C2B7AA7F25E167E4006258ED /* ElementList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElementList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +170,12 @@
 		C2B7AA7425E161FE006258ED /* DemoElements */ = {
 			isa = PBXGroup;
 			children = (
+				C2B7AA7825E16618006258ED /* SwiftUIBuilder.swift */,
+				C2B7AA7D25E167E4006258ED /* DemoElements.swift */,
+				C2B7AA7E25E167E4006258ED /* ElementHeader.swift */,
+				C2B7AA7F25E167E4006258ED /* ElementList.swift */,
+				C2B7AA7C25E167E3006258ED /* ElementListHostingController.swift */,
+				C2B7AA7B25E167E3006258ED /* ElementTitle.swift */,
 			);
 			path = DemoElements;
 			sourceTree = "<group>";
@@ -234,13 +252,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2B7AA5525E15B1A006258ED /* TSConfig.swift in Sources */,
+				C2B7AA7925E16618006258ED /* SwiftUIBuilder.swift in Sources */,
 				C2B7AA5E25E15B1A006258ED /* TSFunction.swift in Sources */,
+				C2B7AA8125E167E4006258ED /* ElementListHostingController.swift in Sources */,
 				C2B7AA5825E15B1A006258ED /* TypeScript.swift in Sources */,
+				C2B7AA8425E167E4006258ED /* ElementList.swift in Sources */,
 				C2914E5D25DD7F2500999D5B /* ViewController.swift in Sources */,
 				C282EB3C25DD9A3D00FF8407 /* Notifications.swift in Sources */,
 				C282EB3925DD9A2A00FF8407 /* WindowController.swift in Sources */,
 				C2B7AA5625E15B1A006258ED /* WKGenerated.swift in Sources */,
 				C2B7AA5D25E15B1A006258ED /* TSUtility.swift in Sources */,
+				C2B7AA8225E167E4006258ED /* DemoElements.swift in Sources */,
+				C2B7AA8025E167E4006258ED /* ElementTitle.swift in Sources */,
+				C2B7AA8325E167E4006258ED /* ElementHeader.swift in Sources */,
 				C2914E5B25DD7F2500999D5B /* AppDelegate.swift in Sources */,
 				C2B7AA5C25E15B1A006258ED /* TS+player.swift in Sources */,
 				C2B7AA5725E15B1A006258ED /* WKExtensions.swift in Sources */,

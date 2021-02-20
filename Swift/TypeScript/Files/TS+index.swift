@@ -19,7 +19,7 @@ extension TypeScript {
         // MARK: Functions
         case toggle(Void = ())
         case setLabel(_ text: String)
-        case hideObjects(_ hidden: Bool = false)
+        case hideObject(_ hidden: Bool = false)
         case addNumbers(_ a: Double, _ b: Double)
         case selectDevice(_ device: Device)
         /// Raw JavaScript-generated code to `evaluate` in some WKWebView.
@@ -29,9 +29,9 @@ extension TypeScript {
             case .actionDelay: return TSUtility.toString("actionDelay")
             case .toggle: return TSFunction.builder("toggle()")
             case .setLabel(let text): return TSFunction.builder("setLabel(\"\(text)\")")
-            case .hideObjects(let hidden): return TSFunction.builder("hideObject(\(hidden))")
+            case .hideObject(let hidden): return TSFunction.builder("hideObject(\(hidden))")
             case .addNumbers(let a, let b): return TSFunction.builder("addNumbers(\(a), \(b))")
-            case .selectDevice(let device): return TSFunction.builder("selectDevice(\(device.rawValue))")
+            case .selectDevice(let device): return TSFunction.builder("selectDevice(\(device.js))")
             }
         }
         
@@ -40,6 +40,14 @@ extension TypeScript {
             case phone = "iOS"
             case pad = "iPadOS"
             case mac = "macOS"
+            
+            var js: String {
+                switch self {
+                case .phone: return "Device.Phone"
+                case .pad: return "Device.Pad"
+                case .mac: return "Device.Mac"
+                }
+            }
         }
     }
 }

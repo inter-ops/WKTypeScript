@@ -684,13 +684,74 @@
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
-                <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                <windowController id="B8D-0N-5wS" customClass="WindowController" customModule="Demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <window key="window" title="WKTypeScript Demo" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="180" width="1045" height="780"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                         <value key="minSize" type="size" width="800" height="600"/>
+                        <toolbar key="toolbar" implicitIdentifier="1797D0F4-EC35-41DE-870E-374D5962D744" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="GSH-PO-Bf4">
+                            <allowedToolbarItems>
+                                <toolbarItem implicitItemIdentifier="NSToolbarShowColorsItem" id="gw5-7K-ebh"/>
+                                <toolbarItem implicitItemIdentifier="610CD151-D7DC-44AB-A1CB-A42CF10AE2C9" label="Select" paletteLabel="Select Device" tag="-1" image="laptopcomputer.and.iphone" catalog="system" id="vEL-ak-XTL">
+                                    <size key="minSize" width="32" height="32"/>
+                                    <size key="maxSize" width="32" height="32"/>
+                                    <connections>
+                                        <action selector="selectDevice:" target="B8D-0N-5wS" id="3TS-Cv-Bkz"/>
+                                    </connections>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="3C010419-56BF-4D97-B954-0BEC45964095" label="Mode" paletteLabel="Switch Mode" tag="-1" image="lightbulb" catalog="system" id="kZo-92-ZX1">
+                                    <size key="minSize" width="32" height="32"/>
+                                    <size key="maxSize" width="32" height="32"/>
+                                    <connections>
+                                        <action selector="setMode:" target="B8D-0N-5wS" id="rs1-h9-IQE"/>
+                                    </connections>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="7FD72514-338D-430B-8A83-B2F2D3906C42" label="Toggle" paletteLabel="Toggle" tag="-1" image="switch.2" catalog="system" id="4HD-C1-63q">
+                                    <size key="minSize" width="32" height="32"/>
+                                    <size key="maxSize" width="32" height="32"/>
+                                    <connections>
+                                        <action selector="toggle:" target="B8D-0N-5wS" id="4dt-k8-SXm"/>
+                                    </connections>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="4011DB4A-B1A9-45D3-B7C3-489209BE21D1" label="Hide Object" paletteLabel="Hide Object" tag="-1" image="eye.slash" catalog="system" id="mxc-rP-cvb">
+                                    <size key="minSize" width="32" height="32"/>
+                                    <size key="maxSize" width="32" height="32"/>
+                                    <connections>
+                                        <action selector="hideObject:" target="B8D-0N-5wS" id="Vhl-cW-XGk"/>
+                                    </connections>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="855C7ABC-CE6E-4D38-BC44-FC7D9DCE868F" label="Set Label" paletteLabel="Set Label" tag="-1" image="text.cursor" catalog="system" id="uiX-U4-9Nj">
+                                    <size key="minSize" width="32" height="32"/>
+                                    <size key="maxSize" width="32" height="32"/>
+                                    <connections>
+                                        <action selector="setLabel:" target="B8D-0N-5wS" id="SKe-jr-M4M"/>
+                                    </connections>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="FF21E0F8-D1A7-4659-A4CD-EA6A34779534" label="Calculate" paletteLabel="Add Numbers" tag="-1" image="plus.slash.minus" catalog="system" id="YL8-lg-nFB">
+                                    <size key="minSize" width="32" height="32"/>
+                                    <size key="maxSize" width="32" height="32"/>
+                                    <connections>
+                                        <action selector="addNumbers:" target="B8D-0N-5wS" id="r1a-3h-GMy"/>
+                                    </connections>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="NSToolbarShowFontsItem" id="MHc-M3-zzJ"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarPrintItem" id="SL7-yi-WbJ"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="btt-Xr-acN"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="p74-3Q-Vwx"/>
+                            </allowedToolbarItems>
+                            <defaultToolbarItems>
+                                <toolbarItem reference="4HD-C1-63q"/>
+                                <toolbarItem reference="uiX-U4-9Nj"/>
+                                <toolbarItem reference="mxc-rP-cvb"/>
+                                <toolbarItem reference="YL8-lg-nFB"/>
+                                <toolbarItem reference="vEL-ak-XTL"/>
+                                <toolbarItem reference="p74-3Q-Vwx"/>
+                                <toolbarItem reference="btt-Xr-acN"/>
+                                <toolbarItem reference="kZo-92-ZX1"/>
+                            </defaultToolbarItems>
+                        </toolbar>
                         <connections>
                             <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
                         </connections>
@@ -717,7 +778,7 @@
                                     <constraint firstAttribute="width" constant="375" id="Lkf-cf-OPY"/>
                                 </constraints>
                                 <connections>
-                                    <segue destination="mfk-wK-gQE" kind="embed" id="bgT-be-b1r"/>
+                                    <segue destination="EiV-Lg-Jaa" kind="embed" id="qVN-wy-Pk8"/>
                                 </connections>
                             </containerView>
                             <wkWebView wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pwY-85-u65">
@@ -727,51 +788,15 @@
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="d9X-F0-Aw9">
-                                <rect key="frame" x="959" y="13" width="73" height="32"/>
-                                <buttonCell key="cell" type="push" title="Test C" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="qwZ-ur-vxj">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="testC:" target="XfG-lQ-9wD" id="KAN-YC-Aib"/>
-                                </connections>
-                            </button>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1vT-0t-1Qc">
-                                <rect key="frame" x="881" y="13" width="72" height="32"/>
-                                <buttonCell key="cell" type="push" title="Test B" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="zME-rQ-8NM">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="testB:" target="XfG-lQ-9wD" id="VNi-dx-Ren"/>
-                                </connections>
-                            </button>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8dM-2i-dRi">
-                                <rect key="frame" x="803" y="13" width="72" height="32"/>
-                                <buttonCell key="cell" type="push" title="Test A" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="tJ0-pf-IBR">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="testA:" target="XfG-lQ-9wD" id="omm-jB-n4y"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="fwG-EK-6Cu" secondAttribute="bottom" id="7cY-jk-FAP"/>
                             <constraint firstAttribute="bottom" secondItem="pwY-85-u65" secondAttribute="bottom" id="9G0-ok-uOH"/>
-                            <constraint firstItem="d9X-F0-Aw9" firstAttribute="leading" secondItem="1vT-0t-1Qc" secondAttribute="trailing" constant="20" id="E2p-ih-sKW"/>
-                            <constraint firstItem="1vT-0t-1Qc" firstAttribute="leading" secondItem="8dM-2i-dRi" secondAttribute="trailing" constant="20" id="Ghy-KN-bHC"/>
-                            <constraint firstItem="fwG-EK-6Cu" firstAttribute="trailing" secondItem="d9X-F0-Aw9" secondAttribute="trailing" constant="20" id="Lbi-S8-QC7"/>
                             <constraint firstItem="fwG-EK-6Cu" firstAttribute="leading" secondItem="pwY-85-u65" secondAttribute="trailing" id="NrS-ph-snw"/>
-                            <constraint firstAttribute="bottom" secondItem="d9X-F0-Aw9" secondAttribute="bottom" constant="20" id="P25-Fa-Pnu"/>
                             <constraint firstAttribute="trailing" secondItem="fwG-EK-6Cu" secondAttribute="trailing" id="U5N-8t-Uwi"/>
                             <constraint firstItem="pwY-85-u65" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="WTx-qx-TvC"/>
-                            <constraint firstAttribute="bottom" secondItem="1vT-0t-1Qc" secondAttribute="bottom" constant="20" symbolic="YES" id="cC9-wR-vee"/>
                             <constraint firstItem="pwY-85-u65" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="lzc-TS-1it"/>
                             <constraint firstItem="fwG-EK-6Cu" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="r6n-Ch-nyI"/>
-                            <constraint firstAttribute="bottom" secondItem="8dM-2i-dRi" secondAttribute="bottom" constant="20" symbolic="YES" id="vBT-AN-rtT"/>
                         </constraints>
                     </view>
                     <connections>
@@ -782,18 +807,21 @@
             </objects>
             <point key="canvasLocation" x="75.5" y="476"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="f4T-Na-zQA">
+        <!--Element List Hosting Controller-->
+        <scene sceneID="4f5-6Q-nVX">
             <objects>
-                <viewController id="mfk-wK-gQE" sceneMemberID="viewController">
-                    <view key="view" id="rIW-WP-8DF">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </view>
-                </viewController>
-                <customObject id="p2y-nA-kJZ" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <hostingController id="EiV-Lg-Jaa" customClass="ElementListHostingController" customModule="Demo" customModuleProvider="target" sceneMemberID="viewController"/>
+                <customObject id="aZ6-Gb-FKB" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="868" y="204"/>
+            <point key="canvasLocation" x="938" y="236"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="eye.slash" catalog="system" width="21" height="14"/>
+        <image name="laptopcomputer.and.iphone" catalog="system" width="21" height="13"/>
+        <image name="lightbulb" catalog="system" width="15" height="17"/>
+        <image name="plus.slash.minus" catalog="system" width="16" height="14"/>
+        <image name="switch.2" catalog="system" width="16" height="14"/>
+        <image name="text.cursor" catalog="system" width="16" height="16"/>
+    </resources>
 </document>
