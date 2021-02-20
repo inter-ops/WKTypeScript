@@ -21,7 +21,7 @@ extension TypeScript {
         var js: String {
             switch self {
             case .currentMode: return TSUtility.toString("currentMode")
-            case .setMode(let io): return TSFunction.builder("setMode(\(io.rawValue));")
+            case .setMode(let io): return TSFunction.builder("setMode(\(io.rawValue))")
             }
         }
         // MARK: enums and related types

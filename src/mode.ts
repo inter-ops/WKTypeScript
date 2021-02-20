@@ -4,10 +4,8 @@ enum Mode {
   Dark = "dark"
 }
 
-/* @ignore this variable */
 let currentMode = Mode.Light;
 
-/* DONT @i_gnore this function */
 async function setMode(mode = Mode.Light) {
   const printMode = currentMode;
   if (mode !== currentMode) {
@@ -23,7 +21,7 @@ async function setMode(mode = Mode.Light) {
  * This function manipulates the CSS of the page to reflect a light or dark mode.
  */
 
-// @ignore
+// @ignore-wkts
 async function toggleTo(mode = Mode.Light) {
   currentMode = mode;
 
@@ -112,7 +110,7 @@ async function toggleTo(mode = Mode.Light) {
   });
 }
 
-// @ignore
+// @ignore-wkts
 function toggleMode() {
   const printMode = currentMode;
   let mode = Mode.Light;

@@ -1,7 +1,7 @@
 const title = "I Gotta Feeling";
 
 function pause() {
-  // pause
+  //no return
 }
 
 function isPlaying() {
@@ -10,4 +10,13 @@ function isPlaying() {
 
 function getTitle() {
   return title;
+}
+
+function getDuration() {
+  return 289.0;
+}
+
+function addAlbums(albums: string[]) {
+  postMessage("Albums added!");
+  return albums;
 }

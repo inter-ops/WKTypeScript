@@ -19,14 +19,16 @@ extension TypeScript {
         case isPlaying(Void = ())
         case getTitle(Void = ())
         case getDuration(Void = ())
+        case addAlbums([String])
         /// Raw JavaScript-generated code to `evaluate` in some WKWebView.
         var js: String {
             switch self {
             case .title: return TSUtility.toString("title")
-            case .pause: return TSFunction.builder("pause();")
-            case .isPlaying: return TSFunction.builder("isPlaying();")
-            case .getTitle: return TSFunction.builder("getTitle();")
-            case .getDuration: return TSFunction.builder("getDuration();")
+            case .pause: return TSFunction.builder("pause()")
+            case .isPlaying: return TSFunction.builder("isPlaying()")
+            case .getTitle: return TSFunction.builder("getTitle()")
+            case .getDuration: return TSFunction.builder("getDuration()")
+            case .addAlbums(let io): return TSFunction.builder("addAlbums(\(io))")
             }
         }
     }

@@ -27,11 +27,11 @@ extension TypeScript {
             switch self {
             case .anchorDelay: return TSUtility.toString("anchorDelay")
             case .actionDelay: return TSUtility.toString("actionDelay")
-            case .toggle: return TSFunction.builder("toggle();")
-            case .setLabel(let text): return TSFunction.builder("setLabel(\"\(text)\");")
-            case .hideObjects(let hidden): return TSFunction.builder("hideObject(\(hidden));")
-            case .addNumbers(let a, let b): return TSFunction.builder("addNumbers(\(a), \(b));")
-            case .selectDevice(let device): return TSFunction.builder("selectDevice(\(device.rawValue));")
+            case .toggle: return TSFunction.builder("toggle()")
+            case .setLabel(let text): return TSFunction.builder("setLabel(\"\(text)\")")
+            case .hideObjects(let hidden): return TSFunction.builder("hideObject(\(hidden))")
+            case .addNumbers(let a, let b): return TSFunction.builder("addNumbers(\(a), \(b))")
+            case .selectDevice(let device): return TSFunction.builder("selectDevice(\(device.rawValue))")
             }
         }
         

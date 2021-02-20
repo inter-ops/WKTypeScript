@@ -62,7 +62,7 @@ extension ViewController {
 //            self.runJS("postMessageTestArray();")
 //        }
         //webView.ts(index: .toggle())
-        webView.index(.toggle())
+        //webView.index(.toggle())
     }
     
     func testC() {

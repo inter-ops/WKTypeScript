@@ -11,7 +11,6 @@ import Foundation
 /// **JavaScript Utility Functions:** Helper functions to format the JavScript code before execution.
 struct TSUtility {
     static func toString(_ variable: String) -> String {
-        // TODO: add postMessage callback
         return "\(variable);" // .toString();"
     }
     /// Removes the `.js` (or `.ts`) extension from the file name (ie. `"index.js" -> "index"`).
@@ -19,7 +18,6 @@ struct TSUtility {
         let fileName = file.replacingOccurrences(of: ".js", with: "")
         return fileName.replacingOccurrences(of: ".ts", with: "")
     }
-    
     /// Returns the raw JavaScript generated-code, as a `String`, from the TypeScript `file`.
     /// - parameters:
     ///     - file: The name of the TypeScript file you wish to retrieve (file extension is optional)

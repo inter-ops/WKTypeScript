@@ -34,8 +34,13 @@ class ViewController: NSViewController, NSWindowDelegate, WKUIDelegate, WKNaviga
         */
     }
     
-    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        webView.js(jsConsoleTestCode)
+    // MARK: WebKit Config
+    /// Initializes the main WKWebView object.
+    func initWebView() {
+        webView.uiDelegate = self
+        webView.navigationDelegate = self
+        webView.configuration.userContentController.add(self, name: "eventListeners")
+        webView.load(file: "index", path: "Shared/WebContent")
     }
     
     // MARK: JavaScript Handler
@@ -48,9 +53,6 @@ class ViewController: NSViewController, NSWindowDelegate, WKUIDelegate, WKNaviga
         }
     }
     
-    
-    
-
     override var representedObject: Any? {
         didSet {
         // Update the view, if already loaded.
@@ -64,8 +66,9 @@ class ViewController: NSViewController, NSWindowDelegate, WKUIDelegate, WKNaviga
 
 
 
-// MARK:- TEMP (DELETE)
-// MARK: WKWebView
+// MARK:- Demo Extensions
+
+// MARK: WKWebView Extensions
 extension WKWebView {
     /// Quick and short load URL String in a WKWebView
     func load(_ string: String) {
@@ -78,6 +81,25 @@ extension WKWebView {
     func load(_ url: URL) {
         let request = URLRequest(url: url)
         load(request)
+    }
+    /// Quick load a `file` (without `.html`) and `path` to the directory
+    /// # Usage
+    ///     webView.loadFile("index", path: "Website")
+    ///  - parameters:
+    ///     - name: Name of the HTML file to load (without `.html`, ie. `"index"`)
+    ///     - path: Path where the HTML file is located (`"website"` for `website/index.html`)
+    func load(file: String, path: String) {
+        if let url = Bundle.main.url(forResource: file, withExtension: "html", subdirectory: path) {
+            self.loadFileURL(url, allowingReadAccessTo: url)
+            let request = URLRequest(url: url)
+            load(request)
+        }
+    }
+    
+    func clearAllCache() {
+        let websiteDataTypes = NSSet(array: [WKWebsiteDataTypeDiskCache, WKWebsiteDataTypeMemoryCache])
+        let date = Date(timeIntervalSince1970: 0)
+        WKWebsiteDataStore.default().removeData(ofTypes: websiteDataTypes as! Set<String>, modifiedSince: date, completionHandler:{ })
     }
 }
 
