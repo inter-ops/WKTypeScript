@@ -16,22 +16,7 @@ class ViewController: NSViewController, NSWindowDelegate, WKUIDelegate, WKNaviga
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        webView.uiDelegate = self
-        webView.navigationDelegate = self
-        webView.configuration.userContentController.add(self, name: "eventListeners")
-        webView.load("about:blank")
-        
-        webView.ts(index: .toggle())
-        
-        
-        /*
-        webView.ts(index: .addNumbers(1, 2), completionHandler: { (result) in
-            switch result {
-                    case .failure(let error): print(error)
-                    case .success(let value): print(value, type(of: value)) // 3 String
-                }
-        })
-        */
+        initWebView()
     }
     
     // MARK: WebKit Config
@@ -41,6 +26,13 @@ class ViewController: NSViewController, NSWindowDelegate, WKUIDelegate, WKNaviga
         webView.navigationDelegate = self
         webView.configuration.userContentController.add(self, name: "eventListeners")
         webView.load(file: "index", path: "Shared/WebContent")
+    }
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        webView.load(.global)       // webView.ts(load: .global)
+        webView.load(.index)        // webView.ts(load: .index)
+        webView.load(.mode)         // webView.ts(load: .mode)
+        webView.load(.player)       // webView.ts(load: .player)
     }
     
     // MARK: JavaScript Handler

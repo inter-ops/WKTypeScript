@@ -85,8 +85,9 @@
 				C2914E5C25DD7F2500999D5B /* ViewController.swift */,
 				C282EB3825DD9A2A00FF8407 /* WindowController.swift */,
 				C282EB3B25DD9A3D00FF8407 /* Notifications.swift */,
-				C2B7AA4525E15B1A006258ED /* TypeScript */,
+				C2B7AA7425E161FE006258ED /* DemoElements */,
 				C2914E5E25DD7F2500999D5B /* Assets.xcassets */,
+				C2B7AA4525E15B1A006258ED /* TypeScript */,
 				C2914E6025DD7F2500999D5B /* Main.storyboard */,
 				C2B7AA6E25E15F62006258ED /* Shared */,
 				C2B7AA7125E15F78006258ED /* dist */,
@@ -152,6 +153,13 @@
 				C2B7AA5325E15B1A006258ED /* TSUtility.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		C2B7AA7425E161FE006258ED /* DemoElements */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DemoElements;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
