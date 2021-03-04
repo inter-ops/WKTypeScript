@@ -52,7 +52,7 @@ Config here.
 - [x] Create example iOS project
 - [x] Create example macOS project
 - [x] Create cross-platform example project
-- [ ] Make a better README
+- [ ] Make a better README <sup>*working on it*</sup>
 
 ## Requirements
 
