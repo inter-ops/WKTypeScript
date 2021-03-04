@@ -1,12 +1,15 @@
 <img src="README/Cover.jpg" />
+<sup>InterOps – automate your workflow (or something).</sup>
 
-# WKTypeScript
-A lightweight framework for evaluating TypeScript through WebKit using native Swift.
+Bridge the gap between TypeScript and Swift – a Node.js generator and WebKit extension framework, all in one.
 
-## Overview
+# Overview
+Declare your functions in TypeScript. Call them, with type-safe parameters, in native Swift.
 
-<img src="README/Syntax.png" />
-<!--<img src="assets/ScriptGen.png" />-->
+<img src="README/Syntax.png" /><!--<img src="assets/ScriptGen.png" />-->
+
+**WKTypeScript** makes it easy and *instantaneous* to go from declaring functions in TypeScript to implementing them in Swift.
+
 
 ### Type-Safe Calls to JavaScript with Native Swift
 
