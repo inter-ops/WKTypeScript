@@ -1,9 +1,12 @@
+<img src="README/Cover.jpg" />
+
 # WKTypeScript
 A lightweight framework for evaluating TypeScript through WebKit using native Swift.
 
 ## Overview
 
-<img src="assets/ScriptGen.png" />
+<img src="README/Syntax.png" />
+<!--<img src="assets/ScriptGen.png" />-->
 
 ### Type-Safe Calls to JavaScript with Native Swift
 
