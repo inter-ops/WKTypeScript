@@ -28,6 +28,7 @@
   },
   "homepage": "https://github.com/inter-ops/WKTypeScript#readme",
   "devDependencies": {
+    "@types/node": "^14.14.31",
     "@typescript-eslint/eslint-plugin": "^4.10.0",
     "@typescript-eslint/parser": "^4.10.0",
     "eslint": "^7.16.0",
