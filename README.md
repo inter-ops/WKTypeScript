@@ -8,13 +8,11 @@ Declare your functions in TypeScript. Call them, with type-safe parameters, in n
 
 <img src="README/Syntax.png" /><!--<img src="assets/ScriptGen.png" />-->
 
-**WKTypeScript** makes it easy and *instantaneous* to go from declaring functions in TypeScript to implementing them in Swift.
+**WKTypeScript** allows you to automate and streamline your TypeScript-Swift workflow. Go from declaring code in TypeScript, to implementing them in native Swift – with `npm run build` in the middle.
 
+<!--<img src="assets/SwiftCode.png" />-->
 
-### Type-Safe Calls to JavaScript with Native Swift
-
-<img src="assets/SwiftCode.png" />
-
+<!--
 ## Table of Contents
 1. **[Getting Started](#getting-started)**
     1. [Setup](#setup)
@@ -26,8 +24,19 @@ Declare your functions in TypeScript. Call them, with type-safe parameters, in n
     1. [Swift](#swift)
     2. [NPM](#npm)
 5. **[License](#mit-license)** 
+-->
 
-## Getting Started
+## Evluate in WebView
+```swift
+webView.ts(.myVar)
+webView.ts(.myFunc())
+webView.ts(.myCallback(.forSomeVal)) { (result) in
+    switch result {
+        case success: print("\(success)")
+    }
+}
+
+```
 
 ### Setup
 Setup here.
@@ -36,18 +45,13 @@ Setup here.
 Building here.
 
 ## Configuration
-
-### Xcode
-Add Xcode config overview:
-
-- [ ] Add Build Phases
-- [ ] Include transpiled JavaScript files
+Config here.
 
 ## Progress
-- [ ] JavaScript type-safe function reference generator for native Swift
+- [x] JavaScript type-safe function reference generator for native Swift
 - [x] Create example iOS project
 - [x] Create example macOS project
-- [ ] Create cross-platform example project
+- [x] Create cross-platform example project
 - [ ] Make a better README
 
 ## Requirements
@@ -55,29 +59,3 @@ Add Xcode config overview:
 ### Swift
 - iOS 11 or later
 - macOS 10.14 or later
-
-### NPM
-- Required?
-- Node packages?
-
-## MIT License
-
-```
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
-```
