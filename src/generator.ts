@@ -18,6 +18,8 @@ interface ParsedTypes {
   };
 }
 
+// TODO: remove file segmentation, user will provide an "entry point" TS file that exports all funcs
+
 const generateFile = (fileName: string, fileTypes: ParsedTypes["fileName"]) => {
   let swiftStr = "";
   swiftStr += "import Foundation\n\n";
@@ -29,16 +31,20 @@ const generateFile = (fileName: string, fileTypes: ParsedTypes["fileName"]) => {
     let funcStr = "";
     funcStr += `case ${funcName}(`;
 
-    // function params
-    for (const param of funcDetails.parameters) {
-      funcStr += `_ ${param.label}: ${param.type}`;
-      if (param.default !== undefined) funcStr += ` = ${param.default}`;
+    if (funcDetails.parameters.length > 0) {
+      // function params
+      for (const param of funcDetails.parameters) {
+        funcStr += `_ ${param.label}: ${param.type}`;
+        if (param.default !== undefined) funcStr += ` = ${param.default}`;
 
-      funcStr += ",";
+        funcStr += ",";
+      }
+
+      // remove trailing comma
+      funcStr = funcStr.slice(0, -1);
+    } else {
+      funcStr += "Void = ()";
     }
-
-    // remove trailing comma if it was added from the param loop above
-    if (funcStr[funcStr.length - 1] === ",") funcStr = funcStr.slice(0, -1);
 
     // closes `case ${funcName}(`
     funcStr += ")";
