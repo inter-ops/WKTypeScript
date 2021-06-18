@@ -2,21 +2,98 @@
 // can install into a TS project
 
 import fs from "fs";
+import { Project, Node, SyntaxKind } from "ts-morph";
 
-// output from ts-morph parser
-interface ParsedTypes {
-  [fileName: string]: {
-    [funcName: string]: {
-      parameters: {
-        label: string;
-        // swift type
-        type: string;
-        default?: string;
-      }[];
-      returnType?: string;
-    };
+type SwiftTypes = "String" | "Double" | "Bool";
+type TsTypes = "string" | "number" | "boolean";
+
+const tsToSwiftMap: { [key in TsTypes]: SwiftTypes } = {
+  string: "String",
+  number: "Double",
+  boolean: "Bool"
+};
+
+interface ParsedParam {
+  label: string;
+  // swift type
+  type: string;
+  default?: string;
+}
+interface ParsedFile {
+  [funcName: string]: {
+    parameters: ParsedParam[];
+    returnType?: string;
   };
 }
+// output from ts-morph parser
+interface ParsedTypes {
+  [fileName: string]: ParsedFile;
+}
+
+const readFile = (fileName: string): ParsedFile => {
+  const project = new Project({});
+  project.addSourceFilesAtPaths([fileName]);
+
+  const parsedTyped: ParsedFile = {};
+  const sourceFile = project.getSourceFileOrThrow(fileName);
+
+  for (const statement of sourceFile.getStatements()) {
+    if (!Node.isVariableStatement(statement)) continue;
+
+    if (statement.hasExportKeyword()) {
+      console.log("Has export keyword: ", statement.getKindName());
+    }
+    const varDeclList = statement.getFirstChildByKind(SyntaxKind.VariableDeclarationList);
+    if (!varDeclList) {
+      continue;
+    }
+
+    const varDecl = varDeclList.getFirstChildByKind(SyntaxKind.VariableDeclaration);
+    if (!varDecl) {
+      continue;
+    }
+
+    const identifier = varDecl.getFirstChildByKind(SyntaxKind.Identifier);
+    if (!identifier) {
+      continue;
+    }
+
+    const arrowFunc = varDecl.getFirstChildByKind(SyntaxKind.ArrowFunction);
+    if (!arrowFunc) {
+      continue;
+    }
+
+    const isAsync = arrowFunc.isAsync();
+    const arrowFuncType = arrowFunc.getType();
+
+    const parameters = arrowFunc.getChildrenOfKind(SyntaxKind.Parameter)?.map((param) => {
+      const paramIdentifier = param.getFirstChildByKind(SyntaxKind.Identifier);
+      const label = paramIdentifier?.getText() ?? "";
+
+      const typeNode = param.getChildAtIndex(1);
+      const defaultValueNode = param.getChildAtIndex(2);
+
+      const type = tsToSwiftMap[typeNode.getText() as TsTypes];
+
+      const parsedParam: ParsedParam = {
+        label,
+        type
+      };
+
+      if (defaultValueNode) parsedParam.default = defaultValueNode?.getText();
+
+      return parsedParam;
+    });
+
+    const name = identifier.getText();
+    parsedTyped[name] = {
+      ...(parsedTyped[name] ?? {}),
+      parameters
+    };
+  }
+
+  return parsedTyped;
+};
 
 // TODO: remove file segmentation, user will provide an "entry point" TS file that exports all funcs
 
