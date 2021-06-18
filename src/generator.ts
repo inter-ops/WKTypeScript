@@ -23,7 +23,7 @@ interface ParsedTypes {
 const generateFile = (fileName: string, fileTypes: ParsedTypes["fileName"]) => {
   let swiftStr = "";
   swiftStr += "import Foundation\n\n";
-  swiftStr += "extension TypeScript {\n";
+  swiftStr += "extension TypeSwift {\n";
   swiftStr += `enum ${fileName} {\n`;
 
   // loop through each function and add it to swiftStr
