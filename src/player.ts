@@ -20,3 +20,11 @@ function addAlbums(albums: string[]) {
   postMessage("Albums added!");
   return albums;
 }
+
+export const test = (a = true) => {
+  return "";
+};
+
+export const test2 = (b = "hi") => {
+  return 1;
+};

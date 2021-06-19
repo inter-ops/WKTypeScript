@@ -2,6 +2,7 @@
 // can install into a TS project
 
 import fs from "fs";
+import path from "path";
 import { Project, Node, SyntaxKind } from "ts-morph";
 
 type SwiftTypes = "String" | "Double" | "Bool";
@@ -31,11 +32,17 @@ interface ParsedTypes {
 }
 
 const readFile = (fileName: string): ParsedFile => {
-  const project = new Project({});
-  project.addSourceFilesAtPaths([fileName]);
+  const project = new Project({
+    tsConfigFilePath: "tsconfig.json"
+  });
+
+  const filePath = path.join(__dirname, fileName);
+  console.log(filePath);
+
+  // project.addSourceFilesAtPaths([filePath]);
 
   const parsedTyped: ParsedFile = {};
-  const sourceFile = project.getSourceFileOrThrow(fileName);
+  const sourceFile = project.getSourceFileOrThrow(filePath);
 
   for (const statement of sourceFile.getStatements()) {
     if (!Node.isVariableStatement(statement)) continue;
@@ -63,8 +70,8 @@ const readFile = (fileName: string): ParsedFile => {
       continue;
     }
 
-    const isAsync = arrowFunc.isAsync();
-    const arrowFuncType = arrowFunc.getType();
+    // const isAsync = arrowFunc.isAsync();
+    // const arrowFuncType = arrowFunc.getType();
 
     const parameters = arrowFunc.getChildrenOfKind(SyntaxKind.Parameter)?.map((param) => {
       const paramIdentifier = param.getFirstChildByKind(SyntaxKind.Identifier);
@@ -182,43 +189,48 @@ const generateFile = (fileName: string, fileTypes: ParsedTypes["fileName"]) => {
   return swiftStr;
 };
 
-const testParsedTypes: ParsedTypes = {
-  index: {
-    toggle: {
-      parameters: []
-    },
-    setLabel: {
-      parameters: [
-        {
-          label: "text",
-          type: "String"
-        }
-      ]
-    },
-    hideObject: {
-      parameters: [
-        {
-          label: "hidden",
-          type: "Bool",
-          default: "false"
-        }
-      ]
-    },
-    addNumbers: {
-      parameters: [
-        {
-          label: "a",
-          type: "Double"
-        },
-        {
-          label: "b",
-          type: "Double"
-        }
-      ]
-    }
-  }
-};
+// const testParsedTypes: ParsedTypes = {
+//   index: {
+//     toggle: {
+//       parameters: []
+//     },
+//     setLabel: {
+//       parameters: [
+//         {
+//           label: "text",
+//           type: "String"
+//         }
+//       ]
+//     },
+//     hideObject: {
+//       parameters: [
+//         {
+//           label: "hidden",
+//           type: "Bool",
+//           default: "false"
+//         }
+//       ]
+//     },
+//     addNumbers: {
+//       parameters: [
+//         {
+//           label: "a",
+//           type: "Double"
+//         },
+//         {
+//           label: "b",
+//           type: "Double"
+//         }
+//       ]
+//     }
+//   }
+// };
 
-const fileName = "index";
-const swiftStr = generateFile(fileName, testParsedTypes[fileName]);
+const fileName = "player";
+const parsedTypes = readFile(`${fileName}.ts`);
+console.log(parsedTypes);
+
+const swiftStr = generateFile(fileName, parsedTypes);
 fs.writeFileSync(`${fileName}.swift`, swiftStr);
+
+// TODO: run  swiftformat
