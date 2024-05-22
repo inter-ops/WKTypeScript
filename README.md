@@ -1,5 +1,6 @@
-<img src="README/Cover.jpg" />
-<sup>InterOps – automate your workflow (or something).</sup>
+#### This project has been archived. For the modern version of this project, see [TypeSwift](https://github.com/TypeSwift/TypeSwift).
+
+<hr />
 
 Bridge the gap between TypeScript and Swift – a Node.js generator and WebKit extension framework, all in one.
 
